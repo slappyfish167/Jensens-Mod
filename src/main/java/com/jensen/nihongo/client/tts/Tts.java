@@ -16,6 +16,10 @@ import java.util.concurrent.TimeUnit;
 public final class Tts {
     private Tts() {}
 
+    private static final int NO_VOICE = 3;
+    private static final String NO_VOICE_HELP = "No Japanese voice found. Windows: Settings > Time & language > Speech > "
+            + "Add voices > Japanese. macOS: install Kyoko. Linux: install espeak-ng.";
+
     private static volatile Process current;
     private static volatile String lastError = "";
 
@@ -42,6 +46,7 @@ public final class Tts {
     private static void run(String text) {
         Process previous = current;
         if (previous != null && previous.isAlive()) previous.destroy();
+        boolean noVoice = false;
         for (List<String> cmd : commands(text)) {
             try {
                 ProcessBuilder pb = new ProcessBuilder(cmd).redirectErrorStream(true);
@@ -53,12 +58,15 @@ public final class Tts {
                     lastError = "";
                     return;
                 }
+                if (p.isAlive()) p.destroy();
+                else if (p.exitValue() == NO_VOICE) noVoice = true;
                 lastError = "Speech command failed: " + cmd.get(0);
             } catch (Exception e) {
                 lastError = "Speech unavailable: " + cmd.get(0) + " (" + e.getMessage() + ")";
             }
         }
-        NihongoMod.LOGGER.debug("TTS failed: {}", lastError);
+        if (noVoice) lastError = NO_VOICE_HELP;
+        NihongoMod.LOGGER.warn("TTS failed: {}", lastError);
     }
 
     private static List<List<String>> commands(String text) {
@@ -83,6 +91,20 @@ public final class Tts {
                     + "if ($v) { $s.SelectVoice($v.VoiceInfo.Name) } else { exit 3 };"
                     + "$s.Rate = -2; $s.Speak($env:NIHONGO_TTS_TEXT)";
             out.add(List.of("powershell", "-NoProfile", "-NonInteractive", "-Command", script));
+            // Voices added through Windows Settings are "OneCore" voices that System.Speech cannot see.
+            String oneCore = "Add-Type -AssemblyName System.Runtime.WindowsRuntime;"
+                    + "[void][Windows.Media.SpeechSynthesis.SpeechSynthesizer,Windows.Media.SpeechSynthesis,ContentType=WindowsRuntime];"
+                    + "$s = New-Object Windows.Media.SpeechSynthesis.SpeechSynthesizer;"
+                    + "$v = [Windows.Media.SpeechSynthesis.SpeechSynthesizer]::AllVoices | Where-Object { $_.Language -like 'ja*' } | Select-Object -First 1;"
+                    + "if (-not $v) { exit 3 };"
+                    + "$s.Voice = $v;"
+                    + "$m = [System.WindowsRuntimeSystemExtensions].GetMethods() | Where-Object { $_.Name -eq 'AsTask' -and $_.GetParameters().Count -eq 1 -and $_.GetParameters()[0].ParameterType.Name -eq 'IAsyncOperation`1' } | Select-Object -First 1;"
+                    + "$t = $m.MakeGenericMethod([Windows.Media.SpeechSynthesis.SpeechSynthesisStream]).Invoke($null, @($s.SynthesizeTextToStreamAsync($env:NIHONGO_TTS_TEXT)));"
+                    + "$t.Wait(-1) | Out-Null;"
+                    + "$in = [System.IO.WindowsRuntimeStreamExtensions]::AsStreamForRead($t.Result);"
+                    + "$ms = New-Object System.IO.MemoryStream; $in.CopyTo($ms); $ms.Position = 0;"
+                    + "(New-Object System.Media.SoundPlayer $ms).PlaySync()";
+            out.add(List.of("powershell", "-NoProfile", "-NonInteractive", "-Command", oneCore));
         } else if (os.contains("mac")) {
             out.add(List.of("say", "-v", "Kyoko", text));
             out.add(List.of("say", "-v", "Otoya", text));

@@ -338,6 +338,7 @@ public class StudyScreen extends Screen {
         };
         String header = mode + "   •   " + session.remaining() + " left   •   ✔ " + session.correctCount() + "/" + session.answeredCount();
         g.drawCenteredString(font, header, cx, 8, Ui.GRAY);
+        if (!Tts.lastError().isEmpty()) Ui.wrap(g, font, Tts.lastError(), cx, 20, width - 40, Ui.RED);
 
         if (session.current() instanceof StudySession.Teach teach) {
             g.enableScissor(0, 20, width, height - 32);
