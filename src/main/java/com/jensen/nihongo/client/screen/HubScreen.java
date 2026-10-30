@@ -73,6 +73,11 @@ public class HubScreen extends Screen {
         }
         addRenderableWidget(Button.builder(Component.literal("Done"), b -> onClose())
                 .bounds(cx + 2, y + 120, half, 20).build());
+        if (lesson != null) {
+            Button placement = addRenderableWidget(Button.builder(Component.literal("Placement test"), b -> minecraft.setScreen(new PlacementScreen(this)))
+                    .bounds(cx - bw / 2, y + 144, bw, 20).build());
+            placement.setTooltip(Tooltip.create(Component.literal("Already know some Japanese? Skip the lessons you can already do.")));
+        }
     }
 
     private void startLesson() {
@@ -108,7 +113,9 @@ public class HubScreen extends Screen {
         g.drawCenteredString(font, today, cx, top - 34, Ui.GRAY);
 
         String hint;
-        if (lessonReason != null && engine.dueCount() == 0) {
+        if (engine.progress().introduced.isEmpty() && engine.currentLesson() != null) {
+            hint = "New here? Press Learn. Already know some Japanese? Take the placement test to skip ahead.";
+        } else if (lessonReason != null && engine.dueCount() == 0) {
             long next = engine.nextDueTime();
             hint = lessonReason + (next == Long.MAX_VALUE ? "" : "  Next review " + until(next) + ".");
         } else if (lessonReason != null) {
@@ -120,7 +127,7 @@ public class HubScreen extends Screen {
 
         Quests.Quest q = QuestTracker.current();
         if (q != null) {
-            g.drawCenteredString(font, "クエスト: " + q.japanese() + " (" + QuestTracker.progress() + "/" + q.count() + ")", cx, top + 146, Ui.PINK);
+            g.drawCenteredString(font, "クエスト: " + q.japanese() + " (" + QuestTracker.progress() + "/" + q.count() + ")", cx, top + 170, Ui.PINK);
         }
     }
 

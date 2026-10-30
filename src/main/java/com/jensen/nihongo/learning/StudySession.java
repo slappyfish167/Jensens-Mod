@@ -9,7 +9,7 @@ import java.util.Random;
  * cards that are still being learned come back a few questions later (expanding rehearsal).
  */
 public final class StudySession {
-    public enum Mode { LESSON, REVIEW, SPEAKING }
+    public enum Mode { LESSON, REVIEW, SPEAKING, PLACEMENT }
 
     public sealed interface Step permits Teach, Ask {}
 
@@ -22,6 +22,7 @@ public final class StudySession {
     private final Mode mode;
     private final List<Step> queue;
     private final Random rng;
+    private final PlacementTest placement;
 
     private Step current;
     private Question question;
@@ -34,7 +35,12 @@ public final class StudySession {
     private final java.util.Set<String> speakingRetries = new java.util.HashSet<>();
 
     StudySession(LearningEngine engine, Mode mode, List<Step> steps, Random rng) {
+        this(engine, mode, steps, rng, null);
+    }
+
+    StudySession(LearningEngine engine, Mode mode, List<Step> steps, Random rng, PlacementTest placement) {
         this.engine = engine;
+        this.placement = placement;
         this.mode = mode;
         this.queue = new ArrayList<>(steps);
         this.rng = rng;
@@ -43,6 +49,11 @@ public final class StudySession {
 
     public Mode mode() {
         return mode;
+    }
+
+    /** The placement test driving this session, or null for ordinary sessions. */
+    public PlacementTest placement() {
+        return placement;
     }
 
     public Step current() {
@@ -146,6 +157,12 @@ public final class StudySession {
         result = new AnswerChecker.Result(AnswerChecker.Verdict.CLOSE, "Marked correct.");
     }
 
+    /** "I don't know": counts as a wrong answer without having to guess. */
+    public void giveUp() {
+        if (question == null || isAnswered()) return;
+        record(new AnswerChecker.Result(AnswerChecker.Verdict.WRONG, ""));
+    }
+
     /** Lets the learner try the same question again without grading (used for speaking). */
     public void retry() {
         if (question == null) return;
@@ -159,6 +176,15 @@ public final class StudySession {
 
     /** Applies the grade for the current question (if any) and moves to the next step. */
     public void advance() {
+        if (mode == Mode.PLACEMENT) {
+            // Placement never touches the schedule; each answer only decides which questions come next.
+            if (current instanceof Ask && pendingGrade != null) {
+                queue.addAll(placement.record(question.itemId, pendingGrade != Srs.Grade.AGAIN));
+                if (placement.done()) queue.clear();
+            }
+            pop();
+            return;
+        }
         if (current instanceof Ask a && pendingGrade != null && mode != Mode.SPEAKING) {
             boolean stillLearning = engine.applyGrade(a.cardId(), pendingGrade);
             if (stillLearning) {

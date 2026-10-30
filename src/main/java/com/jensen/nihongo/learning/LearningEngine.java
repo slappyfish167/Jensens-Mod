@@ -42,6 +42,12 @@ public final class LearningEngine {
 
     public static final String SEP = "#";
 
+    /** Placement: review interval and due-date spread (days) for items skipped past vs. proven in the test. */
+    static final double PLACED_INTERVAL = 3.0;
+    static final double PLACED_SPREAD = 7.0;
+    static final double PLACED_SURE_INTERVAL = 8.0;
+    static final double PLACED_SURE_SPREAD = 14.0;
+
     private final Curriculum curriculum;
     private final Progress progress;
     private final LongSupplier clock;
@@ -255,6 +261,39 @@ public final class LearningEngine {
         changed();
     }
 
+    /**
+     * Marks the items of lessons [from, to) as already known, without counting them as new items today.
+     * Their cards start in review with short intervals, spread over the coming days, so any gap the
+     * placement test missed is caught by ordinary reviews. Items answered correctly in the test get longer ones.
+     */
+    int placeLessons(int from, int to, Set<String> verified) {
+        long now = now();
+        int placed = 0;
+        List<Lesson> lessons = curriculum.lessons();
+        for (int i = from; i < to && i < lessons.size(); i++) {
+            for (String id : lessons.get(i).items) {
+                Item item = curriculum.item(id);
+                if (item == null || !introducedSet.add(id)) continue;
+                progress.introduced.add(id);
+                boolean sure = verified.contains(id);
+                double interval = sure ? PLACED_SURE_INTERVAL : PLACED_INTERVAL;
+                double spread = sure ? PLACED_SURE_SPREAD : PLACED_SPREAD;
+                for (String dir : item.directions()) {
+                    Srs.CardState s = progress.cards.computeIfAbsent(cardId(id, dir), k -> Srs.newCard(now));
+                    s.step = -1;
+                    s.relearning = false;
+                    s.interval = interval;
+                    s.reps = Math.max(s.reps, 1);
+                    s.last = now;
+                    s.due = now + (long) (rng.nextDouble() * spread * Srs.DAY);
+                }
+                placed++;
+            }
+        }
+        if (placed > 0) changed();
+        return placed;
+    }
+
     void unlockKanji(String itemId) {
         progress.cards.computeIfAbsent(cardId(itemId, "kanji"), k -> Srs.newCard(now()));
         changed();
@@ -336,6 +375,18 @@ public final class LearningEngine {
             }
         }
         return steps.isEmpty() ? null : new StudySession(this, StudySession.Mode.REVIEW, steps, rng);
+    }
+
+    /** Adaptive placement test, or null if the course is already complete. Changes nothing until applied. */
+    public PlacementTest startPlacement() {
+        PlacementTest test = new PlacementTest(this, rng);
+        return test.done() ? null : test;
+    }
+
+    /** The study session that runs a placement test. */
+    public StudySession placementSession(PlacementTest test) {
+        List<StudySession.Step> steps = test.openingSteps();
+        return steps.isEmpty() ? null : new StudySession(this, StudySession.Mode.PLACEMENT, steps, rng, test);
     }
 
     /** Production practice: say words you know. Not scheduled; pure extra output practice. */

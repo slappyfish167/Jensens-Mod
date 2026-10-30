@@ -25,6 +25,7 @@ import java.util.List;
 public class StudyScreen extends Screen {
     private final Screen parent;
     private final StudySession session;
+    private final boolean placement;
 
     private EditBox input;
     private String typed = "";
@@ -40,6 +41,12 @@ public class StudyScreen extends Screen {
         super(Component.literal("Study"));
         this.parent = parent;
         this.session = session;
+        this.placement = session.mode() == StudySession.Mode.PLACEMENT;
+    }
+
+    /** Bottom row for buttons; placement tests reserve a line below it for "I don't know". */
+    private int bottomY() {
+        return height - 28 - (placement && !session.isAnswered() ? 24 : 0);
     }
 
     private Question question() {
@@ -52,7 +59,7 @@ public class StudyScreen extends Screen {
     protected void init() {
         input = null;
         int cx = width / 2;
-        int bottom = height - 28;
+        int bottom = bottomY();
 
         if (session.finished()) {
             finishOnce();
@@ -75,6 +82,13 @@ public class StudyScreen extends Screen {
         Question q = question();
         if (q == null) return;
         int inputY = inputY();
+
+        if (placement && !session.isAnswered()) {
+            addRenderableWidget(Button.builder(Component.literal("I don't know"), b -> {
+                session.giveUp();
+                afterAnswer(session.result());
+            }).bounds(cx - 50, height - 28, 100, 20).build());
+        }
 
         if (session.isAnswered()) {
             List<Button> row = new ArrayList<>();
@@ -190,6 +204,10 @@ public class StudyScreen extends Screen {
 
     private void next() {
         session.advance();
+        if (placement && session.finished()) {
+            minecraft.setScreen(new PlacementScreen(parent, session.placement()));
+            return;
+        }
         typed = "";
         picked.clear();
         hint = false;
@@ -266,7 +284,7 @@ public class StudyScreen extends Screen {
     }
 
     private void finishOnce() {
-        if (rewarded) return;
+        if (rewarded || placement) return;
         rewarded = true;
         Learner.rewardStudy(session.correctCount());
         Learner.saveIfDirty();
@@ -335,8 +353,11 @@ public class StudyScreen extends Screen {
             case LESSON -> "Lesson";
             case REVIEW -> "Review";
             case SPEAKING -> "Speaking practice";
+            case PLACEMENT -> "Placement test";
         };
-        String header = mode + "   •   " + session.remaining() + " left   •   ✔ " + session.correctCount() + "/" + session.answeredCount();
+        String left = placement ? "lesson " + session.placement().lessonNumber() + "/" + session.placement().lessonTotal()
+                : session.remaining() + " left";
+        String header = mode + "   •   " + left + "   •   ✔ " + session.correctCount() + "/" + session.answeredCount();
         g.drawCenteredString(font, header, cx, 8, Ui.GRAY);
         if (!Tts.lastError().isEmpty()) Ui.wrap(g, font, Tts.lastError(), cx, 20, width - 40, Ui.RED);
 
@@ -469,7 +490,7 @@ public class StudyScreen extends Screen {
                 int bar = (int) (VoiceService.level() * 120);
                 g.fill(cx - 60, inputY - 8, cx - 60 + bar, inputY - 5, 0xFFFF80FF);
             }
-            if (!status.isEmpty()) g.drawCenteredString(font, status, cx, height - 44, Ui.PINK);
+            if (!status.isEmpty()) g.drawCenteredString(font, status, cx, bottomY() - 16, Ui.PINK);
             return;
         }
 

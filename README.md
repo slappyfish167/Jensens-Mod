@@ -16,6 +16,10 @@ and offline voice recognition, and it labels the Minecraft world in Japanese as 
   - Vocabulary is high-frequency **and visible in Minecraft**: 木 tree, 石 stone, 剣 sword, ゾンビ, クリーパー, ダイヤモンド…
   - Grammar follows Genki I / JLPT N5 order, with every example set in Minecraft.
   - **Kanji are introduced through words you already know**, after you've remembered the word for a few days.
+- **Placement test**: already know some Japanese? An adaptive test samples a few items from each lesson
+  in order and skips you past everything you can already do. It stops at the first lesson that gives you
+  trouble, so it is only a couple of questions for a true beginner. Skipped items come back as reviews
+  over the following days to catch any gaps.
 - **Spaced repetition (SM-2)** with learning steps, a daily new-item limit and mastery gating.
 - **Many question types**: type the reading (romaji is converted to kana as you type, so no
   Japanese keyboard is needed), type the meaning, pick the right kana among look-alikes, build
@@ -38,6 +42,7 @@ and offline voice recognition, and it labels the Minecraft world in Japanese as 
 
 1. Press **J** (or craft a **Japanese Textbook**: book + red dye, shapeless) to open the study hub.
 2. Click **Learn** to start the first lesson. Each new item is taught, then tested right away.
+   Already know some Japanese? Click **Placement test** first to skip ahead.
 3. Come back for **Reviews** when they're due. The hub tells you when.
 4. Optional: open **Voice & audio** to download the Japanese speech model (~50 MB, one time) and
    test your microphone and the speech voice.
