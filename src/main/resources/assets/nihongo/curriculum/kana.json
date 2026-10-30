@@ -1,0 +1,1683 @@
+{
+ "items": [
+  {
+   "id": "h_a",
+   "script": "hiragana",
+   "kana": "あ",
+   "romaji": "a",
+   "alt": [],
+   "mnemonic": "A cross with a big swirling loop: an apple tree shaken by the wind. 'Ah!' an apple drops.",
+   "example": "あお (ao, blue)"
+  },
+  {
+   "id": "h_i",
+   "script": "hiragana",
+   "kana": "い",
+   "romaji": "i",
+   "alt": [],
+   "mnemonic": "Two short strokes standing side by side, like two eels poking out of the sand: 'eee'.",
+   "example": "いえ (ie, house)"
+  },
+  {
+   "id": "h_u",
+   "script": "hiragana",
+   "kana": "う",
+   "romaji": "u",
+   "alt": [],
+   "mnemonic": "A little dash over a hunched curve: someone bent over with a stomach ache going 'uuu...'.",
+   "example": "うし (ushi, cow)"
+  },
+  {
+   "id": "h_e",
+   "script": "hiragana",
+   "kana": "え",
+   "romaji": "e",
+   "alt": [],
+   "mnemonic": "A bird with a feather sticking up on its head, turning to ask 'Eh?'",
+   "example": "え (e, picture)"
+  },
+  {
+   "id": "h_o",
+   "script": "hiragana",
+   "kana": "お",
+   "romaji": "o",
+   "alt": [],
+   "mnemonic": "Like あ but with an extra dash flying off to the right: a golf ball sailing away. 'Oh!'",
+   "example": "おの (ono, axe)"
+  },
+  {
+   "id": "h_ka",
+   "script": "hiragana",
+   "kana": "か",
+   "romaji": "ka",
+   "alt": [],
+   "mnemonic": "A blade swinging next to a spark: 'Ka!' (か also means mosquito - swat!)",
+   "example": "かお (kao, face)"
+  },
+  {
+   "id": "h_ki",
+   "script": "hiragana",
+   "kana": "き",
+   "romaji": "ki",
+   "alt": [],
+   "mnemonic": "Looks like an old key with two teeth on top: ki = key.",
+   "example": "き (ki, tree)"
+  },
+  {
+   "id": "h_ku",
+   "script": "hiragana",
+   "kana": "く",
+   "romaji": "ku",
+   "alt": [],
+   "mnemonic": "An open beak calling out 'ku-ku!' like a cuckoo.",
+   "example": "くつ (kutsu, boots)"
+  },
+  {
+   "id": "h_ke",
+   "script": "hiragana",
+   "kana": "け",
+   "romaji": "ke",
+   "alt": [],
+   "mnemonic": "A keg standing up with a tap sticking out the side: ke(g).",
+   "example": "けん (ken, sword)"
+  },
+  {
+   "id": "h_ko",
+   "script": "hiragana",
+   "kana": "こ",
+   "romaji": "ko",
+   "alt": [],
+   "mnemonic": "Two worms curled up cosily next to each other: ko(zy).",
+   "example": "こえ (koe, voice)"
+  },
+  {
+   "id": "h_sa",
+   "script": "hiragana",
+   "kana": "さ",
+   "romaji": "sa",
+   "alt": [],
+   "mnemonic": "A sword (the cross) stuck in a curved hill: a samurai planted it there. sa(murai).",
+   "example": "さかな (sakana, fish)"
+  },
+  {
+   "id": "h_shi",
+   "script": "hiragana",
+   "kana": "し",
+   "romaji": "shi",
+   "alt": [
+    "si"
+   ],
+   "mnemonic": "A fishing hook: she's going fishing. shi.",
+   "example": "いし (ishi, stone)"
+  },
+  {
+   "id": "h_su",
+   "script": "hiragana",
+   "kana": "す",
+   "romaji": "su",
+   "alt": [],
+   "mnemonic": "A rope with a loop for a seat: a swing. su(wing).",
+   "example": "すな (suna, sand)"
+  },
+  {
+   "id": "h_se",
+   "script": "hiragana",
+   "kana": "せ",
+   "romaji": "se",
+   "alt": [],
+   "mnemonic": "A sailboat: the long line is the deck and the bent strokes are the sail. se(il).",
+   "example": "せきたん (sekitan, coal)"
+  },
+  {
+   "id": "h_so",
+   "script": "hiragana",
+   "kana": "そ",
+   "romaji": "so",
+   "alt": [],
+   "mnemonic": "A zig-zag thread being sewn: so (sew).",
+   "example": "そら (sora, sky)"
+  },
+  {
+   "id": "h_ta",
+   "script": "hiragana",
+   "kana": "た",
+   "romaji": "ta",
+   "alt": [],
+   "mnemonic": "The left half looks like a 't', the right half like an 'a': ta.",
+   "example": "たけ (take, bamboo)"
+  },
+  {
+   "id": "h_chi",
+   "script": "hiragana",
+   "kana": "ち",
+   "romaji": "chi",
+   "alt": [
+    "ti"
+   ],
+   "mnemonic": "Like the number 5 sitting down after eating too much cheese: chi(ese).",
+   "example": "つち (tsuchi, dirt)"
+  },
+  {
+   "id": "h_tsu",
+   "script": "hiragana",
+   "kana": "つ",
+   "romaji": "tsu",
+   "alt": [
+    "tu"
+   ],
+   "mnemonic": "A tsunami wave curling over: tsu.",
+   "example": "つき (tsuki, moon)"
+  },
+  {
+   "id": "h_te",
+   "script": "hiragana",
+   "kana": "て",
+   "romaji": "te",
+   "alt": [],
+   "mnemonic": "An arm reaching out with a hand - and て literally means 'hand'.",
+   "example": "てつ (tetsu, iron)"
+  },
+  {
+   "id": "h_to",
+   "script": "hiragana",
+   "kana": "と",
+   "romaji": "to",
+   "alt": [],
+   "mnemonic": "A toe with a thorn stuck in it: to(e).",
+   "example": "とり (tori, bird)"
+  },
+  {
+   "id": "h_na",
+   "script": "hiragana",
+   "kana": "な",
+   "romaji": "na",
+   "alt": [],
+   "mnemonic": "A cross next to a knotted rope: na (a 'knot').",
+   "example": "なか (naka, inside)"
+  },
+  {
+   "id": "h_ni",
+   "script": "hiragana",
+   "kana": "に",
+   "romaji": "ni",
+   "alt": [],
+   "mnemonic": "A bent knee next to two lines: ni (knee).",
+   "example": "にく (niku, meat)"
+  },
+  {
+   "id": "h_nu",
+   "script": "hiragana",
+   "kana": "ぬ",
+   "romaji": "nu",
+   "alt": [],
+   "mnemonic": "A bowl of noodles with chopsticks; the loop at the end is a curl of noodle: nu(dle).",
+   "example": "いぬ (inu, dog)"
+  },
+  {
+   "id": "h_ne",
+   "script": "hiragana",
+   "kana": "ね",
+   "romaji": "ne",
+   "alt": [],
+   "mnemonic": "A cat curled up with its tail looped. ねこ (cat) starts with ね.",
+   "example": "ねこ (neko, cat)"
+  },
+  {
+   "id": "h_no",
+   "script": "hiragana",
+   "kana": "の",
+   "romaji": "no",
+   "alt": [],
+   "mnemonic": "A big round 'no entry' sign with a slash: no!",
+   "example": "きのこ (kinoko, mushroom)"
+  },
+  {
+   "id": "h_ha",
+   "script": "hiragana",
+   "kana": "は",
+   "romaji": "ha",
+   "alt": [],
+   "mnemonic": "Someone laughing next to a pole: 'Ha!' (As a particle it's read 'wa'.)",
+   "example": "はな (hana, flower)"
+  },
+  {
+   "id": "h_hi",
+   "script": "hiragana",
+   "kana": "ひ",
+   "romaji": "hi",
+   "alt": [],
+   "mnemonic": "A big wide grin: 'hee hee!' hi.",
+   "example": "ひ (hi, fire)"
+  },
+  {
+   "id": "h_fu",
+   "script": "hiragana",
+   "kana": "ふ",
+   "romaji": "fu",
+   "alt": [
+    "hu"
+   ],
+   "mnemonic": "Mount Fuji with clouds swirling around it: fu.",
+   "example": "ふね (fune, boat)"
+  },
+  {
+   "id": "h_he",
+   "script": "hiragana",
+   "kana": "へ",
+   "romaji": "he",
+   "alt": [],
+   "mnemonic": "A little pointed hill: climb it and say 'hey!' (As a particle it's read 'e'.)",
+   "example": "へや (heya, room)"
+  },
+  {
+   "id": "h_ho",
+   "script": "hiragana",
+   "kana": "ほ",
+   "romaji": "ho",
+   "alt": [],
+   "mnemonic": "A Christmas tree next to a pole: 'Ho ho ho!'",
+   "example": "ほね (hone, bone)"
+  },
+  {
+   "id": "h_ma",
+   "script": "hiragana",
+   "kana": "ま",
+   "romaji": "ma",
+   "alt": [],
+   "mnemonic": "A mama with a long necklace tied in a loop: ma.",
+   "example": "まど (mado, window)"
+  },
+  {
+   "id": "h_mi",
+   "script": "hiragana",
+   "kana": "み",
+   "romaji": "mi",
+   "alt": [],
+   "mnemonic": "Looks like the number 21: 'me' at 21. mi.",
+   "example": "みず (mizu, water)"
+  },
+  {
+   "id": "h_mu",
+   "script": "hiragana",
+   "kana": "む",
+   "romaji": "mu",
+   "alt": [],
+   "mnemonic": "A cow's face with a horn on the left and a tail on the right: 'moo' - mu.",
+   "example": "むし (mushi, bug)"
+  },
+  {
+   "id": "h_me",
+   "script": "hiragana",
+   "kana": "め",
+   "romaji": "me",
+   "alt": [],
+   "mnemonic": "An eye with a slash through it - and め means 'eye'!",
+   "example": "め (me, eye)"
+  },
+  {
+   "id": "h_mo",
+   "script": "hiragana",
+   "kana": "も",
+   "romaji": "mo",
+   "alt": [],
+   "mnemonic": "A fishing hook with more bait on it: mo(re).",
+   "example": "もり (mori, forest)"
+  },
+  {
+   "id": "h_ya",
+   "script": "hiragana",
+   "kana": "や",
+   "romaji": "ya",
+   "alt": [],
+   "mnemonic": "A yak with big horns: ya(k).",
+   "example": "やま (yama, mountain)"
+  },
+  {
+   "id": "h_yu",
+   "script": "hiragana",
+   "kana": "ゆ",
+   "romaji": "yu",
+   "alt": [],
+   "mnemonic": "A fish caught in a U-turn: yu (U).",
+   "example": "ゆき (yuki, snow)"
+  },
+  {
+   "id": "h_yo",
+   "script": "hiragana",
+   "kana": "よ",
+   "romaji": "yo",
+   "alt": [],
+   "mnemonic": "A yo-yo dangling from a string: yo.",
+   "example": "よる (yoru, night)"
+  },
+  {
+   "id": "h_ra",
+   "script": "hiragana",
+   "kana": "ら",
+   "romaji": "ra",
+   "alt": [],
+   "mnemonic": "A rabbit with one ear bent over: ra(bbit).",
+   "example": "そら (sora, sky)"
+  },
+  {
+   "id": "h_ri",
+   "script": "hiragana",
+   "kana": "り",
+   "romaji": "ri",
+   "alt": [],
+   "mnemonic": "Two reeds swaying by the river: ri(ver).",
+   "example": "りんご (ringo, apple)"
+  },
+  {
+   "id": "h_ru",
+   "script": "hiragana",
+   "kana": "る",
+   "romaji": "ru",
+   "alt": [],
+   "mnemonic": "A road ending in a loop - a roundabout: ru.",
+   "example": "よる (yoru, night)"
+  },
+  {
+   "id": "h_re",
+   "script": "hiragana",
+   "kana": "れ",
+   "romaji": "re",
+   "alt": [],
+   "mnemonic": "A man kneeling to repent: re.",
+   "example": "これ (kore, this)"
+  },
+  {
+   "id": "h_ro",
+   "script": "hiragana",
+   "kana": "ろ",
+   "romaji": "ro",
+   "alt": [],
+   "mnemonic": "Like る without the loop - the road with no roundabout: ro.",
+   "example": "しろ (shiro, white)"
+  },
+  {
+   "id": "h_wa",
+   "script": "hiragana",
+   "kana": "わ",
+   "romaji": "wa",
+   "alt": [],
+   "mnemonic": "Like ね but with no loop at the tail: a wasp's tail. wa.",
+   "example": "わたし (watashi, I)"
+  },
+  {
+   "id": "h_wo",
+   "script": "hiragana",
+   "kana": "を",
+   "romaji": "wo",
+   "alt": [
+    "o"
+   ],
+   "mnemonic": "A man with a wobbly head: wo. Read 'o'; only used as the object particle.",
+   "example": "けん を つくります"
+  },
+  {
+   "id": "h_n",
+   "script": "hiragana",
+   "kana": "ん",
+   "romaji": "n",
+   "alt": [
+    "nn"
+   ],
+   "mnemonic": "Looks like a lowercase 'n'. The only kana that is just a consonant.",
+   "example": "ほん (hon, book)"
+  },
+  {
+   "id": "h_ga",
+   "script": "hiragana",
+   "title": "が row (k → g)",
+   "kana": "が",
+   "romaji": "ga",
+   "group": [
+    [
+     "が",
+     "ga"
+    ],
+    [
+     "ぎ",
+     "gi"
+    ],
+    [
+     "ぐ",
+     "gu"
+    ],
+    [
+     "げ",
+     "ge"
+    ],
+    [
+     "ご",
+     "go"
+    ]
+   ],
+   "mnemonic": "Two little dots (てんてん, dakuten) make a sound voiced: か ka → が ga. Your throat buzzes!"
+  },
+  {
+   "id": "h_za",
+   "script": "hiragana",
+   "title": "ざ row (s → z)",
+   "kana": "ざ",
+   "romaji": "za",
+   "group": [
+    [
+     "ざ",
+     "za"
+    ],
+    [
+     "じ",
+     "ji"
+    ],
+    [
+     "ず",
+     "zu"
+    ],
+    [
+     "ぜ",
+     "ze"
+    ],
+    [
+     "ぞ",
+     "zo"
+    ]
+   ],
+   "mnemonic": "Dakuten turns s into z: さ → ざ. Remember し shi becomes じ ji."
+  },
+  {
+   "id": "h_da",
+   "script": "hiragana",
+   "title": "だ row (t → d)",
+   "kana": "だ",
+   "romaji": "da",
+   "group": [
+    [
+     "だ",
+     "da"
+    ],
+    [
+     "ぢ",
+     "ji"
+    ],
+    [
+     "づ",
+     "zu"
+    ],
+    [
+     "で",
+     "de"
+    ],
+    [
+     "ど",
+     "do"
+    ]
+   ],
+   "mnemonic": "Dakuten turns t into d: た → だ. ぢ and づ sound the same as じ and ず and are rare."
+  },
+  {
+   "id": "h_ba",
+   "script": "hiragana",
+   "title": "ば row (h → b)",
+   "kana": "ば",
+   "romaji": "ba",
+   "group": [
+    [
+     "ば",
+     "ba"
+    ],
+    [
+     "び",
+     "bi"
+    ],
+    [
+     "ぶ",
+     "bu"
+    ],
+    [
+     "べ",
+     "be"
+    ],
+    [
+     "ぼ",
+     "bo"
+    ]
+   ],
+   "mnemonic": "Dakuten turns h into b: は → ば."
+  },
+  {
+   "id": "h_pa",
+   "script": "hiragana",
+   "title": "ぱ row (h → p)",
+   "kana": "ぱ",
+   "romaji": "pa",
+   "group": [
+    [
+     "ぱ",
+     "pa"
+    ],
+    [
+     "ぴ",
+     "pi"
+    ],
+    [
+     "ぷ",
+     "pu"
+    ],
+    [
+     "ぺ",
+     "pe"
+    ],
+    [
+     "ぽ",
+     "po"
+    ]
+   ],
+   "mnemonic": "A small circle (まる, handakuten) turns h into p: は → ぱ. Think of the circle as lips popping: p!"
+  },
+  {
+   "id": "h_yoon1",
+   "script": "hiragana",
+   "title": "Combo sounds with き・し・ち",
+   "kana": "きゃ",
+   "romaji": "kya",
+   "group": [
+    [
+     "きゃ",
+     "kya"
+    ],
+    [
+     "きゅ",
+     "kyu"
+    ],
+    [
+     "きょ",
+     "kyo"
+    ],
+    [
+     "しゃ",
+     "sha"
+    ],
+    [
+     "しゅ",
+     "shu"
+    ],
+    [
+     "しょ",
+     "sho"
+    ],
+    [
+     "ちゃ",
+     "cha"
+    ],
+    [
+     "ちゅ",
+     "chu"
+    ],
+    [
+     "ちょ",
+     "cho"
+    ]
+   ],
+   "mnemonic": "A SMALL ゃ, ゅ or ょ glues onto an i-sound kana to make one beat: き + ゃ = きゃ (kya). Big や would be two beats (きや, ki-ya)."
+  },
+  {
+   "id": "h_yoon2",
+   "script": "hiragana",
+   "title": "Combo sounds with に・ひ・み・り",
+   "kana": "にゃ",
+   "romaji": "nya",
+   "group": [
+    [
+     "にゃ",
+     "nya"
+    ],
+    [
+     "にゅ",
+     "nyu"
+    ],
+    [
+     "にょ",
+     "nyo"
+    ],
+    [
+     "ひゃ",
+     "hya"
+    ],
+    [
+     "ひゅ",
+     "hyu"
+    ],
+    [
+     "ひょ",
+     "hyo"
+    ],
+    [
+     "みゃ",
+     "mya"
+    ],
+    [
+     "みゅ",
+     "myu"
+    ],
+    [
+     "みょ",
+     "myo"
+    ],
+    [
+     "りゃ",
+     "rya"
+    ],
+    [
+     "りゅ",
+     "ryu"
+    ],
+    [
+     "りょ",
+     "ryo"
+    ]
+   ],
+   "mnemonic": "Same rule: drop the i and add the small y-sound. ひ + ょ = ひょ (hyo). にゃ is how Japanese cats meow!"
+  },
+  {
+   "id": "h_yoon3",
+   "script": "hiragana",
+   "title": "Combo sounds with ぎ・じ・び・ぴ",
+   "kana": "ぎゃ",
+   "romaji": "gya",
+   "group": [
+    [
+     "ぎゃ",
+     "gya"
+    ],
+    [
+     "ぎゅ",
+     "gyu"
+    ],
+    [
+     "ぎょ",
+     "gyo"
+    ],
+    [
+     "じゃ",
+     "ja"
+    ],
+    [
+     "じゅ",
+     "ju"
+    ],
+    [
+     "じょ",
+     "jo"
+    ],
+    [
+     "びゃ",
+     "bya"
+    ],
+    [
+     "びゅ",
+     "byu"
+    ],
+    [
+     "びょ",
+     "byo"
+    ],
+    [
+     "ぴゃ",
+     "pya"
+    ],
+    [
+     "ぴゅ",
+     "pyu"
+    ],
+    [
+     "ぴょ",
+     "pyo"
+    ]
+   ],
+   "mnemonic": "Dakuten kana combine too: ぎ + ゃ = ぎゃ (gya), じ + ゃ = じゃ (ja)."
+  },
+  {
+   "id": "h_sokuon",
+   "script": "hiragana",
+   "title": "Small っ (double consonant)",
+   "kana": "きって",
+   "romaji": "kitte",
+   "group": [
+    [
+     "きって",
+     "kitte"
+    ],
+    [
+     "まって",
+     "matte"
+    ],
+    [
+     "いっしょ",
+     "issho"
+    ],
+    [
+     "ちょっと",
+     "chotto"
+    ],
+    [
+     "はっぱ",
+     "happa"
+    ],
+    [
+     "がっこう",
+     "gakkou"
+    ]
+   ],
+   "mnemonic": "A small っ is a tiny pause: hold your mouth ready and double the next consonant. きって = ki-t-te."
+  },
+  {
+   "id": "h_long",
+   "script": "hiragana",
+   "title": "Long vowels",
+   "kana": "おかあさん",
+   "romaji": "okaasan",
+   "group": [
+    [
+     "おかあさん",
+     "okaasan"
+    ],
+    [
+     "おにいさん",
+     "oniisan"
+    ],
+    [
+     "くうき",
+     "kuuki"
+    ],
+    [
+     "せんせい",
+     "sensei"
+    ],
+    [
+     "こおり",
+     "koori"
+    ],
+    [
+     "おとうさん",
+     "otousan"
+    ]
+   ],
+   "mnemonic": "Long vowels take two beats and change meaning (おばさん aunt vs おばあさん grandma). E-sounds usually lengthen with い, O-sounds with う."
+  },
+  {
+   "id": "k_a",
+   "script": "katakana",
+   "kana": "ア",
+   "romaji": "a",
+   "alt": [],
+   "mnemonic": "An axe swinging down: a(xe).",
+   "example": "アイテム (aitemu, item)"
+  },
+  {
+   "id": "k_i",
+   "script": "katakana",
+   "kana": "イ",
+   "romaji": "i",
+   "alt": [],
+   "mnemonic": "An easel standing on its own: i(sel).",
+   "example": "イカ"
+  },
+  {
+   "id": "k_u",
+   "script": "katakana",
+   "kana": "ウ",
+   "romaji": "u",
+   "alt": [],
+   "mnemonic": "う wearing a little roof: u.",
+   "example": "ウシ"
+  },
+  {
+   "id": "k_e",
+   "script": "katakana",
+   "kana": "エ",
+   "romaji": "e",
+   "alt": [],
+   "mnemonic": "An elevator shaft seen from the side: e.",
+   "example": "エンダーマン"
+  },
+  {
+   "id": "k_o",
+   "script": "katakana",
+   "kana": "オ",
+   "romaji": "o",
+   "alt": [],
+   "mnemonic": "An opera singer with arms spread wide: o.",
+   "example": "オノ"
+  },
+  {
+   "id": "k_ka",
+   "script": "katakana",
+   "kana": "カ",
+   "romaji": "ka",
+   "alt": [],
+   "mnemonic": "Just like か without the spark: ka.",
+   "example": "カギ"
+  },
+  {
+   "id": "k_ki",
+   "script": "katakana",
+   "kana": "キ",
+   "romaji": "ki",
+   "alt": [],
+   "mnemonic": "A key, like き: ki.",
+   "example": "キツネ"
+  },
+  {
+   "id": "k_ku",
+   "script": "katakana",
+   "kana": "ク",
+   "romaji": "ku",
+   "alt": [],
+   "mnemonic": "A cook's knife slicing down: ku(ok).",
+   "example": "クモ"
+  },
+  {
+   "id": "k_ke",
+   "script": "katakana",
+   "kana": "ケ",
+   "romaji": "ke",
+   "alt": [],
+   "mnemonic": "A K-shaped kebab skewer: ke(bab).",
+   "example": "ケーキ (keeki, cake)"
+  },
+  {
+   "id": "k_ko",
+   "script": "katakana",
+   "kana": "コ",
+   "romaji": "ko",
+   "alt": [],
+   "mnemonic": "The corner of a box: ko(rner).",
+   "example": "コンパス"
+  },
+  {
+   "id": "k_sa",
+   "script": "katakana",
+   "kana": "サ",
+   "romaji": "sa",
+   "alt": [],
+   "mnemonic": "A signpost with two posts: sa(ign).",
+   "example": "サバク"
+  },
+  {
+   "id": "k_shi",
+   "script": "katakana",
+   "kana": "シ",
+   "romaji": "shi",
+   "alt": [
+    "si"
+   ],
+   "mnemonic": "A smiling face looking sideways: she smiles. Dots sit on the left, the long stroke sweeps UP.",
+   "example": "シャベル"
+  },
+  {
+   "id": "k_su",
+   "script": "katakana",
+   "kana": "ス",
+   "romaji": "su",
+   "alt": [],
+   "mnemonic": "A skier with a scarf blowing back: su(ki).",
+   "example": "スライム"
+  },
+  {
+   "id": "k_se",
+   "script": "katakana",
+   "kana": "セ",
+   "romaji": "se",
+   "alt": [],
+   "mnemonic": "Like せ, a sail: se.",
+   "example": "セーブ"
+  },
+  {
+   "id": "k_so",
+   "script": "katakana",
+   "kana": "ソ",
+   "romaji": "so",
+   "alt": [],
+   "mnemonic": "A needle sewing a stitch from above: so (sew). Strokes come DOWN from the top.",
+   "example": "ソード"
+  },
+  {
+   "id": "k_ta",
+   "script": "katakana",
+   "kana": "タ",
+   "romaji": "ta",
+   "alt": [],
+   "mnemonic": "Like ク with an extra stroke - a table leg: ta(ble).",
+   "example": "タイマツ"
+  },
+  {
+   "id": "k_chi",
+   "script": "katakana",
+   "kana": "チ",
+   "romaji": "chi",
+   "alt": [
+    "ti"
+   ],
+   "mnemonic": "A cheerleader holding up a tall pom-pom: chi(er).",
+   "example": "チェスト"
+  },
+  {
+   "id": "k_tsu",
+   "script": "katakana",
+   "kana": "ツ",
+   "romaji": "tsu",
+   "alt": [
+    "tu"
+   ],
+   "mnemonic": "A tsunami with spray on top. The dots sit across the TOP and the stroke comes down.",
+   "example": "ツルハシ"
+  },
+  {
+   "id": "k_te",
+   "script": "katakana",
+   "kana": "テ",
+   "romaji": "te",
+   "alt": [],
+   "mnemonic": "A telephone pole with wires: te(lephone).",
+   "example": "テーブル"
+  },
+  {
+   "id": "k_to",
+   "script": "katakana",
+   "kana": "ト",
+   "romaji": "to",
+   "alt": [],
+   "mnemonic": "A totem pole with one wing: to(tem).",
+   "example": "トロッコ"
+  },
+  {
+   "id": "k_na",
+   "script": "katakana",
+   "kana": "ナ",
+   "romaji": "na",
+   "alt": [],
+   "mnemonic": "A knife cutting a cross: na(ife).",
+   "example": "ナイフ"
+  },
+  {
+   "id": "k_ni",
+   "script": "katakana",
+   "kana": "ニ",
+   "romaji": "ni",
+   "alt": [],
+   "mnemonic": "Two needles. It's also the kanji 二 (two, 'ni')!",
+   "example": "ニワトリ"
+  },
+  {
+   "id": "k_nu",
+   "script": "katakana",
+   "kana": "ヌ",
+   "romaji": "nu",
+   "alt": [],
+   "mnemonic": "Chopsticks pinching a noodle: nu(dle).",
+   "example": "ヌードル"
+  },
+  {
+   "id": "k_ne",
+   "script": "katakana",
+   "kana": "ネ",
+   "romaji": "ne",
+   "alt": [],
+   "mnemonic": "A necktie with a knot on top: ne(cktie).",
+   "example": "ネザー"
+  },
+  {
+   "id": "k_no",
+   "script": "katakana",
+   "kana": "ノ",
+   "romaji": "no",
+   "alt": [],
+   "mnemonic": "A single slash - just 'No.'",
+   "example": "ノート"
+  },
+  {
+   "id": "k_ha",
+   "script": "katakana",
+   "kana": "ハ",
+   "romaji": "ha",
+   "alt": [],
+   "mnemonic": "Two strands of hair: ha(ir).",
+   "example": "ハチ"
+  },
+  {
+   "id": "k_hi",
+   "script": "katakana",
+   "kana": "ヒ",
+   "romaji": "hi",
+   "alt": [],
+   "mnemonic": "A heel of a shoe: hi(el).",
+   "example": "ヒツジ"
+  },
+  {
+   "id": "k_fu",
+   "script": "katakana",
+   "kana": "フ",
+   "romaji": "fu",
+   "alt": [
+    "hu"
+   ],
+   "mnemonic": "ふ simplified into a hook: fu.",
+   "example": "ファントム"
+  },
+  {
+   "id": "k_he",
+   "script": "katakana",
+   "kana": "ヘ",
+   "romaji": "he",
+   "alt": [],
+   "mnemonic": "Identical to へ: he.",
+   "example": "ヘルメット"
+  },
+  {
+   "id": "k_ho",
+   "script": "katakana",
+   "kana": "ホ",
+   "romaji": "ho",
+   "alt": [],
+   "mnemonic": "A holy cross with two dots: ho(ly).",
+   "example": "ホネ"
+  },
+  {
+   "id": "k_ma",
+   "script": "katakana",
+   "kana": "マ",
+   "romaji": "ma",
+   "alt": [],
+   "mnemonic": "A mama's nose in profile: ma.",
+   "example": "マップ"
+  },
+  {
+   "id": "k_mi",
+   "script": "katakana",
+   "kana": "ミ",
+   "romaji": "mi",
+   "alt": [],
+   "mnemonic": "Three marks - mi as in mittsu (three).",
+   "example": "ミルク"
+  },
+  {
+   "id": "k_mu",
+   "script": "katakana",
+   "kana": "ム",
+   "romaji": "mu",
+   "alt": [],
+   "mnemonic": "A moose's face: mu.",
+   "example": "ムラ"
+  },
+  {
+   "id": "k_me",
+   "script": "katakana",
+   "kana": "メ",
+   "romaji": "me",
+   "alt": [],
+   "mnemonic": "X marks the spot: me (a treasure map).",
+   "example": "メロン"
+  },
+  {
+   "id": "k_mo",
+   "script": "katakana",
+   "kana": "モ",
+   "romaji": "mo",
+   "alt": [],
+   "mnemonic": "Like も: more hooks. mo.",
+   "example": "モブ"
+  },
+  {
+   "id": "k_ya",
+   "script": "katakana",
+   "kana": "ヤ",
+   "romaji": "ya",
+   "alt": [],
+   "mnemonic": "Like や: a yak. ya.",
+   "example": "ヤリ"
+  },
+  {
+   "id": "k_yu",
+   "script": "katakana",
+   "kana": "ユ",
+   "romaji": "yu",
+   "alt": [],
+   "mnemonic": "A U-boat: yu.",
+   "example": "ユキ"
+  },
+  {
+   "id": "k_yo",
+   "script": "katakana",
+   "kana": "ヨ",
+   "romaji": "yo",
+   "alt": [],
+   "mnemonic": "A folded yoga mat: yo(ga).",
+   "example": "ヨル"
+  },
+  {
+   "id": "k_ra",
+   "script": "katakana",
+   "kana": "ラ",
+   "romaji": "ra",
+   "alt": [],
+   "mnemonic": "A rabbit with a flat hat: ra.",
+   "example": "ランタン"
+  },
+  {
+   "id": "k_ri",
+   "script": "katakana",
+   "kana": "リ",
+   "romaji": "ri",
+   "alt": [],
+   "mnemonic": "Like り: reeds. ri.",
+   "example": "リンゴ"
+  },
+  {
+   "id": "k_ru",
+   "script": "katakana",
+   "kana": "ル",
+   "romaji": "ru",
+   "alt": [],
+   "mnemonic": "Two roots growing: ru(ts).",
+   "example": "ルビー"
+  },
+  {
+   "id": "k_re",
+   "script": "katakana",
+   "kana": "レ",
+   "romaji": "re",
+   "alt": [],
+   "mnemonic": "A ray of light bouncing off the floor: re.",
+   "example": "レール"
+  },
+  {
+   "id": "k_ro",
+   "script": "katakana",
+   "kana": "ロ",
+   "romaji": "ro",
+   "alt": [],
+   "mnemonic": "A square box of rope: ro(pe).",
+   "example": "ロープ"
+  },
+  {
+   "id": "k_wa",
+   "script": "katakana",
+   "kana": "ワ",
+   "romaji": "wa",
+   "alt": [],
+   "mnemonic": "A wine glass: wa(ine).",
+   "example": "ワールド"
+  },
+  {
+   "id": "k_wo",
+   "script": "katakana",
+   "kana": "ヲ",
+   "romaji": "wo",
+   "alt": [
+    "o"
+   ],
+   "mnemonic": "A wobbly-headed man again: wo. Almost never used.",
+   "example": ""
+  },
+  {
+   "id": "k_n",
+   "script": "katakana",
+   "kana": "ン",
+   "romaji": "n",
+   "alt": [
+    "nn"
+   ],
+   "mnemonic": "Like ソ, but the long stroke sweeps UP like a smile: n.",
+   "example": "パン"
+  },
+  {
+   "id": "k_choon",
+   "script": "katakana",
+   "title": "Long vowel mark ー",
+   "kana": "ケーキ",
+   "romaji": "keeki",
+   "group": [
+    [
+     "ケーキ",
+     "keeki"
+    ],
+    [
+     "キー",
+     "kii"
+    ],
+    [
+     "カー",
+     "kaa"
+    ]
+   ],
+   "mnemonic": "In katakana a long vowel is a dash ー. ケーキ = ke-e-ki (cake). You can type it with '-'."
+  },
+  {
+   "id": "k_dakuten",
+   "script": "katakana",
+   "title": "Katakana with dakuten ゛",
+   "kana": "ガ",
+   "romaji": "ga",
+   "group": [
+    [
+     "ガ",
+     "ga"
+    ],
+    [
+     "ギ",
+     "gi"
+    ],
+    [
+     "グ",
+     "gu"
+    ],
+    [
+     "ゲ",
+     "ge"
+    ],
+    [
+     "ゴ",
+     "go"
+    ],
+    [
+     "ザ",
+     "za"
+    ],
+    [
+     "ジ",
+     "ji"
+    ],
+    [
+     "ズ",
+     "zu"
+    ],
+    [
+     "ゼ",
+     "ze"
+    ],
+    [
+     "ゾ",
+     "zo"
+    ],
+    [
+     "ダ",
+     "da"
+    ],
+    [
+     "デ",
+     "de"
+    ],
+    [
+     "ド",
+     "do"
+    ],
+    [
+     "バ",
+     "ba"
+    ],
+    [
+     "ビ",
+     "bi"
+    ],
+    [
+     "ブ",
+     "bu"
+    ],
+    [
+     "ベ",
+     "be"
+    ],
+    [
+     "ボ",
+     "bo"
+    ]
+   ],
+   "mnemonic": "Exactly the same rule as hiragana: the two dots voice the consonant. カ → ガ, サ → ザ, タ → ダ, ハ → バ."
+  },
+  {
+   "id": "k_handakuten",
+   "script": "katakana",
+   "title": "Katakana with handakuten ゜",
+   "kana": "パ",
+   "romaji": "pa",
+   "group": [
+    [
+     "パ",
+     "pa"
+    ],
+    [
+     "ピ",
+     "pi"
+    ],
+    [
+     "プ",
+     "pu"
+    ],
+    [
+     "ペ",
+     "pe"
+    ],
+    [
+     "ポ",
+     "po"
+    ]
+   ],
+   "mnemonic": "The little circle turns h into p, just like hiragana: ハ → パ."
+  },
+  {
+   "id": "k_yoon",
+   "script": "katakana",
+   "title": "Katakana combo sounds",
+   "kana": "キャ",
+   "romaji": "kya",
+   "group": [
+    [
+     "キャ",
+     "kya"
+    ],
+    [
+     "キュ",
+     "kyu"
+    ],
+    [
+     "キョ",
+     "kyo"
+    ],
+    [
+     "シャ",
+     "sha"
+    ],
+    [
+     "シュ",
+     "shu"
+    ],
+    [
+     "ショ",
+     "sho"
+    ],
+    [
+     "チャ",
+     "cha"
+    ],
+    [
+     "チュ",
+     "chu"
+    ],
+    [
+     "チョ",
+     "cho"
+    ],
+    [
+     "ニャ",
+     "nya"
+    ],
+    [
+     "ヒャ",
+     "hya"
+    ],
+    [
+     "ミャ",
+     "mya"
+    ],
+    [
+     "リャ",
+     "rya"
+    ],
+    [
+     "リュ",
+     "ryu"
+    ],
+    [
+     "リョ",
+     "ryo"
+    ],
+    [
+     "ギャ",
+     "gya"
+    ],
+    [
+     "ジャ",
+     "ja"
+    ],
+    [
+     "ジュ",
+     "ju"
+    ],
+    [
+     "ジョ",
+     "jo"
+    ],
+    [
+     "ビャ",
+     "bya"
+    ],
+    [
+     "ピャ",
+     "pya"
+    ]
+   ],
+   "mnemonic": "Small ャュョ work just like in hiragana: シ + ャ = シャ (sha), as in シャベル (shovel)."
+  },
+  {
+   "id": "k_sokuon",
+   "script": "katakana",
+   "title": "Small ッ in katakana",
+   "kana": "ベッド",
+   "romaji": "beddo",
+   "group": [
+    [
+     "ベッド",
+     "beddo"
+    ],
+    [
+     "クッキー",
+     "kukkii"
+    ],
+    [
+     "ロケット",
+     "roketto"
+    ],
+    [
+     "ネット",
+     "netto"
+    ]
+   ],
+   "mnemonic": "Small ッ doubles the next consonant, just like っ: ベッド = be-d-do (bed)."
+  },
+  {
+   "id": "k_extended",
+   "script": "katakana",
+   "title": "Extra sounds for foreign words",
+   "kana": "ティ",
+   "romaji": "ti",
+   "group": [
+    [
+     "ティ",
+     "ti"
+    ],
+    [
+     "ディ",
+     "di"
+    ],
+    [
+     "ファ",
+     "fa"
+    ],
+    [
+     "フィ",
+     "fi"
+    ],
+    [
+     "フェ",
+     "fe"
+    ],
+    [
+     "フォ",
+     "fo"
+    ],
+    [
+     "ウィ",
+     "wi"
+    ],
+    [
+     "ウェ",
+     "we"
+    ],
+    [
+     "ウォ",
+     "wo"
+    ],
+    [
+     "シェ",
+     "she"
+    ],
+    [
+     "ジェ",
+     "je"
+    ],
+    [
+     "チェ",
+     "che"
+    ],
+    [
+     "ヴァ",
+     "va"
+    ]
+   ],
+   "mnemonic": "Katakana borrows small vowels (ァィゥェォ) to make sounds Japanese doesn't have: フ + ァ = ファ (fa) as in ファントム (phantom)."
+  }
+ ],
+ "confusables": [
+  [
+   "あ",
+   "お",
+   "め",
+   "ぬ"
+  ],
+  [
+   "い",
+   "り",
+   "こ"
+  ],
+  [
+   "う",
+   "ら",
+   "つ"
+  ],
+  [
+   "さ",
+   "ち",
+   "き"
+  ],
+  [
+   "は",
+   "ほ",
+   "け"
+  ],
+  [
+   "ね",
+   "れ",
+   "わ"
+  ],
+  [
+   "る",
+   "ろ"
+  ],
+  [
+   "ぬ",
+   "め"
+  ],
+  [
+   "ま",
+   "も",
+   "ほ"
+  ],
+  [
+   "し",
+   "つ",
+   "の"
+  ],
+  [
+   "く",
+   "へ",
+   "し"
+  ],
+  [
+   "た",
+   "な",
+   "に"
+  ],
+  [
+   "そ",
+   "て",
+   "と"
+  ],
+  [
+   "す",
+   "む",
+   "お"
+  ],
+  [
+   "シ",
+   "ツ",
+   "ソ",
+   "ン"
+  ],
+  [
+   "ク",
+   "ワ",
+   "ケ",
+   "タ"
+  ],
+  [
+   "ア",
+   "マ",
+   "ヤ"
+  ],
+  [
+   "ナ",
+   "メ",
+   "ヌ",
+   "ス"
+  ],
+  [
+   "ウ",
+   "ワ",
+   "フ",
+   "ラ"
+  ],
+  [
+   "チ",
+   "テ",
+   "ナ"
+  ],
+  [
+   "ユ",
+   "コ",
+   "ヨ",
+   "ロ"
+  ],
+  [
+   "ル",
+   "レ",
+   "ノ"
+  ],
+  [
+   "ニ",
+   "ミ",
+   "エ"
+  ],
+  [
+   "セ",
+   "ヤ",
+   "サ"
+  ],
+  [
+   "ハ",
+   "ヘ",
+   "ホ"
+  ]
+ ]
+}
