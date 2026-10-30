@@ -1,0 +1,3301 @@
+{
+ "items": [
+  {
+   "id": "v_ki",
+   "kana": "き",
+   "meanings": [
+    "tree",
+    "wood"
+   ],
+   "pos": "noun",
+   "kanji": "木",
+   "mc": [
+    "minecraft:*_log",
+    "minecraft:*_wood"
+   ],
+   "icon": "minecraft:oak_log",
+   "collect": "minecraft:oak_log",
+   "note": "木 looks like a tree with branches and roots."
+  },
+  {
+   "id": "v_ie",
+   "kana": "いえ",
+   "meanings": [
+    "house",
+    "home"
+   ],
+   "pos": "noun",
+   "kanji": "家",
+   "icon": "minecraft:oak_door"
+  },
+  {
+   "id": "v_aka",
+   "kana": "あか",
+   "meanings": [
+    "red"
+   ],
+   "pos": "noun",
+   "kanji": "赤",
+   "mc": [
+    "minecraft:red_*"
+   ],
+   "icon": "minecraft:red_dye",
+   "collect": "minecraft:red_dye"
+  },
+  {
+   "id": "v_ao",
+   "kana": "あお",
+   "meanings": [
+    "blue"
+   ],
+   "pos": "noun",
+   "kanji": "青",
+   "mc": [
+    "minecraft:blue_*",
+    "minecraft:light_blue_*"
+   ],
+   "icon": "minecraft:blue_dye",
+   "note": "あお can also describe green things like traffic lights and fresh leaves."
+  },
+  {
+   "id": "v_kao",
+   "kana": "かお",
+   "meanings": [
+    "face"
+   ],
+   "pos": "noun",
+   "kanji": "顔",
+   "icon": "minecraft:player_head"
+  },
+  {
+   "id": "v_koe",
+   "kana": "こえ",
+   "meanings": [
+    "voice"
+   ],
+   "pos": "noun",
+   "kanji": "声",
+   "icon": "minecraft:note_block"
+  },
+  {
+   "id": "v_e",
+   "kana": "え",
+   "meanings": [
+    "picture",
+    "painting",
+    "drawing"
+   ],
+   "pos": "noun",
+   "kanji": "絵",
+   "mc": [
+    "minecraft:painting"
+   ],
+   "icon": "minecraft:painting",
+   "collect": "minecraft:painting"
+  },
+  {
+   "id": "v_ika",
+   "kana": "いか",
+   "meanings": [
+    "squid"
+   ],
+   "pos": "noun",
+   "kanji": "烏賊",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:squid",
+    "entity:minecraft:glow_squid"
+   ],
+   "icon": "minecraft:squid_spawn_egg",
+   "note": "Animal names are often written in katakana: イカ."
+  },
+  {
+   "id": "v_ue",
+   "kana": "うえ",
+   "meanings": [
+    "above",
+    "up",
+    "on top"
+   ],
+   "pos": "noun",
+   "kanji": "上",
+   "note": "上 points up from a baseline."
+  },
+  {
+   "id": "v_ishi",
+   "kana": "いし",
+   "meanings": [
+    "stone",
+    "rock"
+   ],
+   "pos": "noun",
+   "kanji": "石",
+   "mc": [
+    "minecraft:stone",
+    "minecraft:cobblestone",
+    "minecraft:mossy_cobblestone",
+    "minecraft:smooth_stone"
+   ],
+   "icon": "minecraft:cobblestone",
+   "collect": "minecraft:cobblestone"
+  },
+  {
+   "id": "v_tsuchi",
+   "kana": "つち",
+   "meanings": [
+    "dirt",
+    "soil",
+    "earth"
+   ],
+   "pos": "noun",
+   "kanji": "土",
+   "mc": [
+    "minecraft:dirt",
+    "minecraft:coarse_dirt",
+    "minecraft:rooted_dirt"
+   ],
+   "icon": "minecraft:dirt",
+   "collect": "minecraft:dirt",
+   "note": "土 is a sprout pushing up out of the ground."
+  },
+  {
+   "id": "v_take",
+   "kana": "たけ",
+   "meanings": [
+    "bamboo"
+   ],
+   "pos": "noun",
+   "kanji": "竹",
+   "mc": [
+    "minecraft:bamboo",
+    "minecraft:bamboo_block"
+   ],
+   "icon": "minecraft:bamboo",
+   "collect": "minecraft:bamboo"
+  },
+  {
+   "id": "v_tetsu",
+   "kana": "てつ",
+   "meanings": [
+    "iron"
+   ],
+   "pos": "noun",
+   "kanji": "鉄",
+   "mc": [
+    "minecraft:iron_ingot",
+    "minecraft:iron_ore",
+    "minecraft:deepslate_iron_ore",
+    "minecraft:iron_block",
+    "minecraft:raw_iron",
+    "minecraft:iron_nugget"
+   ],
+   "icon": "minecraft:iron_ingot",
+   "collect": "minecraft:iron_ingot"
+  },
+  {
+   "id": "v_ushi",
+   "kana": "うし",
+   "meanings": [
+    "cow",
+    "cattle"
+   ],
+   "pos": "noun",
+   "kanji": "牛",
+   "mc": [
+    "entity:minecraft:cow"
+   ],
+   "icon": "minecraft:cow_spawn_egg"
+  },
+  {
+   "id": "v_tate",
+   "kana": "たて",
+   "meanings": [
+    "shield"
+   ],
+   "pos": "noun",
+   "kanji": "盾",
+   "mc": [
+    "minecraft:shield"
+   ],
+   "icon": "minecraft:shield",
+   "collect": "minecraft:shield"
+  },
+  {
+   "id": "v_ito",
+   "kana": "いと",
+   "meanings": [
+    "string",
+    "thread"
+   ],
+   "pos": "noun",
+   "kanji": "糸",
+   "mc": [
+    "minecraft:string"
+   ],
+   "icon": "minecraft:string",
+   "collect": "minecraft:string"
+  },
+  {
+   "id": "v_kutsu",
+   "kana": "くつ",
+   "meanings": [
+    "shoes",
+    "boots"
+   ],
+   "pos": "noun",
+   "kanji": "靴",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:*_boots"
+   ],
+   "icon": "minecraft:leather_boots"
+  },
+  {
+   "id": "v_asa",
+   "kana": "あさ",
+   "meanings": [
+    "morning"
+   ],
+   "pos": "noun",
+   "kanji": "朝",
+   "icon": "minecraft:sunflower"
+  },
+  {
+   "id": "v_suika",
+   "kana": "すいか",
+   "meanings": [
+    "watermelon",
+    "melon"
+   ],
+   "pos": "noun",
+   "kanji": "西瓜",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:melon",
+    "minecraft:melon_slice"
+   ],
+   "icon": "minecraft:melon_slice",
+   "collect": "minecraft:melon_slice",
+   "note": "Minecraft's melons are Japanese スイカ (watermelon)."
+  },
+  {
+   "id": "v_satou",
+   "kana": "さとう",
+   "meanings": [
+    "sugar"
+   ],
+   "pos": "noun",
+   "kanji": "砂糖",
+   "mc": [
+    "minecraft:sugar"
+   ],
+   "icon": "minecraft:sugar",
+   "collect": "minecraft:sugar"
+  },
+  {
+   "id": "v_tokei",
+   "kana": "とけい",
+   "meanings": [
+    "clock",
+    "watch"
+   ],
+   "pos": "noun",
+   "kanji": "時計",
+   "mc": [
+    "minecraft:clock"
+   ],
+   "icon": "minecraft:clock"
+  },
+  {
+   "id": "v_teki",
+   "kana": "てき",
+   "meanings": [
+    "enemy"
+   ],
+   "pos": "noun",
+   "kanji": "敵",
+   "icon": "minecraft:zombie_head"
+  },
+  {
+   "id": "v_te",
+   "kana": "て",
+   "meanings": [
+    "hand"
+   ],
+   "pos": "noun",
+   "kanji": "手",
+   "hint": "body part"
+  },
+  {
+   "id": "v_shita",
+   "kana": "した",
+   "meanings": [
+    "below",
+    "down",
+    "under"
+   ],
+   "pos": "noun",
+   "kanji": "下"
+  },
+  {
+   "id": "v_soto",
+   "kana": "そと",
+   "meanings": [
+    "outside"
+   ],
+   "pos": "noun",
+   "kanji": "外"
+  },
+  {
+   "id": "v_inu",
+   "kana": "いぬ",
+   "meanings": [
+    "dog"
+   ],
+   "pos": "noun",
+   "kanji": "犬",
+   "icon": "minecraft:bone",
+   "note": "Minecraft's tameable wolves are おおかみ (wolf), not いぬ."
+  },
+  {
+   "id": "v_neko",
+   "kana": "ねこ",
+   "meanings": [
+    "cat"
+   ],
+   "pos": "noun",
+   "kanji": "猫",
+   "mc": [
+    "entity:minecraft:cat",
+    "entity:minecraft:ocelot"
+   ],
+   "icon": "minecraft:cat_spawn_egg"
+  },
+  {
+   "id": "v_sakana",
+   "kana": "さかな",
+   "meanings": [
+    "fish"
+   ],
+   "pos": "noun",
+   "kanji": "魚",
+   "mc": [
+    "minecraft:cod",
+    "minecraft:salmon",
+    "minecraft:tropical_fish",
+    "minecraft:pufferfish",
+    "minecraft:cooked_cod",
+    "minecraft:cooked_salmon"
+   ],
+   "icon": "minecraft:cod",
+   "collect": "minecraft:cod"
+  },
+  {
+   "id": "v_niku",
+   "kana": "にく",
+   "meanings": [
+    "meat"
+   ],
+   "pos": "noun",
+   "kanji": "肉",
+   "mc": [
+    "minecraft:beef",
+    "minecraft:cooked_beef",
+    "minecraft:porkchop",
+    "minecraft:cooked_porkchop",
+    "minecraft:mutton",
+    "minecraft:cooked_mutton",
+    "item:minecraft:chicken",
+    "minecraft:cooked_chicken",
+    "item:minecraft:rabbit",
+    "minecraft:cooked_rabbit",
+    "minecraft:rotten_flesh"
+   ],
+   "icon": "minecraft:cooked_beef",
+   "collect": "minecraft:beef"
+  },
+  {
+   "id": "v_kinoko",
+   "kana": "きのこ",
+   "meanings": [
+    "mushroom"
+   ],
+   "pos": "noun",
+   "kanji": "茸",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "minecraft:*_mushroom_block"
+   ],
+   "icon": "minecraft:red_mushroom",
+   "collect": "minecraft:brown_mushroom"
+  },
+  {
+   "id": "v_hana",
+   "kana": "はな",
+   "meanings": [
+    "flower"
+   ],
+   "pos": "noun",
+   "kanji": "花",
+   "mc": [
+    "minecraft:dandelion",
+    "minecraft:poppy",
+    "minecraft:blue_orchid",
+    "minecraft:allium",
+    "minecraft:azure_bluet",
+    "minecraft:*_tulip",
+    "minecraft:oxeye_daisy",
+    "minecraft:cornflower",
+    "minecraft:lily_of_the_valley",
+    "minecraft:sunflower",
+    "minecraft:lilac",
+    "minecraft:rose_bush",
+    "minecraft:peony",
+    "minecraft:torchflower"
+   ],
+   "icon": "minecraft:poppy",
+   "collect": "minecraft:poppy",
+   "note": "Also はな 鼻 = nose (same sound, different word)."
+  },
+  {
+   "id": "v_hi",
+   "kana": "ひ",
+   "meanings": [
+    "fire"
+   ],
+   "pos": "noun",
+   "kanji": "火",
+   "mc": [
+    "block:minecraft:fire",
+    "block:minecraft:soul_fire",
+    "minecraft:campfire",
+    "minecraft:fire_charge"
+   ],
+   "icon": "minecraft:flint_and_steel",
+   "note": "火 looks like a campfire with sparks flying out."
+  },
+  {
+   "id": "v_hoshi",
+   "kana": "ほし",
+   "meanings": [
+    "star"
+   ],
+   "pos": "noun",
+   "kanji": "星",
+   "mc": [
+    "minecraft:nether_star"
+   ],
+   "icon": "minecraft:nether_star"
+  },
+  {
+   "id": "v_fune",
+   "kana": "ふね",
+   "meanings": [
+    "boat",
+    "ship"
+   ],
+   "pos": "noun",
+   "kanji": "船",
+   "mc": [
+    "minecraft:*_boat",
+    "minecraft:*_raft"
+   ],
+   "icon": "minecraft:oak_boat",
+   "note": "Minecraft calls the boat ボート, a loanword. ふね is the everyday word."
+  },
+  {
+   "id": "v_hone",
+   "kana": "ほね",
+   "meanings": [
+    "bone"
+   ],
+   "pos": "noun",
+   "kanji": "骨",
+   "mc": [
+    "minecraft:bone",
+    "minecraft:bone_block"
+   ],
+   "icon": "minecraft:bone",
+   "collect": "minecraft:bone"
+  },
+  {
+   "id": "v_hito",
+   "kana": "ひと",
+   "meanings": [
+    "person",
+    "people"
+   ],
+   "pos": "noun",
+   "kanji": "人",
+   "icon": "minecraft:player_head",
+   "note": "人 is a person walking: two legs."
+  },
+  {
+   "id": "v_suna",
+   "kana": "すな",
+   "meanings": [
+    "sand"
+   ],
+   "pos": "noun",
+   "kanji": "砂",
+   "mc": [
+    "minecraft:sand",
+    "minecraft:red_sand",
+    "minecraft:suspicious_sand"
+   ],
+   "icon": "minecraft:sand",
+   "collect": "minecraft:sand"
+  },
+  {
+   "id": "v_kusa",
+   "kana": "くさ",
+   "meanings": [
+    "grass",
+    "weeds"
+   ],
+   "pos": "noun",
+   "kanji": "草",
+   "mc": [
+    "minecraft:short_grass",
+    "minecraft:tall_grass"
+   ],
+   "icon": "minecraft:short_grass"
+  },
+  {
+   "id": "v_kitsune",
+   "kana": "きつね",
+   "meanings": [
+    "fox"
+   ],
+   "pos": "noun",
+   "kanji": "狐",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:fox"
+   ],
+   "icon": "minecraft:fox_spawn_egg"
+  },
+  {
+   "id": "v_hachi",
+   "kana": "はち",
+   "meanings": [
+    "bee"
+   ],
+   "pos": "noun",
+   "kanji": "蜂",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:bee"
+   ],
+   "icon": "minecraft:bee_spawn_egg",
+   "note": "はち also means 8 (八). Context tells you which.",
+   "hint": "animal"
+  },
+  {
+   "id": "v_nani",
+   "kana": "なに",
+   "meanings": [
+    "what"
+   ],
+   "pos": "question",
+   "kanji": "何",
+   "note": "Before です it often shortens to なん: なん です か (What is it?)."
+  },
+  {
+   "id": "v_anata",
+   "kana": "あなた",
+   "meanings": [
+    "you"
+   ],
+   "pos": "pronoun",
+   "note": "Japanese avoids あなた with people you know - use their name instead."
+  },
+  {
+   "id": "v_hai",
+   "kana": "はい",
+   "meanings": [
+    "yes"
+   ],
+   "pos": "phrase"
+  },
+  {
+   "id": "v_iie",
+   "kana": "いいえ",
+   "meanings": [
+    "no"
+   ],
+   "pos": "phrase"
+  },
+  {
+   "id": "v_umi",
+   "kana": "うみ",
+   "meanings": [
+    "sea",
+    "ocean"
+   ],
+   "pos": "noun",
+   "kanji": "海",
+   "icon": "minecraft:heart_of_the_sea"
+  },
+  {
+   "id": "v_yama",
+   "kana": "やま",
+   "meanings": [
+    "mountain"
+   ],
+   "pos": "noun",
+   "kanji": "山",
+   "icon": "minecraft:stone",
+   "note": "山 is three mountain peaks."
+  },
+  {
+   "id": "v_yuki",
+   "kana": "ゆき",
+   "meanings": [
+    "snow"
+   ],
+   "pos": "noun",
+   "kanji": "雪",
+   "mc": [
+    "minecraft:snow",
+    "minecraft:snow_block",
+    "minecraft:snowball",
+    "minecraft:powder_snow"
+   ],
+   "icon": "minecraft:snowball",
+   "collect": "minecraft:snowball"
+  },
+  {
+   "id": "v_yumi",
+   "kana": "ゆみ",
+   "meanings": [
+    "bow"
+   ],
+   "pos": "noun",
+   "kanji": "弓",
+   "mc": [
+    "minecraft:bow"
+   ],
+   "icon": "minecraft:bow",
+   "collect": "minecraft:bow",
+   "note": "弓 is the shape of a bent bow."
+  },
+  {
+   "id": "v_ya",
+   "kana": "や",
+   "meanings": [
+    "arrow"
+   ],
+   "pos": "noun",
+   "kanji": "矢",
+   "mc": [
+    "minecraft:arrow",
+    "minecraft:spectral_arrow",
+    "minecraft:tipped_arrow"
+   ],
+   "icon": "minecraft:arrow",
+   "collect": "minecraft:arrow"
+  },
+  {
+   "id": "v_me",
+   "kana": "め",
+   "meanings": [
+    "eye"
+   ],
+   "pos": "noun",
+   "kanji": "目",
+   "mc": [
+    "minecraft:spider_eye",
+    "minecraft:fermented_spider_eye"
+   ],
+   "icon": "minecraft:spider_eye",
+   "note": "目 is an eye turned on its side."
+  },
+  {
+   "id": "v_mushi",
+   "kana": "むし",
+   "meanings": [
+    "bug",
+    "insect"
+   ],
+   "pos": "noun",
+   "kanji": "虫",
+   "mc": [
+    "entity:minecraft:silverfish",
+    "entity:minecraft:endermite"
+   ],
+   "icon": "minecraft:silverfish_spawn_egg"
+  },
+  {
+   "id": "v_atama",
+   "kana": "あたま",
+   "meanings": [
+    "head"
+   ],
+   "pos": "noun",
+   "kanji": "頭",
+   "mc": [
+    "minecraft:*_head",
+    "minecraft:*_skull"
+   ],
+   "icon": "minecraft:zombie_head"
+  },
+  {
+   "id": "v_uma",
+   "kana": "うま",
+   "meanings": [
+    "horse"
+   ],
+   "pos": "noun",
+   "kanji": "馬",
+   "mc": [
+    "entity:minecraft:horse",
+    "entity:minecraft:skeleton_horse",
+    "entity:minecraft:zombie_horse"
+   ],
+   "icon": "minecraft:horse_spawn_egg"
+  },
+  {
+   "id": "v_kumo",
+   "kana": "くも",
+   "meanings": [
+    "spider",
+    "cloud"
+   ],
+   "pos": "noun",
+   "kanji": "雲",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:spider",
+    "entity:minecraft:cave_spider"
+   ],
+   "icon": "minecraft:spider_eye",
+   "note": "Two words, one sound: 蜘蛛 (spider) and 雲 (cloud)."
+  },
+  {
+   "id": "v_kuma",
+   "kana": "くま",
+   "meanings": [
+    "bear"
+   ],
+   "pos": "noun",
+   "kanji": "熊",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:polar_bear"
+   ],
+   "icon": "minecraft:polar_bear_spawn_egg"
+  },
+  {
+   "id": "v_kame",
+   "kana": "かめ",
+   "meanings": [
+    "turtle",
+    "tortoise"
+   ],
+   "pos": "noun",
+   "kanji": "亀",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:turtle",
+    "minecraft:turtle_egg",
+    "minecraft:turtle_scute"
+   ],
+   "icon": "minecraft:turtle_spawn_egg"
+  },
+  {
+   "id": "v_kami",
+   "kana": "かみ",
+   "meanings": [
+    "paper"
+   ],
+   "pos": "noun",
+   "kanji": "紙",
+   "mc": [
+    "minecraft:paper"
+   ],
+   "icon": "minecraft:paper",
+   "collect": "minecraft:paper",
+   "note": "Also 髪 (hair) and 神 (god) - same sound."
+  },
+  {
+   "id": "v_ookami",
+   "kana": "おおかみ",
+   "meanings": [
+    "wolf"
+   ],
+   "pos": "noun",
+   "kanji": "狼",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:wolf"
+   ],
+   "icon": "minecraft:wolf_spawn_egg"
+  },
+  {
+   "id": "v_taimatsu",
+   "kana": "たいまつ",
+   "meanings": [
+    "torch"
+   ],
+   "pos": "noun",
+   "kanji": "松明",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:torch",
+    "minecraft:wall_torch",
+    "minecraft:soul_torch",
+    "minecraft:soul_wall_torch"
+   ],
+   "icon": "minecraft:torch",
+   "collect": "minecraft:torch"
+  },
+  {
+   "id": "v_mame",
+   "kana": "まめ",
+   "meanings": [
+    "bean",
+    "beans"
+   ],
+   "pos": "noun",
+   "kanji": "豆",
+   "mc": [
+    "minecraft:cocoa_beans"
+   ],
+   "icon": "minecraft:cocoa_beans"
+  },
+  {
+   "id": "v_yasai",
+   "kana": "やさい",
+   "meanings": [
+    "vegetable",
+    "vegetables"
+   ],
+   "pos": "noun",
+   "kanji": "野菜",
+   "icon": "minecraft:beetroot"
+  },
+  {
+   "id": "v_mono",
+   "kana": "もの",
+   "meanings": [
+    "thing",
+    "object"
+   ],
+   "pos": "noun",
+   "kanji": "物"
+  },
+  {
+   "id": "v_ima",
+   "kana": "いま",
+   "meanings": [
+    "now"
+   ],
+   "pos": "noun",
+   "kanji": "今"
+  },
+  {
+   "id": "v_namae",
+   "kana": "なまえ",
+   "meanings": [
+    "name"
+   ],
+   "pos": "noun",
+   "kanji": "名前",
+   "mc": [
+    "minecraft:name_tag"
+   ],
+   "icon": "minecraft:name_tag"
+  },
+  {
+   "id": "v_tsuki",
+   "kana": "つき",
+   "meanings": [
+    "moon",
+    "month"
+   ],
+   "pos": "noun",
+   "kanji": "月",
+   "note": "月 also means month: いちがつ = January."
+  },
+  {
+   "id": "v_yoru",
+   "kana": "よる",
+   "meanings": [
+    "night"
+   ],
+   "pos": "noun",
+   "kanji": "夜",
+   "icon": "minecraft:black_bed"
+  },
+  {
+   "id": "v_sora",
+   "kana": "そら",
+   "meanings": [
+    "sky"
+   ],
+   "pos": "noun",
+   "kanji": "空",
+   "icon": "minecraft:feather"
+  },
+  {
+   "id": "v_tori",
+   "kana": "とり",
+   "meanings": [
+    "bird"
+   ],
+   "pos": "noun",
+   "kanji": "鳥",
+   "mc": [
+    "entity:minecraft:parrot"
+   ],
+   "icon": "minecraft:parrot_spawn_egg"
+  },
+  {
+   "id": "v_kuro",
+   "kana": "くろ",
+   "meanings": [
+    "black"
+   ],
+   "pos": "noun",
+   "kanji": "黒",
+   "mc": [
+    "minecraft:black_*"
+   ],
+   "icon": "minecraft:black_dye"
+  },
+  {
+   "id": "v_shiro",
+   "kana": "しろ",
+   "meanings": [
+    "white"
+   ],
+   "pos": "noun",
+   "kanji": "白",
+   "mc": [
+    "minecraft:white_*"
+   ],
+   "icon": "minecraft:white_dye",
+   "note": "Also 城 (castle)."
+  },
+  {
+   "id": "v_niwatori",
+   "kana": "にわとり",
+   "meanings": [
+    "chicken"
+   ],
+   "pos": "noun",
+   "kanji": "鶏",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:chicken"
+   ],
+   "icon": "minecraft:chicken_spawn_egg",
+   "note": "Literally 'garden bird': にわ (garden) + とり (bird)."
+  },
+  {
+   "id": "v_kuwa",
+   "kana": "くわ",
+   "meanings": [
+    "hoe"
+   ],
+   "pos": "noun",
+   "kanji": "鍬",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:*_hoe"
+   ],
+   "icon": "minecraft:iron_hoe",
+   "collect": "minecraft:wooden_hoe"
+  },
+  {
+   "id": "v_ono",
+   "kana": "おの",
+   "meanings": [
+    "axe"
+   ],
+   "pos": "noun",
+   "kanji": "斧",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:*_axe"
+   ],
+   "icon": "minecraft:iron_axe",
+   "collect": "minecraft:wooden_axe"
+  },
+  {
+   "id": "v_hon",
+   "kana": "ほん",
+   "meanings": [
+    "book"
+   ],
+   "pos": "noun",
+   "kanji": "本",
+   "mc": [
+    "minecraft:book",
+    "minecraft:writable_book",
+    "minecraft:written_book",
+    "minecraft:enchanted_book"
+   ],
+   "icon": "minecraft:book",
+   "collect": "minecraft:book",
+   "note": "本 is a tree (木) with a line marking its root - the origin of knowledge."
+  },
+  {
+   "id": "v_kawa",
+   "kana": "かわ",
+   "meanings": [
+    "river",
+    "leather",
+    "skin"
+   ],
+   "pos": "noun",
+   "kanji": "川",
+   "mc": [
+    "minecraft:leather"
+   ],
+   "icon": "minecraft:leather",
+   "collect": "minecraft:leather",
+   "note": "川 (river) is three flowing streams. 革/皮 (leather, skin) sound the same."
+  },
+  {
+   "id": "v_koori",
+   "kana": "こおり",
+   "meanings": [
+    "ice"
+   ],
+   "pos": "noun",
+   "kanji": "氷",
+   "mc": [
+    "minecraft:ice",
+    "minecraft:packed_ice",
+    "minecraft:blue_ice",
+    "minecraft:frosted_ice"
+   ],
+   "icon": "minecraft:ice"
+  },
+  {
+   "id": "v_kusuri",
+   "kana": "くすり",
+   "meanings": [
+    "medicine",
+    "drug"
+   ],
+   "pos": "noun",
+   "kanji": "薬",
+   "icon": "minecraft:potion"
+  },
+  {
+   "id": "v_iruka",
+   "kana": "いるか",
+   "meanings": [
+    "dolphin"
+   ],
+   "pos": "noun",
+   "kanji": "海豚",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:dolphin"
+   ],
+   "icon": "minecraft:dolphin_spawn_egg"
+  },
+  {
+   "id": "v_kaeru",
+   "kana": "かえる",
+   "meanings": [
+    "frog"
+   ],
+   "pos": "noun",
+   "kanji": "蛙",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:frog",
+    "entity:minecraft:tadpole"
+   ],
+   "icon": "minecraft:frog_spawn_egg",
+   "note": "Also 帰る (to return home) - same sound."
+  },
+  {
+   "id": "v_koumori",
+   "kana": "こうもり",
+   "meanings": [
+    "bat"
+   ],
+   "pos": "noun",
+   "kanji": "蝙蝠",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:bat"
+   ],
+   "icon": "minecraft:bat_spawn_egg"
+  },
+  {
+   "id": "v_hikari",
+   "kana": "ひかり",
+   "meanings": [
+    "light"
+   ],
+   "pos": "noun",
+   "kanji": "光",
+   "mc": [
+    "block:minecraft:light"
+   ],
+   "icon": "minecraft:glowstone_dust"
+  },
+  {
+   "id": "v_ken",
+   "kana": "けん",
+   "meanings": [
+    "sword"
+   ],
+   "pos": "noun",
+   "kanji": "剣",
+   "mc": [
+    "minecraft:*_sword"
+   ],
+   "icon": "minecraft:iron_sword",
+   "collect": "minecraft:wooden_sword"
+  },
+  {
+   "id": "v_kin",
+   "kana": "きん",
+   "meanings": [
+    "gold"
+   ],
+   "pos": "noun",
+   "kanji": "金",
+   "mc": [
+    "minecraft:gold_ingot",
+    "minecraft:gold_ore",
+    "minecraft:deepslate_gold_ore",
+    "minecraft:nether_gold_ore",
+    "minecraft:gold_block",
+    "minecraft:raw_gold",
+    "minecraft:gold_nugget"
+   ],
+   "icon": "minecraft:gold_ingot",
+   "collect": "minecraft:gold_nugget",
+   "note": "金 also means money: おかね."
+  },
+  {
+   "id": "v_sekitan",
+   "kana": "せきたん",
+   "meanings": [
+    "coal"
+   ],
+   "pos": "noun",
+   "kanji": "石炭",
+   "mc": [
+    "minecraft:coal",
+    "minecraft:coal_ore",
+    "minecraft:deepslate_coal_ore",
+    "minecraft:coal_block"
+   ],
+   "icon": "minecraft:coal",
+   "collect": "minecraft:coal",
+   "note": "石 (stone) + 炭 (charcoal) = coal."
+  },
+  {
+   "id": "v_watashi",
+   "kana": "わたし",
+   "meanings": [
+    "I",
+    "me"
+   ],
+   "pos": "pronoun",
+   "kanji": "私"
+  },
+  {
+   "id": "v_mura",
+   "kana": "むら",
+   "meanings": [
+    "village"
+   ],
+   "pos": "noun",
+   "kanji": "村",
+   "mc": [
+    "minecraft:bell"
+   ],
+   "icon": "minecraft:bell"
+  },
+  {
+   "id": "v_ame",
+   "kana": "あめ",
+   "meanings": [
+    "rain"
+   ],
+   "pos": "noun",
+   "kanji": "雨",
+   "note": "Also 飴 (candy), with a different pitch."
+  },
+  {
+   "id": "v_ohayou",
+   "kana": "おはよう",
+   "meanings": [
+    "good morning"
+   ],
+   "pos": "phrase",
+   "note": "Polite version: おはようございます.",
+   "accept": [
+    "おはようございます"
+   ]
+  },
+  {
+   "id": "v_konnichiwa",
+   "kana": "こんにちは",
+   "meanings": [
+    "hello",
+    "good afternoon"
+   ],
+   "pos": "phrase",
+   "note": "The final は is the old topic particle, so it's pronounced 'wa'.",
+   "accept": [
+    "こんにちわ"
+   ]
+  },
+  {
+   "id": "v_sayounara",
+   "kana": "さようなら",
+   "meanings": [
+    "goodbye"
+   ],
+   "pos": "phrase",
+   "note": "Sounds final; friends say じゃあね or またね."
+  },
+  {
+   "id": "v_oyasumi",
+   "kana": "おやすみ",
+   "meanings": [
+    "good night"
+   ],
+   "pos": "phrase",
+   "note": "Polite: おやすみなさい."
+  },
+  {
+   "id": "v_sumimasen",
+   "kana": "すみません",
+   "meanings": [
+    "excuse me",
+    "sorry"
+   ],
+   "pos": "phrase",
+   "note": "Use it to get attention, apologise lightly, or even to say thanks for trouble taken."
+  },
+  {
+   "id": "v_ninjin",
+   "kana": "にんじん",
+   "meanings": [
+    "carrot"
+   ],
+   "pos": "noun",
+   "kanji": "人参",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:carrot",
+    "minecraft:carrots"
+   ],
+   "icon": "minecraft:carrot",
+   "collect": "minecraft:carrot"
+  },
+  {
+   "id": "v_mizu",
+   "kana": "みず",
+   "meanings": [
+    "water"
+   ],
+   "pos": "noun",
+   "kanji": "水",
+   "mc": [
+    "block:minecraft:water",
+    "minecraft:water_bucket"
+   ],
+   "icon": "minecraft:water_bucket"
+  },
+  {
+   "id": "v_kaze",
+   "kana": "かぜ",
+   "meanings": [
+    "wind"
+   ],
+   "pos": "noun",
+   "kanji": "風",
+   "mc": [
+    "minecraft:wind_charge",
+    "entity:minecraft:breeze"
+   ],
+   "icon": "minecraft:wind_charge",
+   "note": "Also 風邪 (a cold, illness)."
+  },
+  {
+   "id": "v_hitsuji",
+   "kana": "ひつじ",
+   "meanings": [
+    "sheep"
+   ],
+   "pos": "noun",
+   "kanji": "羊",
+   "mc": [
+    "entity:minecraft:sheep"
+   ],
+   "icon": "minecraft:sheep_spawn_egg"
+  },
+  {
+   "id": "v_buta",
+   "kana": "ぶた",
+   "meanings": [
+    "pig"
+   ],
+   "pos": "noun",
+   "kanji": "豚",
+   "mc": [
+    "entity:minecraft:pig"
+   ],
+   "icon": "minecraft:pig_spawn_egg"
+  },
+  {
+   "id": "v_ringo",
+   "kana": "りんご",
+   "meanings": [
+    "apple"
+   ],
+   "pos": "noun",
+   "kanji": "林檎",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:apple",
+    "minecraft:golden_apple",
+    "minecraft:enchanted_golden_apple"
+   ],
+   "icon": "minecraft:apple",
+   "collect": "minecraft:apple"
+  },
+  {
+   "id": "v_tamago",
+   "kana": "たまご",
+   "meanings": [
+    "egg"
+   ],
+   "pos": "noun",
+   "kanji": "卵",
+   "mc": [
+    "minecraft:egg",
+    "minecraft:sniffer_egg"
+   ],
+   "icon": "minecraft:egg",
+   "collect": "minecraft:egg"
+  },
+  {
+   "id": "v_bou",
+   "kana": "ぼう",
+   "meanings": [
+    "stick",
+    "pole"
+   ],
+   "pos": "noun",
+   "kanji": "棒",
+   "mc": [
+    "minecraft:stick"
+   ],
+   "icon": "minecraft:stick",
+   "collect": "minecraft:stick"
+  },
+  {
+   "id": "v_kagi",
+   "kana": "かぎ",
+   "meanings": [
+    "key"
+   ],
+   "pos": "noun",
+   "kanji": "鍵",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:trial_key",
+    "minecraft:ominous_trial_key"
+   ],
+   "icon": "minecraft:trial_key"
+  },
+  {
+   "id": "v_mado",
+   "kana": "まど",
+   "meanings": [
+    "window"
+   ],
+   "pos": "noun",
+   "kanji": "窓",
+   "mc": [
+    "minecraft:glass_pane",
+    "minecraft:*_stained_glass_pane"
+   ],
+   "icon": "minecraft:glass_pane"
+  },
+  {
+   "id": "v_kabe",
+   "kana": "かべ",
+   "meanings": [
+    "wall"
+   ],
+   "pos": "noun",
+   "kanji": "壁",
+   "mc": [
+    "minecraft:*_wall"
+   ],
+   "icon": "minecraft:cobblestone_wall"
+  },
+  {
+   "id": "v_hashigo",
+   "kana": "はしご",
+   "meanings": [
+    "ladder"
+   ],
+   "pos": "noun",
+   "kanji": "梯子",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:ladder"
+   ],
+   "icon": "minecraft:ladder",
+   "collect": "minecraft:ladder"
+  },
+  {
+   "id": "v_kamado",
+   "kana": "かまど",
+   "meanings": [
+    "furnace",
+    "stove"
+   ],
+   "pos": "noun",
+   "kanji": "竈",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:furnace"
+   ],
+   "icon": "minecraft:furnace",
+   "collect": "minecraft:furnace",
+   "note": "The Japanese Minecraft name for the furnace."
+  },
+  {
+   "id": "v_chizu",
+   "kana": "ちず",
+   "meanings": [
+    "map"
+   ],
+   "pos": "noun",
+   "kanji": "地図",
+   "mc": [
+    "minecraft:map",
+    "minecraft:filled_map"
+   ],
+   "icon": "minecraft:map"
+  },
+  {
+   "id": "v_dou",
+   "kana": "どう",
+   "meanings": [
+    "copper"
+   ],
+   "pos": "noun",
+   "kanji": "銅",
+   "mc": [
+    "minecraft:copper_ingot",
+    "minecraft:copper_ore",
+    "minecraft:deepslate_copper_ore",
+    "minecraft:raw_copper",
+    "minecraft:copper_block"
+   ],
+   "icon": "minecraft:copper_ingot",
+   "collect": "minecraft:raw_copper"
+  },
+  {
+   "id": "v_mugi",
+   "kana": "むぎ",
+   "meanings": [
+    "wheat",
+    "barley"
+   ],
+   "pos": "noun",
+   "kanji": "麦",
+   "mc": [
+    "minecraft:wheat"
+   ],
+   "icon": "minecraft:wheat",
+   "collect": "minecraft:wheat"
+  },
+  {
+   "id": "v_usagi",
+   "kana": "うさぎ",
+   "meanings": [
+    "rabbit",
+    "bunny"
+   ],
+   "pos": "noun",
+   "kanji": "兎",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:rabbit"
+   ],
+   "icon": "minecraft:rabbit_spawn_egg"
+  },
+  {
+   "id": "v_rakuda",
+   "kana": "らくだ",
+   "meanings": [
+    "camel"
+   ],
+   "pos": "noun",
+   "kanji": "駱駝",
+   "kanjiQuiz": false,
+   "mc": [
+    "entity:minecraft:camel"
+   ],
+   "icon": "minecraft:camel_spawn_egg"
+  },
+  {
+   "id": "v_murabito",
+   "kana": "むらびと",
+   "meanings": [
+    "villager"
+   ],
+   "pos": "noun",
+   "kanji": "村人",
+   "mc": [
+    "entity:minecraft:villager"
+   ],
+   "icon": "minecraft:villager_spawn_egg",
+   "note": "むら (village) + ひと (person); the ひ softens to び."
+  },
+  {
+   "id": "v_yougan",
+   "kana": "ようがん",
+   "meanings": [
+    "lava"
+   ],
+   "pos": "noun",
+   "kanji": "溶岩",
+   "kanjiQuiz": false,
+   "mc": [
+    "block:minecraft:lava",
+    "minecraft:lava_bucket"
+   ],
+   "icon": "minecraft:lava_bucket"
+  },
+  {
+   "id": "v_kaidan",
+   "kana": "かいだん",
+   "meanings": [
+    "stairs",
+    "staircase"
+   ],
+   "pos": "noun",
+   "kanji": "階段",
+   "mc": [
+    "minecraft:*_stairs"
+   ],
+   "icon": "minecraft:oak_stairs",
+   "collect": "minecraft:oak_stairs"
+  },
+  {
+   "id": "v_gohan",
+   "kana": "ごはん",
+   "meanings": [
+    "meal",
+    "cooked rice"
+   ],
+   "pos": "noun",
+   "kanji": "ご飯",
+   "icon": "minecraft:bowl",
+   "note": "Rice is so central that 'rice' also means 'meal'."
+  },
+  {
+   "id": "v_arigatou",
+   "kana": "ありがとう",
+   "meanings": [
+    "thank you",
+    "thanks"
+   ],
+   "pos": "phrase",
+   "note": "Polite: ありがとうございます.",
+   "accept": [
+    "ありがとうございます"
+   ]
+  },
+  {
+   "id": "v_konbanwa",
+   "kana": "こんばんは",
+   "meanings": [
+    "good evening"
+   ],
+   "pos": "phrase",
+   "accept": [
+    "こんばんわ"
+   ]
+  },
+  {
+   "id": "v_itadakimasu",
+   "kana": "いただきます",
+   "meanings": [
+    "let's eat",
+    "thanks for the food"
+   ],
+   "pos": "phrase",
+   "note": "Said before eating - try it before your next steak!"
+  },
+  {
+   "id": "v_gochisousama",
+   "kana": "ごちそうさま",
+   "meanings": [
+    "thanks for the meal"
+   ],
+   "pos": "phrase",
+   "note": "Said after eating."
+  },
+  {
+   "id": "v_gomennasai",
+   "kana": "ごめんなさい",
+   "meanings": [
+    "I'm sorry",
+    "sorry"
+   ],
+   "pos": "phrase"
+  },
+  {
+   "id": "v_douzo",
+   "kana": "どうぞ",
+   "meanings": [
+    "please",
+    "go ahead",
+    "here you are"
+   ],
+   "pos": "phrase",
+   "note": "Offering something: どうぞ."
+  },
+  {
+   "id": "v_onegaishimasu",
+   "kana": "おねがいします",
+   "meanings": [
+    "please"
+   ],
+   "pos": "phrase",
+   "note": "Requesting something: みず を おねがいします."
+  },
+  {
+   "id": "v_ichi",
+   "kana": "いち",
+   "meanings": [
+    "one",
+    "1"
+   ],
+   "pos": "number",
+   "kanji": "一",
+   "hint": "number"
+  },
+  {
+   "id": "v_ni",
+   "kana": "に",
+   "meanings": [
+    "two",
+    "2"
+   ],
+   "pos": "number",
+   "kanji": "二",
+   "hint": "number"
+  },
+  {
+   "id": "v_san",
+   "kana": "さん",
+   "meanings": [
+    "three",
+    "3"
+   ],
+   "pos": "number",
+   "kanji": "三",
+   "hint": "number"
+  },
+  {
+   "id": "v_yon",
+   "kana": "よん",
+   "meanings": [
+    "four",
+    "4"
+   ],
+   "pos": "number",
+   "kanji": "四",
+   "note": "Also read し, but し sounds like 死 (death).",
+   "hint": "number",
+   "accept": [
+    "し"
+   ]
+  },
+  {
+   "id": "v_go",
+   "kana": "ご",
+   "meanings": [
+    "five",
+    "5"
+   ],
+   "pos": "number",
+   "kanji": "五",
+   "hint": "number"
+  },
+  {
+   "id": "v_roku",
+   "kana": "ろく",
+   "meanings": [
+    "six",
+    "6"
+   ],
+   "pos": "number",
+   "kanji": "六",
+   "hint": "number"
+  },
+  {
+   "id": "v_nana",
+   "kana": "なな",
+   "meanings": [
+    "seven",
+    "7"
+   ],
+   "pos": "number",
+   "kanji": "七",
+   "hint": "number",
+   "accept": [
+    "しち"
+   ]
+  },
+  {
+   "id": "v_hachi_num",
+   "kana": "はち",
+   "meanings": [
+    "eight",
+    "8"
+   ],
+   "pos": "number",
+   "kanji": "八",
+   "hint": "number"
+  },
+  {
+   "id": "v_kyuu",
+   "kana": "きゅう",
+   "meanings": [
+    "nine",
+    "9"
+   ],
+   "pos": "number",
+   "kanji": "九",
+   "hint": "number",
+   "accept": [
+    "く"
+   ]
+  },
+  {
+   "id": "v_juu",
+   "kana": "じゅう",
+   "meanings": [
+    "ten",
+    "10"
+   ],
+   "pos": "number",
+   "kanji": "十",
+   "note": "Bigger numbers combine: じゅうご = 15, にじゅう = 20.",
+   "hint": "number"
+  },
+  {
+   "id": "v_hyaku",
+   "kana": "ひゃく",
+   "meanings": [
+    "hundred",
+    "100"
+   ],
+   "pos": "number",
+   "kanji": "百",
+   "hint": "number"
+  },
+  {
+   "id": "v_kabocha",
+   "kana": "かぼちゃ",
+   "meanings": [
+    "pumpkin"
+   ],
+   "pos": "noun",
+   "kanji": "南瓜",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:pumpkin",
+    "minecraft:carved_pumpkin"
+   ],
+   "icon": "minecraft:pumpkin",
+   "collect": "minecraft:pumpkin"
+  },
+  {
+   "id": "v_jagaimo",
+   "kana": "じゃがいも",
+   "meanings": [
+    "potato"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:potato",
+    "minecraft:potatoes",
+    "minecraft:baked_potato",
+    "minecraft:poisonous_potato"
+   ],
+   "icon": "minecraft:potato",
+   "collect": "minecraft:potato"
+  },
+  {
+   "id": "v_happa",
+   "kana": "はっぱ",
+   "meanings": [
+    "leaf",
+    "leaves"
+   ],
+   "pos": "noun",
+   "kanji": "葉っぱ",
+   "mc": [
+    "minecraft:*_leaves"
+   ],
+   "icon": "minecraft:oak_leaves"
+  },
+  {
+   "id": "v_sagyoudai",
+   "kana": "さぎょうだい",
+   "meanings": [
+    "crafting table",
+    "workbench"
+   ],
+   "pos": "noun",
+   "kanji": "作業台",
+   "mc": [
+    "minecraft:crafting_table"
+   ],
+   "icon": "minecraft:crafting_table",
+   "collect": "minecraft:crafting_table",
+   "note": "作業 (work) + 台 (stand)."
+  },
+  {
+   "id": "v_kyou",
+   "kana": "きょう",
+   "meanings": [
+    "today"
+   ],
+   "pos": "noun",
+   "kanji": "今日",
+   "note": "今日 is a special reading: 今 (now) + 日 (day)."
+  },
+  {
+   "id": "v_ashita",
+   "kana": "あした",
+   "meanings": [
+    "tomorrow"
+   ],
+   "pos": "noun",
+   "kanji": "明日"
+  },
+  {
+   "id": "v_kinou",
+   "kana": "きのう",
+   "meanings": [
+    "yesterday"
+   ],
+   "pos": "noun",
+   "kanji": "昨日"
+  },
+  {
+   "id": "v_daijoubu",
+   "kana": "だいじょうぶ",
+   "meanings": [
+    "okay",
+    "all right",
+    "fine"
+   ],
+   "pos": "na-adjective",
+   "kanji": "大丈夫",
+   "kanjiQuiz": false
+  },
+  {
+   "id": "v_chotto",
+   "kana": "ちょっと",
+   "meanings": [
+    "a little",
+    "a bit"
+   ],
+   "pos": "adverb",
+   "note": "Also a soft way to refuse: ちょっと... (that's a bit...)"
+  },
+  {
+   "id": "v_issho",
+   "kana": "いっしょ",
+   "meanings": [
+    "together"
+   ],
+   "pos": "noun",
+   "kanji": "一緒",
+   "kanjiQuiz": false,
+   "note": "いっしょ に = together (with)."
+  },
+  {
+   "id": "v_gakusei",
+   "kana": "がくせい",
+   "meanings": [
+    "student"
+   ],
+   "pos": "noun",
+   "kanji": "学生"
+  },
+  {
+   "id": "v_sensei",
+   "kana": "せんせい",
+   "meanings": [
+    "teacher"
+   ],
+   "pos": "noun",
+   "kanji": "先生",
+   "note": "Also used as a title: やまだ せんせい."
+  },
+  {
+   "id": "v_tomodachi",
+   "kana": "ともだち",
+   "meanings": [
+    "friend"
+   ],
+   "pos": "noun",
+   "kanji": "友達"
+  },
+  {
+   "id": "v_nihonjin",
+   "kana": "にほんじん",
+   "meanings": [
+    "Japanese person"
+   ],
+   "pos": "noun",
+   "kanji": "日本人",
+   "note": "Country + じん = person from there."
+  },
+  {
+   "id": "v_nihongo",
+   "kana": "にほんご",
+   "meanings": [
+    "Japanese language",
+    "Japanese"
+   ],
+   "pos": "noun",
+   "kanji": "日本語",
+   "note": "Country + ご = language."
+  },
+  {
+   "id": "v_eigo",
+   "kana": "えいご",
+   "meanings": [
+    "English",
+    "English language"
+   ],
+   "pos": "noun",
+   "kanji": "英語"
+  },
+  {
+   "id": "v_dare",
+   "kana": "だれ",
+   "meanings": [
+    "who"
+   ],
+   "pos": "question",
+   "kanji": "誰",
+   "kanjiQuiz": false
+  },
+  {
+   "id": "v_ookii",
+   "kana": "おおきい",
+   "meanings": [
+    "big",
+    "large"
+   ],
+   "pos": "i-adjective",
+   "kanji": "大きい"
+  },
+  {
+   "id": "v_chiisai",
+   "kana": "ちいさい",
+   "meanings": [
+    "small",
+    "little"
+   ],
+   "pos": "i-adjective",
+   "kanji": "小さい"
+  },
+  {
+   "id": "v_takai",
+   "kana": "たかい",
+   "meanings": [
+    "tall",
+    "high",
+    "expensive"
+   ],
+   "pos": "i-adjective",
+   "kanji": "高い"
+  },
+  {
+   "id": "v_hikui",
+   "kana": "ひくい",
+   "meanings": [
+    "low",
+    "short"
+   ],
+   "pos": "i-adjective",
+   "kanji": "低い"
+  },
+  {
+   "id": "v_atsui",
+   "kana": "あつい",
+   "meanings": [
+    "hot"
+   ],
+   "pos": "i-adjective",
+   "kanji": "暑い",
+   "note": "暑い for weather, 熱い for hot things."
+  },
+  {
+   "id": "v_samui",
+   "kana": "さむい",
+   "meanings": [
+    "cold"
+   ],
+   "pos": "i-adjective",
+   "kanji": "寒い",
+   "note": "For weather. Cold things are つめたい."
+  },
+  {
+   "id": "v_kowai",
+   "kana": "こわい",
+   "meanings": [
+    "scary",
+    "frightening"
+   ],
+   "pos": "i-adjective",
+   "kanji": "怖い"
+  },
+  {
+   "id": "v_tsuyoi",
+   "kana": "つよい",
+   "meanings": [
+    "strong"
+   ],
+   "pos": "i-adjective",
+   "kanji": "強い"
+  },
+  {
+   "id": "v_yowai",
+   "kana": "よわい",
+   "meanings": [
+    "weak"
+   ],
+   "pos": "i-adjective",
+   "kanji": "弱い"
+  },
+  {
+   "id": "v_hayai",
+   "kana": "はやい",
+   "meanings": [
+    "fast",
+    "quick",
+    "early"
+   ],
+   "pos": "i-adjective",
+   "kanji": "速い",
+   "note": "速い = fast, 早い = early."
+  },
+  {
+   "id": "v_osoi",
+   "kana": "おそい",
+   "meanings": [
+    "slow",
+    "late"
+   ],
+   "pos": "i-adjective",
+   "kanji": "遅い"
+  },
+  {
+   "id": "v_akarui",
+   "kana": "あかるい",
+   "meanings": [
+    "bright"
+   ],
+   "pos": "i-adjective",
+   "kanji": "明るい"
+  },
+  {
+   "id": "v_kurai",
+   "kana": "くらい",
+   "meanings": [
+    "dark"
+   ],
+   "pos": "i-adjective",
+   "kanji": "暗い"
+  },
+  {
+   "id": "v_ii",
+   "kana": "いい",
+   "meanings": [
+    "good"
+   ],
+   "pos": "i-adjective",
+   "kanji": "良い",
+   "kanjiQuiz": false,
+   "note": "Irregular: its other forms come from よい (よくない, よかった)."
+  },
+  {
+   "id": "v_warui",
+   "kana": "わるい",
+   "meanings": [
+    "bad"
+   ],
+   "pos": "i-adjective",
+   "kanji": "悪い"
+  },
+  {
+   "id": "v_oishii",
+   "kana": "おいしい",
+   "meanings": [
+    "tasty",
+    "delicious"
+   ],
+   "pos": "i-adjective",
+   "kanji": "美味しい",
+   "kanjiQuiz": false
+  },
+  {
+   "id": "v_atarashii",
+   "kana": "あたらしい",
+   "meanings": [
+    "new"
+   ],
+   "pos": "i-adjective",
+   "kanji": "新しい"
+  },
+  {
+   "id": "v_furui",
+   "kana": "ふるい",
+   "meanings": [
+    "old"
+   ],
+   "pos": "i-adjective",
+   "kanji": "古い",
+   "note": "For things, not people."
+  },
+  {
+   "id": "v_abunai",
+   "kana": "あぶない",
+   "meanings": [
+    "dangerous"
+   ],
+   "pos": "i-adjective",
+   "kanji": "危ない",
+   "note": "Shout あぶない! when a creeper sneaks up."
+  },
+  {
+   "id": "v_kawaii",
+   "kana": "かわいい",
+   "meanings": [
+    "cute"
+   ],
+   "pos": "i-adjective"
+  },
+  {
+   "id": "v_tanoshii",
+   "kana": "たのしい",
+   "meanings": [
+    "fun",
+    "enjoyable"
+   ],
+   "pos": "i-adjective",
+   "kanji": "楽しい"
+  },
+  {
+   "id": "v_kore",
+   "kana": "これ",
+   "meanings": [
+    "this",
+    "this one"
+   ],
+   "pos": "pronoun",
+   "note": "Near the speaker."
+  },
+  {
+   "id": "v_sore",
+   "kana": "それ",
+   "meanings": [
+    "that",
+    "that one"
+   ],
+   "pos": "pronoun",
+   "note": "Near the listener."
+  },
+  {
+   "id": "v_are",
+   "kana": "あれ",
+   "meanings": [
+    "that over there"
+   ],
+   "pos": "pronoun",
+   "note": "Far from both."
+  },
+  {
+   "id": "v_dore",
+   "kana": "どれ",
+   "meanings": [
+    "which",
+    "which one"
+   ],
+   "pos": "question"
+  },
+  {
+   "id": "v_koko",
+   "kana": "ここ",
+   "meanings": [
+    "here"
+   ],
+   "pos": "pronoun"
+  },
+  {
+   "id": "v_soko",
+   "kana": "そこ",
+   "meanings": [
+    "there"
+   ],
+   "pos": "pronoun"
+  },
+  {
+   "id": "v_asoko",
+   "kana": "あそこ",
+   "meanings": [
+    "over there"
+   ],
+   "pos": "pronoun"
+  },
+  {
+   "id": "v_doko",
+   "kana": "どこ",
+   "meanings": [
+    "where"
+   ],
+   "pos": "question"
+  },
+  {
+   "id": "v_zonbi",
+   "kana": "ゾンビ",
+   "meanings": [
+    "zombie"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:zombie",
+    "entity:minecraft:zombie_villager"
+   ],
+   "icon": "minecraft:zombie_head"
+  },
+  {
+   "id": "v_sukeruton",
+   "kana": "スケルトン",
+   "meanings": [
+    "skeleton"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:*skeleton"
+   ],
+   "icon": "minecraft:skeleton_skull"
+  },
+  {
+   "id": "v_kuriipaa",
+   "kana": "クリーパー",
+   "meanings": [
+    "creeper"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:creeper"
+   ],
+   "icon": "minecraft:creeper_head"
+  },
+  {
+   "id": "v_endaaman",
+   "kana": "エンダーマン",
+   "meanings": [
+    "enderman"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:enderman"
+   ],
+   "icon": "minecraft:ender_pearl"
+  },
+  {
+   "id": "v_suraimu",
+   "kana": "スライム",
+   "meanings": [
+    "slime"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:slime",
+    "minecraft:slime_ball",
+    "minecraft:slime_block"
+   ],
+   "icon": "minecraft:slime_ball",
+   "collect": "minecraft:slime_ball"
+  },
+  {
+   "id": "v_gooremu",
+   "kana": "ゴーレム",
+   "meanings": [
+    "golem"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:iron_golem",
+    "entity:minecraft:snow_golem"
+   ],
+   "icon": "minecraft:carved_pumpkin"
+  },
+  {
+   "id": "v_doragon",
+   "kana": "ドラゴン",
+   "meanings": [
+    "dragon"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:ender_dragon",
+    "minecraft:dragon_egg",
+    "minecraft:dragon_head"
+   ],
+   "icon": "minecraft:dragon_head"
+  },
+  {
+   "id": "v_witchi",
+   "kana": "ウィッチ",
+   "meanings": [
+    "witch"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:witch"
+   ],
+   "icon": "minecraft:witch_spawn_egg"
+  },
+  {
+   "id": "v_gasuto",
+   "kana": "ガスト",
+   "meanings": [
+    "ghast"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:ghast",
+    "minecraft:ghast_tear"
+   ],
+   "icon": "minecraft:ghast_tear"
+  },
+  {
+   "id": "v_bureizu",
+   "kana": "ブレイズ",
+   "meanings": [
+    "blaze"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:blaze",
+    "minecraft:blaze_rod",
+    "minecraft:blaze_powder"
+   ],
+   "icon": "minecraft:blaze_rod"
+  },
+  {
+   "id": "v_fantomu",
+   "kana": "ファントム",
+   "meanings": [
+    "phantom"
+   ],
+   "pos": "noun",
+   "mc": [
+    "entity:minecraft:phantom",
+    "minecraft:phantom_membrane"
+   ],
+   "icon": "minecraft:phantom_membrane"
+  },
+  {
+   "id": "v_daiyamondo",
+   "kana": "ダイヤモンド",
+   "meanings": [
+    "diamond"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:diamond",
+    "minecraft:diamond_ore",
+    "minecraft:deepslate_diamond_ore",
+    "minecraft:diamond_block"
+   ],
+   "icon": "minecraft:diamond",
+   "collect": "minecraft:diamond"
+  },
+  {
+   "id": "v_emerarudo",
+   "kana": "エメラルド",
+   "meanings": [
+    "emerald"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:emerald",
+    "minecraft:emerald_ore",
+    "minecraft:deepslate_emerald_ore",
+    "minecraft:emerald_block"
+   ],
+   "icon": "minecraft:emerald",
+   "collect": "minecraft:emerald"
+  },
+  {
+   "id": "v_reddosutoon",
+   "kana": "レッドストーン",
+   "meanings": [
+    "redstone"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:redstone",
+    "minecraft:redstone_ore",
+    "minecraft:deepslate_redstone_ore",
+    "minecraft:redstone_block",
+    "minecraft:redstone_wire"
+   ],
+   "icon": "minecraft:redstone",
+   "collect": "minecraft:redstone"
+  },
+  {
+   "id": "v_burokku",
+   "kana": "ブロック",
+   "meanings": [
+    "block"
+   ],
+   "pos": "noun",
+   "icon": "minecraft:grass_block"
+  },
+  {
+   "id": "v_beddo",
+   "kana": "ベッド",
+   "meanings": [
+    "bed"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:*_bed"
+   ],
+   "icon": "minecraft:red_bed"
+  },
+  {
+   "id": "v_chesuto",
+   "kana": "チェスト",
+   "meanings": [
+    "chest"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:chest",
+    "minecraft:trapped_chest",
+    "minecraft:ender_chest"
+   ],
+   "icon": "minecraft:chest",
+   "collect": "minecraft:chest"
+  },
+  {
+   "id": "v_doa",
+   "kana": "ドア",
+   "meanings": [
+    "door"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:*_door"
+   ],
+   "icon": "minecraft:oak_door",
+   "collect": "minecraft:oak_door"
+  },
+  {
+   "id": "v_garasu",
+   "kana": "ガラス",
+   "meanings": [
+    "glass"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:glass",
+    "minecraft:*_stained_glass",
+    "minecraft:tinted_glass"
+   ],
+   "icon": "minecraft:glass",
+   "collect": "minecraft:glass"
+  },
+  {
+   "id": "v_renga",
+   "kana": "レンガ",
+   "meanings": [
+    "brick",
+    "bricks"
+   ],
+   "pos": "noun",
+   "kanji": "煉瓦",
+   "kanjiQuiz": false,
+   "mc": [
+    "minecraft:brick",
+    "minecraft:bricks"
+   ],
+   "icon": "minecraft:bricks",
+   "collect": "minecraft:brick"
+  },
+  {
+   "id": "v_rantan",
+   "kana": "ランタン",
+   "meanings": [
+    "lantern"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:lantern",
+    "minecraft:soul_lantern"
+   ],
+   "icon": "minecraft:lantern",
+   "collect": "minecraft:lantern"
+  },
+  {
+   "id": "v_reeru",
+   "kana": "レール",
+   "meanings": [
+    "rail",
+    "rails"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:rail",
+    "minecraft:powered_rail",
+    "minecraft:detector_rail",
+    "minecraft:activator_rail"
+   ],
+   "icon": "minecraft:rail",
+   "collect": "minecraft:rail"
+  },
+  {
+   "id": "v_torokko",
+   "kana": "トロッコ",
+   "meanings": [
+    "minecart",
+    "mine cart"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:minecart",
+    "minecraft:*_minecart"
+   ],
+   "icon": "minecraft:minecart"
+  },
+  {
+   "id": "v_tsuruhashi",
+   "kana": "ツルハシ",
+   "meanings": [
+    "pickaxe"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:*_pickaxe"
+   ],
+   "icon": "minecraft:iron_pickaxe",
+   "collect": "minecraft:wooden_pickaxe",
+   "note": "A native word (鶴嘴, 'crane's beak') usually written in katakana."
+  },
+  {
+   "id": "v_shaberu",
+   "kana": "シャベル",
+   "meanings": [
+    "shovel"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:*_shovel"
+   ],
+   "icon": "minecraft:iron_shovel",
+   "collect": "minecraft:wooden_shovel"
+  },
+  {
+   "id": "v_baketsu",
+   "kana": "バケツ",
+   "meanings": [
+    "bucket"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:bucket",
+    "minecraft:*_bucket"
+   ],
+   "icon": "minecraft:bucket",
+   "collect": "minecraft:bucket"
+  },
+  {
+   "id": "v_konpasu",
+   "kana": "コンパス",
+   "meanings": [
+    "compass"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:compass",
+    "minecraft:recovery_compass"
+   ],
+   "icon": "minecraft:compass"
+  },
+  {
+   "id": "v_pan",
+   "kana": "パン",
+   "meanings": [
+    "bread"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:bread"
+   ],
+   "icon": "minecraft:bread",
+   "collect": "minecraft:bread",
+   "note": "From Portuguese 'pão'."
+  },
+  {
+   "id": "v_keeki",
+   "kana": "ケーキ",
+   "meanings": [
+    "cake"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:cake"
+   ],
+   "icon": "minecraft:cake"
+  },
+  {
+   "id": "v_kukkii",
+   "kana": "クッキー",
+   "meanings": [
+    "cookie"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:cookie"
+   ],
+   "icon": "minecraft:cookie",
+   "collect": "minecraft:cookie"
+  },
+  {
+   "id": "v_pooshon",
+   "kana": "ポーション",
+   "meanings": [
+    "potion"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:potion",
+    "minecraft:splash_potion",
+    "minecraft:lingering_potion"
+   ],
+   "icon": "minecraft:potion"
+  },
+  {
+   "id": "v_miruku",
+   "kana": "ミルク",
+   "meanings": [
+    "milk"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:milk_bucket"
+   ],
+   "icon": "minecraft:milk_bucket"
+  },
+  {
+   "id": "v_suupu",
+   "kana": "スープ",
+   "meanings": [
+    "soup",
+    "stew"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:mushroom_stew",
+    "minecraft:beetroot_soup",
+    "minecraft:rabbit_stew",
+    "minecraft:suspicious_stew"
+   ],
+   "icon": "minecraft:mushroom_stew"
+  },
+  {
+   "id": "v_nezaa",
+   "kana": "ネザー",
+   "meanings": [
+    "the Nether",
+    "Nether"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:netherrack"
+   ],
+   "icon": "minecraft:netherrack"
+  },
+  {
+   "id": "v_endo",
+   "kana": "エンド",
+   "meanings": [
+    "the End",
+    "End"
+   ],
+   "pos": "noun",
+   "mc": [
+    "minecraft:end_stone"
+   ],
+   "icon": "minecraft:end_stone"
+  },
+  {
+   "id": "v_geemu",
+   "kana": "ゲーム",
+   "meanings": [
+    "game"
+   ],
+   "pos": "noun"
+  },
+  {
+   "id": "v_shizuka",
+   "kana": "しずか",
+   "meanings": [
+    "quiet"
+   ],
+   "pos": "na-adjective",
+   "kanji": "静か"
+  },
+  {
+   "id": "v_kirei",
+   "kana": "きれい",
+   "meanings": [
+    "pretty",
+    "clean",
+    "beautiful"
+   ],
+   "pos": "na-adjective",
+   "note": "Ends in い but it's a な-adjective!"
+  },
+  {
+   "id": "v_genki",
+   "kana": "げんき",
+   "meanings": [
+    "healthy",
+    "energetic",
+    "well"
+   ],
+   "pos": "na-adjective",
+   "kanji": "元気"
+  },
+  {
+   "id": "v_suki",
+   "kana": "すき",
+   "meanings": [
+    "like",
+    "liked"
+   ],
+   "pos": "na-adjective",
+   "kanji": "好き",
+   "note": "X が すき です = I like X."
+  },
+  {
+   "id": "v_kirai",
+   "kana": "きらい",
+   "meanings": [
+    "dislike",
+    "hate"
+   ],
+   "pos": "na-adjective",
+   "kanji": "嫌い",
+   "kanjiQuiz": false,
+   "note": "Ends in い but it's a な-adjective!"
+  },
+  {
+   "id": "v_jouzu",
+   "kana": "じょうず",
+   "meanings": [
+    "skilled",
+    "good at"
+   ],
+   "pos": "na-adjective",
+   "kanji": "上手"
+  },
+  {
+   "id": "v_heta",
+   "kana": "へた",
+   "meanings": [
+    "bad at",
+    "unskilled"
+   ],
+   "pos": "na-adjective",
+   "kanji": "下手"
+  },
+  {
+   "id": "v_taihen",
+   "kana": "たいへん",
+   "meanings": [
+    "tough",
+    "hard",
+    "terrible"
+   ],
+   "pos": "na-adjective",
+   "kanji": "大変"
+  },
+  {
+   "id": "v_benri",
+   "kana": "べんり",
+   "meanings": [
+    "convenient",
+    "useful"
+   ],
+   "pos": "na-adjective",
+   "kanji": "便利"
+  },
+  {
+   "id": "v_hima",
+   "kana": "ひま",
+   "meanings": [
+    "free (time)",
+    "free",
+    "bored"
+   ],
+   "pos": "na-adjective",
+   "kanji": "暇",
+   "kanjiQuiz": false
+  },
+  {
+   "id": "v_doukutsu",
+   "kana": "どうくつ",
+   "meanings": [
+    "cave"
+   ],
+   "pos": "noun",
+   "kanji": "洞窟",
+   "kanjiQuiz": false,
+   "icon": "minecraft:stone"
+  },
+  {
+   "id": "v_mori",
+   "kana": "もり",
+   "meanings": [
+    "forest",
+    "woods"
+   ],
+   "pos": "noun",
+   "kanji": "森",
+   "icon": "minecraft:oak_sapling",
+   "note": "森 = three trees (木)."
+  },
+  {
+   "id": "v_shima",
+   "kana": "しま",
+   "meanings": [
+    "island"
+   ],
+   "pos": "noun",
+   "kanji": "島"
+  },
+  {
+   "id": "v_sabaku",
+   "kana": "さばく",
+   "meanings": [
+    "desert"
+   ],
+   "pos": "noun",
+   "kanji": "砂漠",
+   "kanjiQuiz": false,
+   "icon": "minecraft:cactus",
+   "note": "砂 (sand) appears in it!"
+  },
+  {
+   "id": "v_naka",
+   "kana": "なか",
+   "meanings": [
+    "inside",
+    "middle"
+   ],
+   "pos": "noun",
+   "kanji": "中"
+  },
+  {
+   "id": "v_mae",
+   "kana": "まえ",
+   "meanings": [
+    "front",
+    "before"
+   ],
+   "pos": "noun",
+   "kanji": "前"
+  },
+  {
+   "id": "v_ushiro",
+   "kana": "うしろ",
+   "meanings": [
+    "behind",
+    "back"
+   ],
+   "pos": "noun",
+   "kanji": "後ろ"
+  },
+  {
+   "id": "v_chikaku",
+   "kana": "ちかく",
+   "meanings": [
+    "near",
+    "nearby"
+   ],
+   "pos": "noun",
+   "kanji": "近く"
+  },
+  {
+   "id": "v_heya",
+   "kana": "へや",
+   "meanings": [
+    "room"
+   ],
+   "pos": "noun",
+   "kanji": "部屋"
+  },
+  {
+   "id": "v_mainichi",
+   "kana": "まいにち",
+   "meanings": [
+    "every day"
+   ],
+   "pos": "noun",
+   "kanji": "毎日"
+  },
+  {
+   "id": "v_hiru",
+   "kana": "ひる",
+   "meanings": [
+    "noon",
+    "daytime"
+   ],
+   "pos": "noun",
+   "kanji": "昼"
+  },
+  {
+   "id": "v_yuugata",
+   "kana": "ゆうがた",
+   "meanings": [
+    "evening"
+   ],
+   "pos": "noun",
+   "kanji": "夕方"
+  },
+  {
+   "id": "v_itsu",
+   "kana": "いつ",
+   "meanings": [
+    "when"
+   ],
+   "pos": "question"
+  },
+  {
+   "id": "v_jikan",
+   "kana": "じかん",
+   "meanings": [
+    "time",
+    "hour"
+   ],
+   "pos": "noun",
+   "kanji": "時間"
+  },
+  {
+   "id": "v_tabemasu",
+   "kana": "たべます",
+   "meanings": [
+    "eat",
+    "to eat"
+   ],
+   "pos": "verb",
+   "kanji": "食べます",
+   "icon": "minecraft:cooked_beef",
+   "note": "Polite ます form. Dictionary form: たべる."
+  },
+  {
+   "id": "v_nomimasu",
+   "kana": "のみます",
+   "meanings": [
+    "drink",
+    "to drink"
+   ],
+   "pos": "verb",
+   "kanji": "飲みます",
+   "icon": "minecraft:milk_bucket",
+   "note": "Polite ます form. Dictionary form: のむ."
+  },
+  {
+   "id": "v_mimasu",
+   "kana": "みます",
+   "meanings": [
+    "see",
+    "look",
+    "watch",
+    "to see"
+   ],
+   "pos": "verb",
+   "kanji": "見ます",
+   "icon": "minecraft:spyglass",
+   "note": "Polite ます form. Dictionary form: みる."
+  },
+  {
+   "id": "v_ikimasu",
+   "kana": "いきます",
+   "meanings": [
+    "go",
+    "to go"
+   ],
+   "pos": "verb",
+   "kanji": "行きます",
+   "note": "Polite ます form. Dictionary form: いく."
+  },
+  {
+   "id": "v_kimasu",
+   "kana": "きます",
+   "meanings": [
+    "come",
+    "to come"
+   ],
+   "pos": "verb",
+   "kanji": "来ます",
+   "note": "Polite ます form. Dictionary form: くる."
+  },
+  {
+   "id": "v_kaerimasu",
+   "kana": "かえります",
+   "meanings": [
+    "go home",
+    "return",
+    "to go home"
+   ],
+   "pos": "verb",
+   "kanji": "帰ります",
+   "icon": "minecraft:red_bed",
+   "note": "Polite ます form. Dictionary form: かえる."
+  },
+  {
+   "id": "v_shimasu",
+   "kana": "します",
+   "meanings": [
+    "do",
+    "to do"
+   ],
+   "pos": "verb",
+   "note": "Polite ます form. Dictionary form: する."
+  },
+  {
+   "id": "v_tsukurimasu",
+   "kana": "つくります",
+   "meanings": [
+    "make",
+    "build",
+    "craft",
+    "to make"
+   ],
+   "pos": "verb",
+   "kanji": "作ります",
+   "icon": "minecraft:crafting_table",
+   "note": "Polite ます form. Dictionary form: つくる."
+  },
+  {
+   "id": "v_horimasu",
+   "kana": "ほります",
+   "meanings": [
+    "dig",
+    "mine",
+    "to dig"
+   ],
+   "pos": "verb",
+   "kanji": "掘ります",
+   "kanjiQuiz": false,
+   "icon": "minecraft:iron_pickaxe",
+   "note": "Polite ます form. Dictionary form: ほる."
+  },
+  {
+   "id": "v_nemasu",
+   "kana": "ねます",
+   "meanings": [
+    "sleep",
+    "go to bed",
+    "to sleep"
+   ],
+   "pos": "verb",
+   "kanji": "寝ます",
+   "icon": "minecraft:white_bed",
+   "note": "Polite ます form. Dictionary form: ねる."
+  },
+  {
+   "id": "v_okimasu",
+   "kana": "おきます",
+   "meanings": [
+    "wake up",
+    "get up",
+    "to wake up"
+   ],
+   "pos": "verb",
+   "kanji": "起きます",
+   "note": "Polite ます form. Dictionary form: おきる."
+  },
+  {
+   "id": "v_kaimasu",
+   "kana": "かいます",
+   "meanings": [
+    "buy",
+    "to buy"
+   ],
+   "pos": "verb",
+   "kanji": "買います",
+   "icon": "minecraft:emerald",
+   "note": "Polite ます form. Dictionary form: かう."
+  },
+  {
+   "id": "v_atsumemasu",
+   "kana": "あつめます",
+   "meanings": [
+    "collect",
+    "gather",
+    "to collect"
+   ],
+   "pos": "verb",
+   "kanji": "集めます",
+   "icon": "minecraft:chest",
+   "note": "Polite ます form. Dictionary form: あつめる."
+  },
+  {
+   "id": "v_tatakaimasu",
+   "kana": "たたかいます",
+   "meanings": [
+    "fight",
+    "to fight"
+   ],
+   "pos": "verb",
+   "kanji": "戦います",
+   "icon": "minecraft:iron_sword",
+   "note": "Polite ます form. Dictionary form: たたかう."
+  },
+  {
+   "id": "v_taoshimasu",
+   "kana": "たおします",
+   "meanings": [
+    "defeat",
+    "knock down",
+    "to defeat"
+   ],
+   "pos": "verb",
+   "kanji": "倒します",
+   "icon": "minecraft:diamond_sword",
+   "note": "Polite ます form. Dictionary form: たおす."
+  },
+  {
+   "id": "v_hashirimasu",
+   "kana": "はしります",
+   "meanings": [
+    "run",
+    "to run"
+   ],
+   "pos": "verb",
+   "kanji": "走ります",
+   "icon": "minecraft:sugar",
+   "note": "Polite ます form. Dictionary form: はしる."
+  },
+  {
+   "id": "v_tobimasu",
+   "kana": "とびます",
+   "meanings": [
+    "jump",
+    "fly",
+    "to fly"
+   ],
+   "pos": "verb",
+   "kanji": "飛びます",
+   "icon": "minecraft:elytra",
+   "note": "Polite ます form. Dictionary form: とぶ."
+  },
+  {
+   "id": "v_arukimasu",
+   "kana": "あるきます",
+   "meanings": [
+    "walk",
+    "to walk"
+   ],
+   "pos": "verb",
+   "kanji": "歩きます",
+   "icon": "minecraft:leather_boots",
+   "note": "Polite ます form. Dictionary form: あるく."
+  },
+  {
+   "id": "v_tsukaimasu",
+   "kana": "つかいます",
+   "meanings": [
+    "use",
+    "to use"
+   ],
+   "pos": "verb",
+   "kanji": "使います",
+   "note": "Polite ます form. Dictionary form: つかう."
+  },
+  {
+   "id": "v_mamorimasu",
+   "kana": "まもります",
+   "meanings": [
+    "protect",
+    "defend",
+    "to protect"
+   ],
+   "pos": "verb",
+   "kanji": "守ります",
+   "icon": "minecraft:shield",
+   "note": "Polite ます form. Dictionary form: まもる."
+  },
+  {
+   "id": "v_mitsukemasu",
+   "kana": "みつけます",
+   "meanings": [
+    "find",
+    "to find"
+   ],
+   "pos": "verb",
+   "kanji": "見つけます",
+   "icon": "minecraft:compass",
+   "note": "Polite ます form. Dictionary form: みつける."
+  },
+  {
+   "id": "v_tasukemasu",
+   "kana": "たすけます",
+   "meanings": [
+    "help",
+    "save",
+    "rescue",
+    "to help"
+   ],
+   "pos": "verb",
+   "kanji": "助けます",
+   "note": "Polite ます form. Dictionary form: たすける."
+  },
+  {
+   "id": "v_machimasu",
+   "kana": "まちます",
+   "meanings": [
+    "wait",
+    "to wait"
+   ],
+   "pos": "verb",
+   "kanji": "待ちます",
+   "icon": "minecraft:clock",
+   "note": "Polite ます form. Dictionary form: まつ."
+  }
+ ]
+}

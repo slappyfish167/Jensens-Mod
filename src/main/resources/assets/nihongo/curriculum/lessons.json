@@ -1,0 +1,794 @@
+{
+ "lessons": [
+  {
+   "id": "hira_a",
+   "title": "Hiragana: あ い う え お",
+   "stage": "hiragana",
+   "intro": "Japanese has three scripts. Hiragana comes first: every sound in the language can be written with it. We start with the five vowels.",
+   "items": [
+    "h_a",
+    "h_i",
+    "h_u",
+    "h_e",
+    "h_o"
+   ]
+  },
+  {
+   "id": "hira_ka",
+   "title": "Hiragana: か row",
+   "stage": "hiragana",
+   "intro": "Each row is a consonant + the five vowels: ka ki ku ke ko.",
+   "items": [
+    "h_ka",
+    "h_ki",
+    "h_ku",
+    "h_ke",
+    "h_ko"
+   ]
+  },
+  {
+   "id": "words_1",
+   "title": "First words",
+   "stage": "vocabulary",
+   "intro": "You can already read real words! Each one is linked to something in Minecraft.",
+   "items": [
+    "v_ki",
+    "v_ie",
+    "v_aka",
+    "v_ao",
+    "v_kao",
+    "v_koe",
+    "v_e",
+    "v_ika",
+    "v_ue"
+   ]
+  },
+  {
+   "id": "hira_sa",
+   "title": "Hiragana: さ row",
+   "stage": "hiragana",
+   "intro": "Note し is 'shi', not 'si'.",
+   "items": [
+    "h_sa",
+    "h_shi",
+    "h_su",
+    "h_se",
+    "h_so"
+   ]
+  },
+  {
+   "id": "hira_ta",
+   "title": "Hiragana: た row",
+   "stage": "hiragana",
+   "intro": "Note ち 'chi' and つ 'tsu'.",
+   "items": [
+    "h_ta",
+    "h_chi",
+    "h_tsu",
+    "h_te",
+    "h_to"
+   ]
+  },
+  {
+   "id": "words_2",
+   "title": "Stone, dirt and iron",
+   "stage": "vocabulary",
+   "intro": "Words for the things you mine and craft first.",
+   "items": [
+    "v_ishi",
+    "v_tsuchi",
+    "v_take",
+    "v_tetsu",
+    "v_ushi",
+    "v_tate",
+    "v_ito",
+    "v_kutsu",
+    "v_asa",
+    "v_suika",
+    "v_satou",
+    "v_tokei",
+    "v_teki",
+    "v_te",
+    "v_shita",
+    "v_soto"
+   ]
+  },
+  {
+   "id": "hira_na",
+   "title": "Hiragana: な row",
+   "stage": "hiragana",
+   "intro": "",
+   "items": [
+    "h_na",
+    "h_ni",
+    "h_nu",
+    "h_ne",
+    "h_no"
+   ]
+  },
+  {
+   "id": "hira_ha",
+   "title": "Hiragana: は row",
+   "stage": "hiragana",
+   "intro": "ふ is between 'fu' and 'hu' - blow gently.",
+   "items": [
+    "h_ha",
+    "h_hi",
+    "h_fu",
+    "h_he",
+    "h_ho"
+   ]
+  },
+  {
+   "id": "words_3",
+   "title": "Animals and nature",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_inu",
+    "v_neko",
+    "v_sakana",
+    "v_niku",
+    "v_kinoko",
+    "v_hana",
+    "v_hi",
+    "v_hoshi",
+    "v_fune",
+    "v_hone",
+    "v_hito",
+    "v_suna",
+    "v_kusa",
+    "v_kitsune",
+    "v_hachi",
+    "v_nani",
+    "v_anata",
+    "v_hai",
+    "v_iie"
+   ]
+  },
+  {
+   "id": "hira_ma",
+   "title": "Hiragana: ま row",
+   "stage": "hiragana",
+   "intro": "",
+   "items": [
+    "h_ma",
+    "h_mi",
+    "h_mu",
+    "h_me",
+    "h_mo"
+   ]
+  },
+  {
+   "id": "hira_ya",
+   "title": "Hiragana: や row",
+   "stage": "hiragana",
+   "intro": "Only three: や ゆ よ.",
+   "items": [
+    "h_ya",
+    "h_yu",
+    "h_yo"
+   ]
+  },
+  {
+   "id": "words_4",
+   "title": "Mountains, mobs and weapons",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_umi",
+    "v_yama",
+    "v_yuki",
+    "v_yumi",
+    "v_ya",
+    "v_me",
+    "v_mushi",
+    "v_atama",
+    "v_uma",
+    "v_kumo",
+    "v_kuma",
+    "v_kame",
+    "v_kami",
+    "v_ookami",
+    "v_taimatsu",
+    "v_mame",
+    "v_yasai",
+    "v_mono",
+    "v_ima",
+    "v_namae",
+    "v_tsuki"
+   ]
+  },
+  {
+   "id": "hira_ra",
+   "title": "Hiragana: ら row",
+   "stage": "hiragana",
+   "intro": "The Japanese r is a light tap, halfway to an l or d.",
+   "items": [
+    "h_ra",
+    "h_ri",
+    "h_ru",
+    "h_re",
+    "h_ro"
+   ]
+  },
+  {
+   "id": "hira_wa",
+   "title": "Hiragana: わ を ん",
+   "stage": "hiragana",
+   "intro": "The last three basic hiragana.",
+   "items": [
+    "h_wa",
+    "h_wo",
+    "h_n"
+   ]
+  },
+  {
+   "id": "words_5",
+   "title": "Sky, tools and treasure",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_yoru",
+    "v_sora",
+    "v_tori",
+    "v_kuro",
+    "v_shiro",
+    "v_niwatori",
+    "v_kuwa",
+    "v_ono",
+    "v_hon",
+    "v_kawa",
+    "v_koori",
+    "v_kusuri",
+    "v_iruka",
+    "v_kaeru",
+    "v_koumori",
+    "v_hikari",
+    "v_ken",
+    "v_kin",
+    "v_sekitan",
+    "v_watashi",
+    "v_mura",
+    "v_ame"
+   ]
+  },
+  {
+   "id": "greetings_1",
+   "title": "Greetings",
+   "stage": "phrases",
+   "intro": "Whole phrases learned as chunks - you'll use them every day.",
+   "items": [
+    "v_ohayou",
+    "v_konnichiwa",
+    "v_sayounara",
+    "v_oyasumi",
+    "v_sumimasen"
+   ]
+  },
+  {
+   "id": "hira_dakuten",
+   "title": "Hiragana: ゛ and ゜",
+   "stage": "hiragana",
+   "intro": "Two marks turn the kana you know into 25 more sounds.",
+   "items": [
+    "h_ga",
+    "h_za",
+    "h_da",
+    "h_ba",
+    "h_pa"
+   ]
+  },
+  {
+   "id": "words_6",
+   "title": "Farm and village",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_ninjin",
+    "v_mizu",
+    "v_kaze",
+    "v_hitsuji",
+    "v_buta",
+    "v_ringo",
+    "v_tamago",
+    "v_bou",
+    "v_kagi",
+    "v_mado",
+    "v_kabe",
+    "v_hashigo",
+    "v_kamado",
+    "v_chizu",
+    "v_dou",
+    "v_mugi",
+    "v_usagi",
+    "v_rakuda",
+    "v_murabito",
+    "v_yougan",
+    "v_kaidan",
+    "v_gohan"
+   ]
+  },
+  {
+   "id": "greetings_2",
+   "title": "Polite phrases",
+   "stage": "phrases",
+   "intro": "",
+   "items": [
+    "v_arigatou",
+    "v_konbanwa",
+    "v_itadakimasu",
+    "v_gochisousama",
+    "v_gomennasai",
+    "v_douzo",
+    "v_onegaishimasu"
+   ]
+  },
+  {
+   "id": "hira_combos",
+   "title": "Hiragana: combos, small っ, long vowels",
+   "stage": "hiragana",
+   "intro": "The last hiragana rules. After this you can read anything written in hiragana!",
+   "items": [
+    "h_yoon1",
+    "h_yoon2",
+    "h_yoon3",
+    "h_sokuon",
+    "h_long"
+   ]
+  },
+  {
+   "id": "numbers",
+   "title": "Numbers 1-100",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_ichi",
+    "v_ni",
+    "v_san",
+    "v_yon",
+    "v_go",
+    "v_roku",
+    "v_nana",
+    "v_hachi_num",
+    "v_kyuu",
+    "v_juu",
+    "v_hyaku"
+   ]
+  },
+  {
+   "id": "words_7",
+   "title": "Crops and time",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_kabocha",
+    "v_jagaimo",
+    "v_happa",
+    "v_sagyoudai",
+    "v_kyou",
+    "v_ashita",
+    "v_kinou",
+    "v_daijoubu",
+    "v_chotto",
+    "v_issho"
+   ]
+  },
+  {
+   "id": "people",
+   "title": "People and languages",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_gakusei",
+    "v_sensei",
+    "v_tomodachi",
+    "v_nihonjin",
+    "v_nihongo",
+    "v_eigo",
+    "v_dare"
+   ]
+  },
+  {
+   "id": "adjectives_1",
+   "title": "Describing things",
+   "stage": "vocabulary",
+   "intro": "い-adjectives: they all end in い.",
+   "items": [
+    "v_ookii",
+    "v_chiisai",
+    "v_takai",
+    "v_hikui",
+    "v_atsui",
+    "v_samui",
+    "v_kowai",
+    "v_tsuyoi",
+    "v_yowai",
+    "v_hayai",
+    "v_osoi",
+    "v_akarui",
+    "v_kurai",
+    "v_ii",
+    "v_warui",
+    "v_oishii",
+    "v_atarashii",
+    "v_furui",
+    "v_abunai",
+    "v_kawaii",
+    "v_tanoshii"
+   ]
+  },
+  {
+   "id": "grammar_1",
+   "title": "Grammar: X は Y です and questions",
+   "stage": "grammar",
+   "intro": "Your first sentences.",
+   "items": [
+    "g_desu",
+    "g_ka"
+   ]
+  },
+  {
+   "id": "pointing_words",
+   "title": "This, that, here, there",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_kore",
+    "v_sore",
+    "v_are",
+    "v_dore",
+    "v_koko",
+    "v_soko",
+    "v_asoko",
+    "v_doko"
+   ]
+  },
+  {
+   "id": "grammar_2",
+   "title": "Grammar: これ / それ and の",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_kore",
+    "g_no"
+   ]
+  },
+  {
+   "id": "grammar_3",
+   "title": "Grammar: も and じゃないです",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_mo",
+    "g_janai"
+   ]
+  },
+  {
+   "id": "grammar_4",
+   "title": "Grammar: い-adjectives",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_adj_i"
+   ]
+  },
+  {
+   "id": "kata_1",
+   "title": "Katakana: ア and カ rows, ー",
+   "stage": "katakana",
+   "intro": "Katakana writes foreign words - including most Minecraft mobs! Same sounds as hiragana, new shapes.",
+   "items": [
+    "k_a",
+    "k_i",
+    "k_u",
+    "k_e",
+    "k_o",
+    "k_ka",
+    "k_ki",
+    "k_ku",
+    "k_ke",
+    "k_ko",
+    "k_choon"
+   ]
+  },
+  {
+   "id": "kata_2",
+   "title": "Katakana: サ and タ rows",
+   "stage": "katakana",
+   "intro": "Careful with シ/ツ and ソ/ン: watch the stroke direction.",
+   "items": [
+    "k_sa",
+    "k_shi",
+    "k_su",
+    "k_se",
+    "k_so",
+    "k_ta",
+    "k_chi",
+    "k_tsu",
+    "k_te",
+    "k_to"
+   ]
+  },
+  {
+   "id": "kata_3",
+   "title": "Katakana: ナ and ハ rows",
+   "stage": "katakana",
+   "intro": "",
+   "items": [
+    "k_na",
+    "k_ni",
+    "k_nu",
+    "k_ne",
+    "k_no",
+    "k_ha",
+    "k_hi",
+    "k_fu",
+    "k_he",
+    "k_ho"
+   ]
+  },
+  {
+   "id": "kata_4",
+   "title": "Katakana: マ and ヤ rows",
+   "stage": "katakana",
+   "intro": "",
+   "items": [
+    "k_ma",
+    "k_mi",
+    "k_mu",
+    "k_me",
+    "k_mo",
+    "k_ya",
+    "k_yu",
+    "k_yo"
+   ]
+  },
+  {
+   "id": "kata_5",
+   "title": "Katakana: ラ row, ワ ヲ ン",
+   "stage": "katakana",
+   "intro": "",
+   "items": [
+    "k_ra",
+    "k_ri",
+    "k_ru",
+    "k_re",
+    "k_ro",
+    "k_wa",
+    "k_wo",
+    "k_n"
+   ]
+  },
+  {
+   "id": "kata_6",
+   "title": "Katakana: marks, combos and new sounds",
+   "stage": "katakana",
+   "intro": "",
+   "items": [
+    "k_dakuten",
+    "k_handakuten",
+    "k_yoon",
+    "k_sokuon",
+    "k_extended"
+   ]
+  },
+  {
+   "id": "katakana_mobs",
+   "title": "Mobs in katakana",
+   "stage": "vocabulary",
+   "intro": "Japanese Minecraft names these mobs with loanwords.",
+   "items": [
+    "v_zonbi",
+    "v_sukeruton",
+    "v_kuriipaa",
+    "v_endaaman",
+    "v_suraimu",
+    "v_gooremu",
+    "v_doragon",
+    "v_witchi",
+    "v_gasuto",
+    "v_bureizu",
+    "v_fantomu"
+   ]
+  },
+  {
+   "id": "katakana_things",
+   "title": "Blocks and tools in katakana",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_daiyamondo",
+    "v_emerarudo",
+    "v_reddosutoon",
+    "v_burokku",
+    "v_beddo",
+    "v_chesuto",
+    "v_doa",
+    "v_garasu",
+    "v_renga",
+    "v_rantan",
+    "v_reeru",
+    "v_torokko",
+    "v_tsuruhashi",
+    "v_shaberu",
+    "v_baketsu",
+    "v_konpasu"
+   ]
+  },
+  {
+   "id": "katakana_food",
+   "title": "Food and dimensions",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_pan",
+    "v_keeki",
+    "v_kukkii",
+    "v_pooshon",
+    "v_miruku",
+    "v_suupu",
+    "v_nezaa",
+    "v_endo",
+    "v_geemu"
+   ]
+  },
+  {
+   "id": "adjectives_na",
+   "title": "な-adjectives",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_shizuka",
+    "v_kirei",
+    "v_genki",
+    "v_suki",
+    "v_kirai",
+    "v_jouzu",
+    "v_heta",
+    "v_taihen",
+    "v_benri",
+    "v_hima"
+   ]
+  },
+  {
+   "id": "grammar_5",
+   "title": "Grammar: な-adjectives",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_adj_na"
+   ]
+  },
+  {
+   "id": "places",
+   "title": "Places",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_doukutsu",
+    "v_mori",
+    "v_shima",
+    "v_sabaku",
+    "v_naka",
+    "v_mae",
+    "v_ushiro",
+    "v_chikaku",
+    "v_heya"
+   ]
+  },
+  {
+   "id": "grammar_6",
+   "title": "Grammar: あります / います",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_arimasu"
+   ]
+  },
+  {
+   "id": "time_words",
+   "title": "Time",
+   "stage": "vocabulary",
+   "intro": "",
+   "items": [
+    "v_mainichi",
+    "v_hiru",
+    "v_yuugata",
+    "v_itsu",
+    "v_jikan"
+   ]
+  },
+  {
+   "id": "verbs_1",
+   "title": "Action verbs",
+   "stage": "vocabulary",
+   "intro": "Verbs are taught in their polite ます form first.",
+   "items": [
+    "v_tabemasu",
+    "v_nomimasu",
+    "v_mimasu",
+    "v_ikimasu",
+    "v_kimasu",
+    "v_kaerimasu",
+    "v_shimasu",
+    "v_tsukurimasu",
+    "v_horimasu",
+    "v_nemasu",
+    "v_okimasu",
+    "v_kaimasu",
+    "v_atsumemasu",
+    "v_tatakaimasu",
+    "v_taoshimasu",
+    "v_hashirimasu",
+    "v_tobimasu",
+    "v_arukimasu",
+    "v_tsukaimasu",
+    "v_mamorimasu",
+    "v_mitsukemasu",
+    "v_tasukemasu",
+    "v_machimasu"
+   ]
+  },
+  {
+   "id": "grammar_7",
+   "title": "Grammar: verbs and を",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_masu",
+    "g_wo"
+   ]
+  },
+  {
+   "id": "grammar_8",
+   "title": "Grammar: に, へ and で",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_ni_he",
+    "g_de"
+   ]
+  },
+  {
+   "id": "grammar_9",
+   "title": "Grammar: the past",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_mashita"
+   ]
+  },
+  {
+   "id": "grammar_10",
+   "title": "Grammar: likes and invitations",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_ga_suki",
+    "g_mashou"
+   ]
+  },
+  {
+   "id": "grammar_11",
+   "title": "Grammar: want to, please do",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_tai",
+    "g_te_kudasai"
+   ]
+  },
+  {
+   "id": "grammar_12",
+   "title": "Grammar: ている, past adjectives, から",
+   "stage": "grammar",
+   "intro": "",
+   "items": [
+    "g_teiru",
+    "g_adj_past",
+    "g_kara"
+   ]
+  }
+ ]
+}

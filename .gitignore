@@ -1,0 +1,27 @@
+# gradle
+.gradle/
+build/
+out/
+classes/
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+bin/
+
+# runs
+run/
+runs/
+run-data/
+repo/
+
+# os
+.DS_Store
+Thumbs.db
+__pycache__/

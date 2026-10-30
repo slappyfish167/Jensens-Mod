@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+issueTrackerURL="https://github.com/slappyfish167/Jensens-Mod/issues"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="Jensen"
+logoFile="nihongo_logo.png"
+description='''
+Learn Japanese while you play.
+
+- Research-ordered curriculum: hiragana -> katakana -> core vocabulary -> grammar (Genki/JLPT N5 order), with kanji taught through words you already know.
+- Spaced repetition (SM-2), retrieval practice, interleaving, picture mnemonics and dual coding with Minecraft items.
+- Offline voice recognition (Vosk) for speaking practice and spoken "kotodama" spells.
+- Immersion: Japanese labels on the blocks, mobs and items you have learned, plus Japanese collection quests.
+
+Press J (or use the Japanese Textbook) to start.
+'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"

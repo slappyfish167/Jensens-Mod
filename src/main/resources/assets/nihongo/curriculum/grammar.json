@@ -1,0 +1,1649 @@
+{
+ "items": [
+  {
+   "id": "g_desu",
+   "title": "X は Y です  (X is Y)",
+   "summary": "は marks the topic; です politely ends the sentence.",
+   "explanation": [
+    "Japanese sentences often start with a topic followed by は. As a particle, は is read 'wa'.",
+    "です (desu - the final u is almost silent) works like 'is / am / are' and makes the sentence polite.",
+    "Pattern: [topic] は [description] です. There are no words for 'a' or 'the', and nouns have no plural form."
+   ],
+   "examples": [
+    {
+     "jp": "わたし は がくせい です。",
+     "en": "I am a student."
+    },
+    {
+     "jp": "やま は たかい です。",
+     "en": "The mountain is tall."
+    },
+    {
+     "jp": "ねこ は かわいい です。",
+     "en": "Cats are cute."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "わたし ___ がくせい です。",
+     "answer": "は",
+     "options": [
+      "は",
+      "を",
+      "に",
+      "の"
+     ],
+     "en": "I am a student.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "ともだち は にほんじん ___。",
+     "answer": "です",
+     "options": [
+      "です",
+      "は",
+      "か",
+      "の"
+     ],
+     "en": "My friend is Japanese.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "The mountain is tall.",
+     "tiles": [
+      "やま",
+      "は",
+      "たかい",
+      "です"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "ねこ は かわいい です。",
+     "answer": "Cats are cute.",
+     "options": [
+      "Cats are cute.",
+      "Cats are scary.",
+      "Dogs are cute.",
+      "I am a cat."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    },
+    {
+     "type": "type",
+     "prompt": "せんせい は にほんじん ___。",
+     "answer": "です",
+     "en": "The teacher is Japanese.",
+     "accept": [],
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_ka",
+   "title": "Questions with か",
+   "summary": "Put か at the end to turn a sentence into a question.",
+   "explanation": [
+    "Add か to the end of a sentence to make it a question. The word order does not change.",
+    "Answer with はい (yes) or いいえ (no). Written Japanese often ends a か question with 。 instead of ?"
+   ],
+   "examples": [
+    {
+     "jp": "あなた は がくせい です か。",
+     "en": "Are you a student?"
+    },
+    {
+     "jp": "はい、 がくせい です。",
+     "en": "Yes, I am a student."
+    },
+    {
+     "jp": "さかな は おいしい です か。",
+     "en": "Is the fish tasty?"
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "あなた は せんせい です ___。",
+     "answer": "か",
+     "options": [
+      "か",
+      "は",
+      "を",
+      "の"
+     ],
+     "en": "Are you a teacher?",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "Is the cat cute?",
+     "tiles": [
+      "ねこ",
+      "は",
+      "かわいい",
+      "です",
+      "か"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "はい、 せんせい です。",
+     "answer": "Yes, I'm a teacher.",
+     "options": [
+      "Yes, I'm a teacher.",
+      "No, I'm a teacher.",
+      "Are you a teacher?",
+      "Yes, I'm a student."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "さかな は おいしい です か。  ___、 おいしい です。",
+     "answer": "はい",
+     "options": [
+      "はい",
+      "いいえ",
+      "か",
+      "です"
+     ],
+     "en": "Is the fish tasty? - Yes, it's tasty.",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_kore",
+   "title": "これ・それ・あれ・どれ",
+   "summary": "this / that / that over there / which",
+   "explanation": [
+    "これ = this (near me), それ = that (near you), あれ = that over there (far from both), どれ = which one.",
+    "Directly before a noun use この / その / あの / どの: この けん = this sword.",
+    "The same こ-そ-あ-ど pattern gives ここ / そこ / あそこ / どこ (here / there / over there / where)."
+   ],
+   "examples": [
+    {
+     "jp": "これ は けん です。",
+     "en": "This is a sword."
+    },
+    {
+     "jp": "あれ は なん です か。",
+     "en": "What is that over there?"
+    },
+    {
+     "jp": "この りんご は おいしい です。",
+     "en": "This apple is tasty."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "___ は ほん です。 (in my hand)",
+     "answer": "これ",
+     "options": [
+      "これ",
+      "それ",
+      "あれ",
+      "どれ"
+     ],
+     "en": "This is a book.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "___ ゆみ は あたらしい です。",
+     "answer": "この",
+     "options": [
+      "この",
+      "これ",
+      "ここ",
+      "どこ"
+     ],
+     "en": "This bow is new.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "What is that over there?",
+     "tiles": [
+      "あれ",
+      "は",
+      "なん",
+      "です",
+      "か"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "いえ は ___ です か。",
+     "answer": "どこ",
+     "options": [
+      "どこ",
+      "どれ",
+      "だれ",
+      "なに"
+     ],
+     "en": "Where is the house?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_no",
+   "title": "の  (possession and description)",
+   "summary": "A の B = A's B, or a B made of / related to A.",
+   "explanation": [
+    "の links two nouns: わたし の けん = my sword.",
+    "It also describes what something is made of or about: てつ の けん = an iron sword; にほんご の ほん = a Japanese book.",
+    "You can chain them: わたし の ともだち の いぬ = my friend's dog."
+   ],
+   "examples": [
+    {
+     "jp": "これ は わたし の けん です。",
+     "en": "This is my sword."
+    },
+    {
+     "jp": "きん の りんご",
+     "en": "a golden apple"
+    },
+    {
+     "jp": "ともだち の いえ は どこ です か。",
+     "en": "Where is my friend's house?"
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "これ は わたし ___ ゆみ です。",
+     "answer": "の",
+     "options": [
+      "の",
+      "は",
+      "を",
+      "か"
+     ],
+     "en": "This is my bow.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "an iron sword",
+     "tiles": [
+      "てつ",
+      "の",
+      "けん"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "それ は ___ の ほん です か。",
+     "answer": "だれ",
+     "options": [
+      "だれ",
+      "どこ",
+      "なに",
+      "どれ"
+     ],
+     "en": "Whose book is that?",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "せんせい の ねこ は かわいい です。",
+     "answer": "The teacher's cat is cute.",
+     "options": [
+      "The teacher's cat is cute.",
+      "The cat's teacher is cute.",
+      "The teacher is a cute cat.",
+      "My cat is cute."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    },
+    {
+     "type": "type",
+     "prompt": "いし ___ かべ",
+     "answer": "の",
+     "en": "a stone wall",
+     "accept": [],
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_mo",
+   "title": "も  (also, too)",
+   "summary": "も replaces は to mean 'also'.",
+   "explanation": [
+    "も means 'also / too'. It replaces は (and が / を) - never write はも.",
+    "With a negative sentence it means 'not ... either'."
+   ],
+   "examples": [
+    {
+     "jp": "わたし も がくせい です。",
+     "en": "I'm a student too."
+    },
+    {
+     "jp": "これ も おいしい です。",
+     "en": "This is tasty too."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "ねこ は かわいい です。 いぬ ___ かわいい です。",
+     "answer": "も",
+     "options": [
+      "も",
+      "は",
+      "の",
+      "か"
+     ],
+     "en": "Cats are cute. Dogs are cute too.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "This is tasty too.",
+     "tiles": [
+      "これ",
+      "も",
+      "おいしい",
+      "です"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "あれ も わたし の いえ です。",
+     "answer": "That over there is also my house.",
+     "options": [
+      "That over there is also my house.",
+      "That house is mine.",
+      "This is also my house.",
+      "My house is over there."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_janai",
+   "title": "じゃないです  (is not)",
+   "summary": "Noun + じゃないです / じゃありません = is not.",
+   "explanation": [
+    "To say 'X is not Y' with a noun, replace です with じゃないです, or the more formal じゃありません.",
+    "In writing you will also see ではありません - the same meaning, more formal."
+   ],
+   "examples": [
+    {
+     "jp": "これ は けん じゃないです。",
+     "en": "This is not a sword."
+    },
+    {
+     "jp": "わたし は せんせい じゃありません。",
+     "en": "I am not a teacher."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "あれ は いぬ ___。 おおかみ です。",
+     "answer": "じゃないです",
+     "options": [
+      "じゃないです",
+      "です",
+      "か",
+      "も"
+     ],
+     "en": "That's not a dog. It's a wolf.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "I am not a teacher.",
+     "tiles": [
+      "わたし",
+      "は",
+      "せんせい",
+      "じゃありません"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "type",
+     "prompt": "これ は きん ___。",
+     "answer": "じゃないです",
+     "en": "This is not gold.",
+     "accept": [
+      "じゃありません",
+      "ではありません",
+      "ではないです"
+     ],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "それ は わたし の ほん じゃないです。",
+     "answer": "That's not my book.",
+     "options": [
+      "That's not my book.",
+      "That is my book.",
+      "Is that my book?",
+      "That's my book too."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_adj_i",
+   "title": "い-adjectives",
+   "summary": "Before nouns as-is; negative: drop い, add くない.",
+   "explanation": [
+    "い-adjectives end in い and go straight before a noun: たかい やま = a tall mountain.",
+    "At the end of a sentence add です: やま は たかい です.",
+    "Negative: drop the final い and add くないです: たかい → たかくないです. The irregular いい becomes よくないです."
+   ],
+   "examples": [
+    {
+     "jp": "おおきい いえ",
+     "en": "a big house"
+    },
+    {
+     "jp": "この けん は つよい です。",
+     "en": "This sword is strong."
+    },
+    {
+     "jp": "この りんご は おいしくないです。",
+     "en": "This apple isn't tasty."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "type",
+     "prompt": "さかな は おいしく___。",
+     "answer": "ないです",
+     "en": "The fish isn't tasty.",
+     "accept": [
+      "ない です"
+     ],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "この やま は ___ です。",
+     "answer": "たかい",
+     "options": [
+      "たかい",
+      "たかく",
+      "たかいの",
+      "たかな"
+     ],
+     "en": "This mountain is tall.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "a big house",
+     "tiles": [
+      "おおきい",
+      "いえ"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "この ほん は ___ です。",
+     "answer": "よくない",
+     "options": [
+      "よくない",
+      "いくない",
+      "いいない",
+      "よい"
+     ],
+     "en": "This book isn't good.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "よる は あぶない です。",
+     "answer": "The night is dangerous.",
+     "options": [
+      "The night is dangerous.",
+      "The night is dark.",
+      "Mornings are dangerous.",
+      "It's not dangerous at night."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_adj_na",
+   "title": "な-adjectives",
+   "summary": "Need な before a noun; behave like nouns at the end.",
+   "explanation": [
+    "な-adjectives need な before a noun: しずか な むら = a quiet village.",
+    "At the end of a sentence they act like nouns: むら は しずか です. Negative: しずか じゃないです.",
+    "Watch out: きれい and きらい end in い but are な-adjectives!"
+   ],
+   "examples": [
+    {
+     "jp": "きれい な はな",
+     "en": "a pretty flower"
+    },
+    {
+     "jp": "むら は しずか です。",
+     "en": "The village is quiet."
+    },
+    {
+     "jp": "わたし は げんき です。",
+     "en": "I'm well."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "しずか ___ もり",
+     "answer": "な",
+     "options": [
+      "な",
+      "の",
+      "い",
+      "を"
+     ],
+     "en": "a quiet forest",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "この むら は べんり ___。",
+     "answer": "じゃないです",
+     "options": [
+      "じゃないです",
+      "くないです",
+      "です か",
+      "な"
+     ],
+     "en": "This village isn't convenient.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "a pretty star",
+     "tiles": [
+      "きれい",
+      "な",
+      "ほし"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "わたし は げんき です。",
+     "answer": "I'm well.",
+     "options": [
+      "I'm well.",
+      "I'm sick.",
+      "I'm quiet.",
+      "I'm famous."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_arimasu",
+   "title": "あります・います  (there is)",
+   "summary": "Place に thing が あります (things) / います (living beings).",
+   "explanation": [
+    "あります = there is / to have, for objects and plants. います = there is, for people and animals.",
+    "Pattern: [place] に [thing] が あります / います. が marks the thing that exists.",
+    "Negative: ありません / いません."
+   ],
+   "examples": [
+    {
+     "jp": "どうくつ に ゾンビ が います。",
+     "en": "There are zombies in the cave."
+    },
+    {
+     "jp": "むら に いえ が あります。",
+     "en": "There are houses in the village."
+    },
+    {
+     "jp": "ここ に ダイヤモンド は ありません。",
+     "en": "There are no diamonds here."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "もり に おおかみ が ___。",
+     "answer": "います",
+     "options": [
+      "います",
+      "あります",
+      "です",
+      "します"
+     ],
+     "en": "There are wolves in the forest.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "チェスト に パン が ___。",
+     "answer": "あります",
+     "options": [
+      "あります",
+      "います",
+      "です",
+      "ます"
+     ],
+     "en": "There's bread in the chest.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "どうくつ ___ スケルトン が います。",
+     "answer": "に",
+     "options": [
+      "に",
+      "を",
+      "は",
+      "の"
+     ],
+     "en": "There's a skeleton in the cave.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "There is a village over there.",
+     "tiles": [
+      "あそこ",
+      "に",
+      "むら",
+      "が",
+      "あります"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "type",
+     "prompt": "ここ に クリーパー は い___。",
+     "answer": "ません",
+     "en": "There's no creeper here.",
+     "accept": [],
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_masu",
+   "title": "Polite verbs: ます・ません",
+   "summary": "ます = do / will do; ません = don't / won't.",
+   "explanation": [
+    "Polite verbs end in ます. The present form covers habits and the future: たべます = (I) eat / will eat.",
+    "Negative: ます → ません. たべません = don't eat / won't eat.",
+    "Japanese drops the subject when it's obvious, so you rarely need わたし."
+   ],
+   "examples": [
+    {
+     "jp": "まいにち はしります。",
+     "en": "I run every day."
+    },
+    {
+     "jp": "よる は ねません。",
+     "en": "I don't sleep at night."
+    },
+    {
+     "jp": "あした いきます。",
+     "en": "I'll go tomorrow."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "まいにち はしり___。",
+     "answer": "ます",
+     "options": [
+      "ます",
+      "です",
+      "ません",
+      "ました"
+     ],
+     "en": "I run every day.",
+     "explain": ""
+    },
+    {
+     "type": "type",
+     "prompt": "よる は ね___。",
+     "answer": "ません",
+     "en": "I don't sleep at night.",
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "I'll go tomorrow.",
+     "tiles": [
+      "あした",
+      "いきます"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "きょう は たたかいません。",
+     "answer": "I won't fight today.",
+     "options": [
+      "I won't fight today.",
+      "I'll fight today.",
+      "I fought today.",
+      "Let's fight today."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_wo",
+   "title": "を  (object marker)",
+   "summary": "を marks the thing an action is done to.",
+   "explanation": [
+    "を (pronounced 'o') marks the direct object: パン を たべます = eat bread.",
+    "Typical order: [time] [topic は] [object を] [verb]."
+   ],
+   "examples": [
+    {
+     "jp": "ミルク を のみます。",
+     "en": "I drink milk."
+    },
+    {
+     "jp": "てつ を ほります。",
+     "en": "I mine iron."
+    },
+    {
+     "jp": "いえ を つくります。",
+     "en": "I'll build a house."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "りんご ___ たべます。",
+     "answer": "を",
+     "options": [
+      "を",
+      "は",
+      "に",
+      "の"
+     ],
+     "en": "I eat an apple.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "I'll make a sword.",
+     "tiles": [
+      "けん",
+      "を",
+      "つくります"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "ダイヤモンド を ___。",
+     "answer": "みつけます",
+     "options": [
+      "みつけます",
+      "います",
+      "あります",
+      "です"
+     ],
+     "en": "I'll find diamonds.",
+     "explain": ""
+    },
+    {
+     "type": "type",
+     "prompt": "みず ___ のみます。",
+     "answer": "を",
+     "en": "I drink water.",
+     "accept": [
+      "お"
+     ],
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_ni_he",
+   "title": "に・へ  (destination and time)",
+   "summary": "Go/come/return に (or へ) a place; do something at a time に.",
+   "explanation": [
+    "With movement verbs (いきます, きます, かえります) に or へ marks the destination: むら に いきます.",
+    "に also marks a specific time: よる に = at night. Relative words like きょう, あした, まいにち take no particle."
+   ],
+   "examples": [
+    {
+     "jp": "あした ネザー に いきます。",
+     "en": "Tomorrow I'll go to the Nether."
+    },
+    {
+     "jp": "いえ に かえります。",
+     "en": "I'll go home."
+    },
+    {
+     "jp": "エンド へ いきます。",
+     "en": "I'm going to the End."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "むら ___ いきます。",
+     "answer": "に",
+     "options": [
+      "に",
+      "を",
+      "で",
+      "の"
+     ],
+     "en": "I'll go to the village.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "あした どこ ___ いきます か。",
+     "answer": "に",
+     "options": [
+      "に",
+      "を",
+      "が",
+      "の"
+     ],
+     "en": "Where will you go tomorrow?",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "I'll go home.",
+     "tiles": [
+      "いえ",
+      "に",
+      "かえります"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "エンド へ いきます。",
+     "answer": "I'll go to the End.",
+     "options": [
+      "I'll go to the End.",
+      "I came from the End.",
+      "I'll fight in the End.",
+      "The End is far."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_de",
+   "title": "で  (place of action, tool)",
+   "summary": "Where an action happens, or what you do it with.",
+   "explanation": [
+    "で marks where an action happens: もり で きのこ を あつめます = collect mushrooms in the forest.",
+    "で also marks the tool or means: ツルハシ で ほります = dig with a pickaxe.",
+    "Compare: に is where something IS or where you GO; で is where you DO something."
+   ],
+   "examples": [
+    {
+     "jp": "どうくつ で てつ を ほります。",
+     "en": "I mine iron in the cave."
+    },
+    {
+     "jp": "けん で たたかいます。",
+     "en": "I fight with a sword."
+    },
+    {
+     "jp": "いえ で ねます。",
+     "en": "I sleep at home."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "ツルハシ ___ いし を ほります。",
+     "answer": "で",
+     "options": [
+      "で",
+      "に",
+      "を",
+      "の"
+     ],
+     "en": "I mine stone with a pickaxe.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "むら ___ パン を かいます。",
+     "answer": "で",
+     "options": [
+      "で",
+      "に",
+      "を",
+      "へ"
+     ],
+     "en": "I buy bread in the village.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "どうくつ ___ ゾンビ が います。",
+     "answer": "に",
+     "options": [
+      "に",
+      "で",
+      "を",
+      "へ"
+     ],
+     "en": "There are zombies in the cave.",
+     "explain": "Existence (います) uses に, not で."
+    },
+    {
+     "type": "order",
+     "en": "I fight with a sword.",
+     "tiles": [
+      "けん",
+      "で",
+      "たたかいます"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "かわ で さかな を みつけます。",
+     "answer": "I find fish in the river.",
+     "options": [
+      "I find fish in the river.",
+      "I eat fish by the river.",
+      "The fish is in the river.",
+      "I go to the river."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_mashita",
+   "title": "Past: ました・ませんでした",
+   "summary": "ました = did; ませんでした = didn't; でした = was.",
+   "explanation": [
+    "Past: ます → ました. たべました = ate.",
+    "Past negative: ません → ませんでした. たべませんでした = didn't eat.",
+    "The past of です is でした."
+   ],
+   "examples": [
+    {
+     "jp": "きのう ドラゴン を たおしました。",
+     "en": "Yesterday I defeated the dragon."
+    },
+    {
+     "jp": "きのう は ねませんでした。",
+     "en": "I didn't sleep yesterday."
+    },
+    {
+     "jp": "きのう は あめ でした。",
+     "en": "It was rainy yesterday."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "type",
+     "prompt": "きのう パン を たべ___。",
+     "answer": "ました",
+     "en": "I ate bread yesterday.",
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "きのう ダイヤモンド を みつけ___。",
+     "answer": "ました",
+     "options": [
+      "ました",
+      "ます",
+      "ましょう",
+      "たい"
+     ],
+     "en": "I found a diamond yesterday.",
+     "explain": ""
+    },
+    {
+     "type": "type",
+     "prompt": "きのう は いき___。",
+     "answer": "ませんでした",
+     "en": "I didn't go yesterday.",
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "I made a bed yesterday.",
+     "tiles": [
+      "きのう",
+      "ベッド",
+      "を",
+      "つくりました"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "きのう は あめ ___。",
+     "answer": "でした",
+     "options": [
+      "でした",
+      "ました",
+      "です",
+      "ません"
+     ],
+     "en": "It was rainy yesterday.",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_ga_suki",
+   "title": "が with すき・きらい・じょうず",
+   "summary": "I like X: X が すき です.",
+   "explanation": [
+    "Likes, dislikes and skills mark the thing with が: わたし は ねこ が すき です = I like cats.",
+    "すき (like), きらい (dislike), じょうず (good at) and へた (bad at) are な-adjectives.",
+    "だいすき = love / really like."
+   ],
+   "examples": [
+    {
+     "jp": "わたし は クッキー が すき です。",
+     "en": "I like cookies."
+    },
+    {
+     "jp": "クリーパー が きらい です。",
+     "en": "I hate creepers."
+    },
+    {
+     "jp": "ともだち は ゆみ が じょうず です。",
+     "en": "My friend is good with a bow."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "わたし は ねこ ___ すき です。",
+     "answer": "が",
+     "options": [
+      "が",
+      "を",
+      "に",
+      "で"
+     ],
+     "en": "I like cats.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "I dislike creepers.",
+     "tiles": [
+      "クリーパー",
+      "が",
+      "きらい",
+      "です"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "ともだち は ゆみ が ___ です。",
+     "answer": "じょうず",
+     "options": [
+      "じょうず",
+      "へた",
+      "すき",
+      "きらい"
+     ],
+     "en": "My friend is skilled with a bow.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "スライム が だいすき です。",
+     "answer": "I love slimes.",
+     "options": [
+      "I love slimes.",
+      "I hate slimes.",
+      "Slimes like me.",
+      "Slimes are big."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_mashou",
+   "title": "ましょう・ませんか  (let's / won't you?)",
+   "summary": "Invitations and suggestions.",
+   "explanation": [
+    "ましょう = let's: いきましょう = Let's go!",
+    "ませんか = won't you...? - a polite invitation: いっしょ に いきませんか = Won't you come with me?",
+    "ましょうか = shall we / shall I?"
+   ],
+   "examples": [
+    {
+     "jp": "いっしょ に ネザー に いきましょう。",
+     "en": "Let's go to the Nether together."
+    },
+    {
+     "jp": "いえ を つくりませんか。",
+     "en": "Won't you build a house (with me)?"
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "いっしょ に たたかい___!",
+     "answer": "ましょう",
+     "options": [
+      "ましょう",
+      "ました",
+      "ません",
+      "たい"
+     ],
+     "en": "Let's fight together!",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "Won't you build a house together?",
+     "tiles": [
+      "いっしょ",
+      "に",
+      "いえ",
+      "を",
+      "つくりませんか"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "type",
+     "prompt": "むら に いき___。",
+     "answer": "ましょう",
+     "en": "Let's go to the village.",
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "パン を たべませんか。",
+     "answer": "Won't you eat some bread?",
+     "options": [
+      "Won't you eat some bread?",
+      "I don't eat bread.",
+      "I didn't eat bread.",
+      "Let's not eat bread."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_tai",
+   "title": "たい  (want to)",
+   "summary": "Verb stem + たい = want to.",
+   "explanation": [
+    "Take the ます form, drop ます, add たい: たべます → たべたい (want to eat).",
+    "It works like an い-adjective: たべたい です, たべたくない です (don't want to eat).",
+    "Use it for your own wishes; asking others directly with たい can sound pushy."
+   ],
+   "examples": [
+    {
+     "jp": "ダイヤモンド を みつけたい です。",
+     "en": "I want to find diamonds."
+    },
+    {
+     "jp": "ネザー に いきたくない です。",
+     "en": "I don't want to go to the Nether."
+    },
+    {
+     "jp": "なに を たべたい です か。",
+     "en": "What do you want to eat?"
+    }
+   ],
+   "exercises": [
+    {
+     "type": "type",
+     "prompt": "ケーキ を たべ___ です。",
+     "answer": "たい",
+     "en": "I want to eat cake.",
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "ドラゴン を たおし___ です。",
+     "answer": "たい",
+     "options": [
+      "たい",
+      "ます",
+      "ました",
+      "ない"
+     ],
+     "en": "I want to defeat the dragon.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "I want to go to the village.",
+     "tiles": [
+      "むら",
+      "に",
+      "いきたい",
+      "です"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "ねたくない です。",
+     "answer": "I don't want to sleep.",
+     "options": [
+      "I don't want to sleep.",
+      "I want to sleep.",
+      "I didn't sleep.",
+      "Let's sleep."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_te_kudasai",
+   "title": "て-form + ください  (please do)",
+   "summary": "Requests, and the key て-form rules.",
+   "explanation": [
+    "The て-form links actions and makes requests: ～て ください = please do ～.",
+    "From the ます form - る-verbs: たべます → たべて, みます → みて. う-verbs: い/ち/り → って (かいます → かって); み/び/に → んで (のみます → のんで); き → いて (あるきます → あるいて, but いきます → いって); し → して.",
+    "Irregular: します → して, きます → きて."
+   ],
+   "examples": [
+    {
+     "jp": "たすけて ください!",
+     "en": "Please help me!"
+    },
+    {
+     "jp": "りんご を あつめて ください。",
+     "en": "Please collect apples."
+    },
+    {
+     "jp": "ここ で まって ください。",
+     "en": "Please wait here."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "パン を たべ___ ください。",
+     "answer": "て",
+     "options": [
+      "て",
+      "た",
+      "ます",
+      "たい"
+     ],
+     "en": "Please eat the bread.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "ちょっと まっ___ ください。",
+     "answer": "て",
+     "options": [
+      "て",
+      "で",
+      "た",
+      "ち"
+     ],
+     "en": "Please wait a moment.",
+     "explain": ""
+    },
+    {
+     "type": "type",
+     "prompt": "みず を の___ ください。",
+     "answer": "んで",
+     "en": "Please drink the water.",
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "Please collect apples.",
+     "tiles": [
+      "りんご",
+      "を",
+      "あつめて",
+      "ください"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "むら に ___ ください。",
+     "answer": "いって",
+     "options": [
+      "いって",
+      "いきて",
+      "いいて",
+      "いて"
+     ],
+     "en": "Please go to the village.",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "いえ を まもって ください。",
+     "answer": "Please protect the house.",
+     "options": [
+      "Please protect the house.",
+      "I protected the house.",
+      "Let's protect the house.",
+      "Don't protect the house."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_teiru",
+   "title": "ている  (is doing)",
+   "summary": "て-form + います = ongoing action or state.",
+   "explanation": [
+    "て-form + います describes an action in progress: たべて います = is eating.",
+    "It also describes a resulting state: ねて います = is asleep; きて います = has come / is coming."
+   ],
+   "examples": [
+    {
+     "jp": "クリーパー が きて います!",
+     "en": "A creeper is coming!"
+    },
+    {
+     "jp": "いま ほって います。",
+     "en": "I'm mining right now."
+    },
+    {
+     "jp": "ともだち は ねて います。",
+     "en": "My friend is sleeping."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "type",
+     "prompt": "いま パン を たべて ___。",
+     "answer": "います",
+     "en": "I'm eating bread now.",
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "ゾンビ が ___ います!",
+     "answer": "きて",
+     "options": [
+      "きて",
+      "くて",
+      "きって",
+      "きた"
+     ],
+     "en": "A zombie is coming!",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "My friend is sleeping.",
+     "tiles": [
+      "ともだち",
+      "は",
+      "ねて",
+      "います"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "いま なに を して います か。",
+     "answer": "What are you doing now?",
+     "options": [
+      "What are you doing now?",
+      "What did you do?",
+      "What will you do?",
+      "Who is doing it now?"
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_adj_past",
+   "title": "Past adjectives: かった・でした",
+   "summary": "い-adj: drop い + かった; な-adj and nouns: でした.",
+   "explanation": [
+    "い-adjective past: drop い, add かったです: たのしい → たのしかったです (was fun).",
+    "Past negative: drop い, add くなかったです. いい → よかったです.",
+    "な-adjectives and nouns use でした: しずか でした."
+   ],
+   "examples": [
+    {
+     "jp": "きのう は たのしかった です。",
+     "en": "Yesterday was fun."
+    },
+    {
+     "jp": "ドラゴン は つよかった です。",
+     "en": "The dragon was strong."
+    },
+    {
+     "jp": "むら は しずか でした。",
+     "en": "The village was quiet."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "type",
+     "prompt": "ネザー は あつ___ です。",
+     "answer": "かった",
+     "en": "The Nether was hot.",
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "きのう は ___ です。",
+     "answer": "よかった",
+     "options": [
+      "よかった",
+      "いかった",
+      "よいでした",
+      "いいでした"
+     ],
+     "en": "Yesterday was good.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "The dragon was strong.",
+     "tiles": [
+      "ドラゴン",
+      "は",
+      "つよかった",
+      "です"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "どうくつ は くらくなかった です。",
+     "answer": "The cave wasn't dark.",
+     "options": [
+      "The cave wasn't dark.",
+      "The cave was dark.",
+      "The cave isn't dark.",
+      "Was the cave dark?"
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    }
+   ]
+  },
+  {
+   "id": "g_kara",
+   "title": "から  (because / from)",
+   "summary": "Reason から, result. Also: place から = from.",
+   "explanation": [
+    "[reason] から、[result]: あぶない です から、いえ に かえります = It's dangerous, so I'll go home.",
+    "Noun + から = from: むら から きました = I came from the village."
+   ],
+   "examples": [
+    {
+     "jp": "よる です から、 ねます。",
+     "en": "It's night, so I'll sleep."
+    },
+    {
+     "jp": "くらい です から、 たいまつ を つかいます。",
+     "en": "It's dark, so I'll use a torch."
+    },
+    {
+     "jp": "ネザー から かえりました。",
+     "en": "I came back from the Nether."
+    }
+   ],
+   "exercises": [
+    {
+     "type": "choice",
+     "prompt": "あめ です ___、 いえ に います。",
+     "answer": "から",
+     "options": [
+      "から",
+      "まで",
+      "で",
+      "に"
+     ],
+     "en": "It's raining, so I'm at home.",
+     "explain": ""
+    },
+    {
+     "type": "order",
+     "en": "It's dark, so I'll use a torch.",
+     "tiles": [
+      "くらい",
+      "です",
+      "から",
+      "たいまつ",
+      "を",
+      "つかいます"
+     ],
+     "extra": [],
+     "accept": [],
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "ゾンビ が います から、 あぶない です。",
+     "answer": "There are zombies, so it's dangerous.",
+     "options": [
+      "There are zombies, so it's dangerous.",
+      "It's dangerous because there are no zombies.",
+      "Zombies are dangerous.",
+      "Zombies came from the cave."
+     ],
+     "en": "What does this mean?",
+     "explain": ""
+    },
+    {
+     "type": "choice",
+     "prompt": "どこ ___ きました か。",
+     "answer": "から",
+     "options": [
+      "から",
+      "に",
+      "で",
+      "を"
+     ],
+     "en": "Where did you come from?",
+     "explain": ""
+    }
+   ]
+  }
+ ]
+}
