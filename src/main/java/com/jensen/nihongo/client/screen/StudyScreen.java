@@ -208,6 +208,11 @@ public class StudyScreen extends Screen {
             minecraft.setScreen(new PlacementScreen(parent, session.placement()));
             return;
         }
+        // In-world prompts drop straight back into the game instead of showing a summary.
+        if (session.mode() == StudySession.Mode.FIELD && session.finished()) {
+            onClose();
+            return;
+        }
         typed = "";
         picked.clear();
         hint = false;
@@ -286,7 +291,8 @@ public class StudyScreen extends Screen {
     private void finishOnce() {
         if (rewarded || placement) return;
         rewarded = true;
-        Learner.rewardStudy(session.correctCount());
+        if (session.mode() == StudySession.Mode.FIELD) Learner.rewardField(session.correctCount());
+        else Learner.rewardStudy(session.correctCount());
         Learner.saveIfDirty();
     }
 
@@ -354,6 +360,7 @@ public class StudyScreen extends Screen {
             case REVIEW -> "Review";
             case SPEAKING -> "Speaking practice";
             case PLACEMENT -> "Placement test";
+            case FIELD -> "Field study";
         };
         String left = placement ? "lesson " + session.placement().lessonNumber() + "/" + session.placement().lessonTotal()
                 : session.remaining() + " left";

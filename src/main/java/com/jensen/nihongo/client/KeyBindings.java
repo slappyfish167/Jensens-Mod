@@ -16,6 +16,10 @@ public final class KeyBindings {
     public static final KeyMapping SPEAK = new KeyMapping("key.nihongo.speak",
             InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_V, CATEGORY);
 
+    /** Answers an in-world study prompt (or asks about whatever you are looking at). */
+    public static final KeyMapping FIELD_STUDY = new KeyMapping("key.nihongo.field_study",
+            InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_K, CATEGORY);
+
     public static final KeyMapping QUEST_HINT = new KeyMapping("key.nihongo.quest_hint",
             InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_H, CATEGORY);
 }

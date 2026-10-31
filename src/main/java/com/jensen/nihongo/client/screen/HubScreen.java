@@ -10,11 +10,13 @@ import com.jensen.nihongo.learning.StudySession;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.gui.screens.ConfirmScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
 /** The study hub: what to do next, at a glance. */
 public class HubScreen extends Screen {
+    private static final int ROW = 22;
     private LearningEngine engine;
     private String lessonReason;
 
@@ -41,43 +43,78 @@ public class HubScreen extends Screen {
                     : (lesson.intro.isEmpty() ? lesson.title : lesson.intro))));
         }
 
+        int half = bw / 2 - 2;
         int due = engine.dueCount();
         Button review = addRenderableWidget(Button.builder(Component.literal("Review (" + due + " due)"), b -> startReview())
-                .bounds(cx - bw / 2, y + 24, bw, 20).build());
+                .bounds(cx - bw / 2, y + ROW, half, 20).build());
         review.active = due > 0;
+
+        // Kanji are the last stage of the course, taught through words you already know.
+        String kanjiReason = engine.kanjiBlockReason();
+        int kanjiReady = engine.kanjiReady().size();
+        Button kanji = addRenderableWidget(Button.builder(Component.literal(kanjiReady > 0 ? "Kanji (" + kanjiReady + " ready)" : "Kanji"),
+                b -> startKanji()).bounds(cx + 2, y + ROW, half, 20).build());
+        kanji.active = kanjiReason == null;
+        kanji.setTooltip(Tooltip.create(Component.literal(kanjiReason != null ? kanjiReason
+                : "Learn the kanji for words you already know.")));
 
         if (VoiceService.isReady()) {
             Button speak = addRenderableWidget(Button.builder(Component.literal("Speaking practice"), b -> startSpeaking())
-                    .bounds(cx - bw / 2, y + 48, bw, 20).build());
+                    .bounds(cx - bw / 2, y + ROW * 2, bw, 20).build());
             speak.active = !engine.introducedVocab().isEmpty();
             speak.setTooltip(Tooltip.create(Component.literal("Say the words you know out loud. Production practice strengthens recall.")));
         } else {
             addRenderableWidget(Button.builder(Component.literal("Set up voice recognition"), b -> minecraft.setScreen(new VoiceSetupScreen(this)))
-                    .bounds(cx - bw / 2, y + 48, bw, 20).build());
+                    .bounds(cx - bw / 2, y + ROW * 2, bw, 20).build());
         }
 
-        int half = bw / 2 - 2;
         addRenderableWidget(Button.builder(Component.literal("Kana chart"), b -> minecraft.setScreen(new KanaChartScreen(this)))
-                .bounds(cx - bw / 2, y + 72, half, 20).build());
+                .bounds(cx - bw / 2, y + ROW * 3, half, 20).build());
         addRenderableWidget(Button.builder(Component.literal("Grammar notes"), b -> minecraft.setScreen(new GrammarBookScreen(this)))
-                .bounds(cx + 2, y + 72, half, 20).build());
+                .bounds(cx + 2, y + ROW * 3, half, 20).build());
         addRenderableWidget(Button.builder(Component.literal("Course map"), b -> minecraft.setScreen(new CourseScreen(this)))
-                .bounds(cx - bw / 2, y + 96, half, 20).build());
+                .bounds(cx - bw / 2, y + ROW * 4, half, 20).build());
         addRenderableWidget(Button.builder(Component.literal("Voice & audio"), b -> minecraft.setScreen(new VoiceSetupScreen(this)))
-                .bounds(cx + 2, y + 96, half, 20).build());
+                .bounds(cx + 2, y + ROW * 4, half, 20).build());
+
+        boolean limited = engine.settings().dailyLimitEnabled;
+        Button limit = addRenderableWidget(Button.builder(Component.literal("Daily limit: " + (limited ? engine.settings().dailyNewLimit : "off")), b -> {
+            Learner.setDailyLimitEnabled(!limited);
+            rebuildWidgets();
+        }).bounds(cx - bw / 2, y + ROW * 5, half, 20).build());
+        limit.setTooltip(Tooltip.create(Component.literal(limited
+                ? "New items are limited to " + engine.settings().dailyNewLimit + " a day (change the number in the mod config). Click to turn the limit off."
+                : "Learn as many new items a day as you like. Click to limit new items per day.")));
+        Button reset = addRenderableWidget(Button.builder(Component.literal("Reset progress"), b -> confirmReset())
+                .bounds(cx + 2, y + ROW * 5, half, 20).build());
+        reset.setTooltip(Tooltip.create(Component.literal("Start the course over from the first hiragana.")));
+
+        if (lesson != null) {
+            Button placement = addRenderableWidget(Button.builder(Component.literal("Placement test"), b -> minecraft.setScreen(new PlacementScreen(this)))
+                    .bounds(cx - bw / 2, y + ROW * 6, half, 20).build());
+            placement.setTooltip(Tooltip.create(Component.literal("Already know some Japanese? Skip the lessons you can already do.")));
+        }
         if (QuestTracker.current() != null) {
             addRenderableWidget(Button.builder(Component.literal("Skip quest"), b -> {
                 QuestTracker.skip();
                 rebuildWidgets();
-            }).bounds(cx - bw / 2, y + 120, half, 20).build());
+            }).bounds(cx + 2, y + ROW * 6, half, 20).build());
         }
         addRenderableWidget(Button.builder(Component.literal("Done"), b -> onClose())
-                .bounds(cx + 2, y + 120, half, 20).build());
-        if (lesson != null) {
-            Button placement = addRenderableWidget(Button.builder(Component.literal("Placement test"), b -> minecraft.setScreen(new PlacementScreen(this)))
-                    .bounds(cx - bw / 2, y + 144, bw, 20).build());
-            placement.setTooltip(Tooltip.create(Component.literal("Already know some Japanese? Skip the lessons you can already do.")));
-        }
+                .bounds(cx - bw / 2, y + ROW * 7, bw, 20).build());
+    }
+
+    private void confirmReset() {
+        minecraft.setScreen(new ConfirmScreen(yes -> {
+            if (yes) Learner.resetProgress();
+            minecraft.setScreen(new HubScreen());
+        }, Component.literal("Reset all Japanese progress?"),
+                Component.literal("Every lesson, review and kanji goes back to the start. A backup of your current progress is kept in .minecraft/nihongo/.")));
+    }
+
+    private void startKanji() {
+        StudySession s = engine.startKanjiLesson();
+        if (s != null) minecraft.setScreen(new StudyScreen(this, s));
     }
 
     private void startLesson() {
@@ -108,8 +145,9 @@ public class HubScreen extends Screen {
                 c.kanaLearned(), c.kanaTotal(), c.vocabLearned(), c.vocabTotal(), c.grammarLearned(), c.grammarTotal(), c.kanjiLearned());
         g.drawCenteredString(font, stats, cx, top - 46, Ui.WHITE);
         int streak = p.currentStreak(engine.today());
-        String today = String.format("Today: %d new (limit %d)  •  %d reviews  •  streak %d day%s",
-                p.dailyNew, engine.settings().dailyNewLimit, p.dailyReviews, streak, streak == 1 ? "" : "s");
+        String limit = engine.settings().dailyLimitEnabled ? " (limit " + engine.settings().dailyNewLimit + ")" : "";
+        String today = String.format("Today: %d new%s  •  %d reviews  •  streak %d day%s",
+                p.dailyNew, limit, p.dailyReviews, streak, streak == 1 ? "" : "s");
         g.drawCenteredString(font, today, cx, top - 34, Ui.GRAY);
 
         String hint;
@@ -127,7 +165,7 @@ public class HubScreen extends Screen {
 
         Quests.Quest q = QuestTracker.current();
         if (q != null) {
-            g.drawCenteredString(font, "クエスト: " + q.japanese() + " (" + QuestTracker.progress() + "/" + q.count() + ")", cx, top + 170, Ui.PINK);
+            g.drawCenteredString(font, "クエスト: " + q.japanese() + " (" + QuestTracker.progress() + "/" + q.count() + ")", cx, top + ROW * 8 + 4, Ui.PINK);
         }
     }
 

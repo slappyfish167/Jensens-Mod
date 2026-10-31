@@ -76,8 +76,32 @@ class LearningEngineTest {
         assertTrue(seenAgain);
     }
 
+    /** Runs lessons until the given item has been introduced. */
+    void learnUntil(String itemId) {
+        while (!engine.isIntroduced(itemId)) {
+            StudySession s = engine.startLesson();
+            assertNotNull(s, engine.lessonBlockReason());
+            answerAll(s);
+        }
+    }
+
+    /** Does every due review (sessions are capped, so possibly several). */
+    void reviewAll() {
+        StudySession s;
+        while ((s = engine.startReview()) != null) answerAll(s);
+    }
+
+    @Test
+    void dailyLimitIsOffByDefault() {
+        assertFalse(engine.settings().dailyLimitEnabled);
+        for (int i = 0; i < 4; i++) answerAll(engine.startLesson());
+        assertTrue(progress.dailyNew > engine.settings().dailyNewLimit);
+        assertNull(engine.lessonBlockReason());
+    }
+
     @Test
     void dailyLimitAndGateBlockNewLessons() {
+        engine.settings().dailyLimitEnabled = true;
         engine.settings().dailyNewLimit = 5;
         answerAll(engine.startLesson());
         assertNotNull(engine.lessonBlockReason());
@@ -87,24 +111,88 @@ class LearningEngineTest {
     }
 
     @Test
-    void reviewsComeDueAndKanjiUnlockLater() {
-        engine.settings().dailyNewLimit = 100;
-        // Finish the first three lessons (two kana rows and the first words).
-        for (int i = 0; i < 3; i++) answerAll(engine.startLesson());
+    void courseTeachesHiraganaThenKatakanaThenWords() {
+        List<Curriculum.Lesson> lessons = engine.curriculum().lessons();
+        int stage = 0;
+        for (Curriculum.Lesson l : lessons) {
+            int s = switch (l.stage) {
+                case "hiragana" -> 0;
+                case "katakana" -> 1;
+                default -> 2;
+            };
+            assertTrue(s >= stage, l.id + " comes too late or too early");
+            stage = s;
+        }
+        assertEquals("hiragana", lessons.get(0).stage);
+        assertEquals(2, stage);
+    }
+
+    @Test
+    void reviewsComeDue() {
+        learnUntil("v_ki");
+        assertTrue(engine.kanaStageDone());
         assertTrue(engine.isLearned("v_ki"));
         assertEquals(0, engine.dueCount());
         now += Srs.DAY + 1;
         assertTrue(engine.dueCount() > 0);
-        answerAll(engine.startReview());
+        reviewAll();
         assertEquals(0, engine.dueCount());
+    }
 
-        // After a few successful days the kanji 木 is introduced through the known word き.
-        for (int day = 0; day < 4; day++) {
+    @Test
+    void kanjiComeLastThroughKnownWords() {
+        learnUntil("v_ki");
+        assertFalse(engine.kanjiStageOpen());
+        assertNotNull(engine.kanjiBlockReason());
+        assertNull(engine.startKanjiLesson());
+
+        StudySession lesson;
+        while ((lesson = engine.startLesson()) != null) answerAll(lesson);
+        assertNull(engine.currentLesson());
+        assertTrue(engine.kanjiStageOpen());
+        // The words are known, but not yet for long enough.
+        assertTrue(engine.kanjiReady().isEmpty());
+
+        for (int day = 0; day < 4 && engine.kanjiReady().isEmpty(); day++) {
             now += 4 * Srs.DAY;
-            StudySession review = engine.startReview();
-            if (review != null) answerAll(review);
+            reviewAll();
         }
-        assertTrue(progress.cards.containsKey("v_ki#kanji"));
+        assertFalse(engine.kanjiReady().isEmpty());
+        // Reviews never sneak kanji in; they have their own lesson.
+        assertFalse(progress.cards.containsKey("v_ki#kanji"));
+        int before = engine.kanjiReady().size();
+        StudySession kanji = engine.startKanjiLesson();
+        assertNotNull(kanji);
+        assertInstanceOf(StudySession.Teach.class, kanji.current());
+        answerAll(kanji);
+        assertEquals(before - Math.min(before, engine.settings().maxKanjiPerSession), engine.kanjiReady().size());
+        assertTrue(engine.counts().kanjiLearned() > 0);
+    }
+
+    @Test
+    void encountersReviewDueWordsAndTeachNewOnes() {
+        Curriculum.VocabItem tree = (Curriculum.VocabItem) engine.curriculum().item("v_ki");
+        // Nothing to do in the world until the kana are learned.
+        assertNull(engine.encounter(List.of(tree)));
+
+        learnUntil("k_extended");
+        assertTrue(engine.kanaStageDone());
+        LearningEngine.Encounter discover = engine.encounter(List.of(tree));
+        assertNotNull(discover);
+        assertEquals(LearningEngine.EncounterKind.DISCOVER, discover.kind());
+        StudySession s = engine.startEncounter(discover);
+        assertEquals(StudySession.Mode.FIELD, s.mode());
+        assertInstanceOf(StudySession.Teach.class, s.current());
+        answerAll(s);
+        assertTrue(engine.isLearned("v_ki"));
+        // Learned and not due: nothing to ask.
+        assertNull(engine.encounter(List.of(tree)));
+
+        now += Srs.DAY + 1;
+        LearningEngine.Encounter review = engine.encounter(List.of(tree));
+        assertEquals(LearningEngine.EncounterKind.REVIEW, review.kind());
+        assertTrue(answerAll(engine.startEncounter(review)) >= 2);
+        assertNull(engine.encounter(List.of(tree)));
     }
 
     @Test
@@ -120,8 +208,7 @@ class LearningEngineTest {
 
     @Test
     void questsUseLearnedCollectibleWords() {
-        engine.settings().dailyNewLimit = 100;
-        for (int i = 0; i < 3; i++) answerAll(engine.startLesson());
+        learnUntil("v_ki");
         Quests.Quest q = Quests.generate(engine.learnedVocab(), new Random(1), null);
         assertNotNull(q);
         assertTrue(q.japanese().contains("あつめて"));

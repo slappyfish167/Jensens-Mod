@@ -11,16 +11,23 @@ and offline voice recognition, and it labels the Minecraft world in Japanese as 
 
 - **Research-ordered course**: 50 lessons covering 108 kana items (all hiragana and katakana,
   dakuten, combinations, small っ, long vowels), 261 words and 21 grammar points.
-  - Hiragana first with **picture mnemonics**, then words that use *only kana you've learned*
-    (checked automatically).
+  - Four stages, in order: **hiragana** (with picture mnemonics), then **katakana**, then **words**
+    (and grammar), then **kanji**. Words only use kana you've learned (checked automatically).
   - Vocabulary is high-frequency **and visible in Minecraft**: 木 tree, 石 stone, 剣 sword, ゾンビ, クリーパー, ダイヤモンド…
   - Grammar follows Genki I / JLPT N5 order, with every example set in Minecraft.
-  - **Kanji are introduced through words you already know**, after you've remembered the word for a few days.
+  - **Kanji come last, through words you already know**: once the word lessons are done, a word's kanji
+    is taught after you've remembered the word for a few days (hub → **Kanji**).
 - **Placement test**: already know some Japanese? An adaptive test samples a few items from each lesson
   in order and skips you past everything you can already do. It stops at the first lesson that gives you
   trouble, so it is only a couple of questions for a true beginner. Skipped items come back as reviews
   over the following days to catch any gaps.
-- **Spaced repetition (SM-2)** with learning steps, a daily new-item limit and mastery gating.
+- **Spaced repetition (SM-2)** with learning steps and mastery gating. An optional daily new-item limit
+  is off by default; turn it on or off from the hub.
+- **Study while you play (field study)**: once you know your kana, mining, collecting, attacking or looking
+  at something whose word is due for review pops up a small prompt. Press **K** to answer on the spot
+  (or to learn the word, if you haven't yet) and earn a little XP, then you're straight back in the game.
+  Press **K** while looking at a mob or block to ask about it any time.
+- **Reset progress** from the hub to start the course over (a backup of the old progress is kept).
 - **Many question types**: type the reading (romaji is converted to kana as you type, so no
   Japanese keyboard is needed), type the meaning, pick the right kana among look-alikes, build
   sentences from word tiles, fill in particles, and **answer by speaking**.
@@ -44,6 +51,7 @@ and offline voice recognition, and it labels the Minecraft world in Japanese as 
 2. Click **Learn** to start the first lesson. Each new item is taught, then tested right away.
    Already know some Japanese? Click **Placement test** first to skip ahead.
 3. Come back for **Reviews** when they're due. The hub tells you when.
+   Out in the world, reviews also come to you: when a prompt appears on the right of the screen, press **K**.
 4. Optional: open **Voice & audio** to download the Japanese speech model (~50 MB, one time) and
    test your microphone and the speech voice.
 
@@ -52,6 +60,7 @@ and offline voice recognition, and it labels the Minecraft world in Japanese as 
 | J | Open the study hub |
 | V (hold) | Speak a kotodama spell |
 | H | Show/hide the hint for the current quest |
+| K | Answer a field-study prompt (or ask about what you're looking at) |
 | Enter | Check answer / continue |
 | 1-4 | Pick a multiple-choice answer |
 
@@ -74,7 +83,8 @@ The mod uses your operating system's speech voices:
 ## Configuration
 
 Mods → NihongoCraft → Config, or edit `config/nihongo-client.toml`:
-- daily new items, unlock threshold, look-at labels, tooltips, romaji, quests
+- daily new-item limit (on/off and how many), unlock threshold, look-at labels, tooltips, romaji, quests,
+  field-study prompts and how often they appear
 - TTS on/off and a custom TTS command, voice recognition and spells
 
 Per-world settings (`serverconfig/nihongo-server.toml`): spell cooldown, XP per correct answer, quest rewards.

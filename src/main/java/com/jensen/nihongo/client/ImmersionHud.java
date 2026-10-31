@@ -2,6 +2,7 @@ package com.jensen.nihongo.client;
 
 import com.jensen.nihongo.client.voice.VoiceService;
 import com.jensen.nihongo.learning.Curriculum;
+import com.jensen.nihongo.learning.LearningEngine;
 import com.jensen.nihongo.learning.McIndex;
 import com.jensen.nihongo.learning.Quests;
 import net.minecraft.client.DeltaTracker;
@@ -9,14 +10,18 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
 /**
  * In-world overlay: the Japanese name of whatever you're looking at (only for words you have
- * studied, so the world gradually "turns Japanese" as you learn), the active quest, and a
- * listening indicator for voice spells.
+ * studied, so the world gradually "turns Japanese" as you learn), the active quest, in-world
+ * study prompts, and a listening indicator for voice spells.
  */
 public final class ImmersionHud {
     private ImmersionHud() {}
@@ -55,6 +60,8 @@ public final class ImmersionHud {
             }
         }
 
+        renderEncounter(g, font, w, h);
+
         if (VoiceService.isRecording()) {
             String text = "♪ きいて います... (listening)";
             int tw = font.width(text);
@@ -65,6 +72,36 @@ public final class ImmersionHud {
             int bar = (int) (VoiceService.level() * (tw + 8));
             g.fill(x - 4, y + 12, x - 4 + bar, y + 14, 0xFFFF80FF);
         }
+    }
+
+    /** The in-world study prompt: a card at the right edge of the screen. */
+    private static void renderEncounter(GuiGraphics g, Font font, int w, int h) {
+        LearningEngine.Encounter e = Encounters.pending();
+        if (e == null) return;
+        String key = KeyBindings.FIELD_STUDY.getTranslatedKeyMessage().getString();
+        boolean review = e.kind() == LearningEngine.EncounterKind.REVIEW;
+        String title = review ? "ふくしゅう!  Review" : "あたらしい ことば!  New word";
+        String line = review ? "What is this called in Japanese?" : "Learn the Japanese for \"" + e.word().meanings.get(0) + "\"";
+        String action = "Press [" + key + "] to " + (review ? "answer" : "learn it");
+        int textW = Math.max(font.width(title), Math.max(font.width(line), font.width(action)));
+        int boxW = textW + 30;
+        int x = w - boxW - 6;
+        int y = h / 2 - 40;
+        g.fill(x, y, x + boxW, y + 40, 0xB0101020);
+        g.renderOutline(x, y, boxW, 40, review ? 0xFF8AE6FF : 0xFFFFD866);
+        ItemStack icon = iconStack(Encounters.pendingIcon());
+        if (!icon.isEmpty()) g.renderItem(icon, x + 5, y + 12);
+        int tx = x + 25;
+        g.drawString(font, title, tx, y + 4, review ? 0xFF8AE6FF : 0xFFFFD866, false);
+        g.drawString(font, line, tx, y + 16, 0xFFFFFFFF, false);
+        g.drawString(font, action, tx, y + 28, 0xFFAAAAAA, false);
+    }
+
+    private static ItemStack iconStack(String id) {
+        ResourceLocation rl = id == null ? null : ResourceLocation.tryParse(id);
+        if (rl == null) return ItemStack.EMPTY;
+        Item item = BuiltInRegistries.ITEM.get(rl);
+        return item == Items.AIR ? ItemStack.EMPTY : new ItemStack(item);
     }
 
     private static String lookAtLabel(Minecraft mc) {
