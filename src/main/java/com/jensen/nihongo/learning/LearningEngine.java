@@ -40,9 +40,21 @@ public final class LearningEngine {
         /** Days a word's reading must have been remembered before its kanji is introduced. */
         public double kanjiUnlockDays = 3.0;
         public int maxKanjiPerSession = 5;
+        /** Whether Japanese audio can be played, so listening cards can be asked. Set by the client. */
+        public boolean listeningAvailable = false;
+        /** Times an item must have been heard before an in-world listening check may ask about it. */
+        public int listenUnlockHeard = 3;
+        /** New listening cards started in one listening practice session. */
+        public int maxNewListenPerSession = 10;
+        /** Times an item is heard in the primary voice before other voices start reading it. */
+        public int anchorExposures = 2;
+        /** Chance (0..1) that a voice other than the primary one reads an item, once past the anchor exposures. */
+        public double voiceVariety = 0.4;
     }
 
     public static final String SEP = "#";
+    /** Direction of listening cards: understanding the item by ear, tracked apart from reading it. */
+    public static final String LISTEN = "listen";
 
     /** Placement: review interval and due-date spread (days) for items skipped past vs. proven in the test. */
     static final double PLACED_INTERVAL = 3.0;
@@ -147,14 +159,23 @@ public final class LearningEngine {
     public int dueCount() {
         long now = now();
         int n = 0;
-        for (Srs.CardState s : progress.cards.values()) if (s.isDue(now)) n++;
+        for (Map.Entry<String, Srs.CardState> e : progress.cards.entrySet()) {
+            if (e.getValue().isDue(now) && askable(e.getKey())) n++;
+        }
         return n;
     }
 
     public long nextDueTime() {
         long best = Long.MAX_VALUE;
-        for (Srs.CardState s : progress.cards.values()) best = Math.min(best, s.due);
+        for (Map.Entry<String, Srs.CardState> e : progress.cards.entrySet()) {
+            if (askable(e.getKey())) best = Math.min(best, e.getValue().due);
+        }
         return best;
+    }
+
+    /** Whether a card can be asked now: its item exists, and listening cards need audio. */
+    private boolean askable(String cardId) {
+        return curriculum.item(itemOf(cardId)) != null && (settings.listeningAvailable || !isListenCard(cardId));
     }
 
     /** New items still allowed today; unlimited when the daily limit is turned off. */
@@ -259,11 +280,12 @@ public final class LearningEngine {
         return null;
     }
 
+    /** {@code listening}: words and phrases understood by ear (listening cards past the learning stage). */
     public record Counts(int kanaLearned, int kanaTotal, int vocabLearned, int vocabTotal,
-                         int grammarLearned, int grammarTotal, int kanjiLearned) {}
+                         int grammarLearned, int grammarTotal, int kanjiLearned, int listening) {}
 
     public Counts counts() {
-        int kl = 0, kt = 0, vl = 0, vt = 0, gl = 0, gt = 0, kj = 0;
+        int kl = 0, kt = 0, vl = 0, vt = 0, gl = 0, gt = 0, kj = 0, li = 0;
         for (Item i : curriculum.items().values()) {
             boolean learned = isLearned(i.id);
             switch (i.kind()) {
@@ -276,8 +298,10 @@ public final class LearningEngine {
                 }
                 case GRAMMAR -> { gt++; if (learned) gl++; }
             }
+            Srs.CardState l = progress.cards.get(cardId(i.id, LISTEN));
+            if (l != null && l.inReview()) li++;
         }
-        return new Counts(kl, kt, vl, vt, gl, gt, kj);
+        return new Counts(kl, kt, vl, vt, gl, gt, kj, li);
     }
 
     public List<VocabItem> learnedVocab() {
@@ -406,7 +430,7 @@ public final class LearningEngine {
         long now = now();
         List<Map.Entry<String, Srs.CardState>> due = new ArrayList<>();
         for (Map.Entry<String, Srs.CardState> e : progress.cards.entrySet()) {
-            if (e.getValue().isDue(now) && curriculum.item(itemOf(e.getKey())) != null) due.add(e);
+            if (e.getValue().isDue(now) && askable(e.getKey())) due.add(e);
         }
         due.sort(Comparator.comparingLong(e -> e.getValue().due));
         List<StudySession.Step> steps = new ArrayList<>();
@@ -483,6 +507,165 @@ public final class LearningEngine {
         return new StudySession(this, StudySession.Mode.FIELD, steps, rng);
     }
 
+    // ---------------------------------------------------------------- listening
+
+    public static boolean isListenCard(String cardId) {
+        return LISTEN.equals(directionOf(cardId));
+    }
+
+    /** Items with a listening card: words, and grammar points (through their example sentences). */
+    public static boolean hasListening(Item item) {
+        return item instanceof VocabItem || item instanceof GrammarPoint g && !g.examples.isEmpty();
+    }
+
+    /**
+     * Known well enough by eye to be tested by ear, with no listening card yet: words whose reading has left
+     * the learning steps, and learned grammar points.
+     */
+    private boolean listenEligible(Item item) {
+        if (!hasListening(item) || !isIntroduced(item.id) || progress.cards.containsKey(cardId(item.id, LISTEN))) return false;
+        if (item instanceof VocabItem) {
+            Srs.CardState reading = progress.cards.get(cardId(item.id, "reading"));
+            return reading != null && reading.inReview();
+        }
+        return isLearned(item.id);
+    }
+
+    public int heardCount(String itemId) {
+        return progress.heard.getOrDefault(itemId, 0);
+    }
+
+    /** Items heard often enough to be asked about by ear, most heard first. */
+    public List<Item> listenReady() {
+        List<Item> out = new ArrayList<>();
+        for (String id : progress.introduced) {
+            Item item = curriculum.item(id);
+            if (item != null && listenEligible(item) && heardCount(id) >= settings.listenUnlockHeard) out.add(item);
+        }
+        out.sort(Comparator.comparingInt((Item i) -> -heardCount(i.id)));
+        return out;
+    }
+
+    public int listenDueCount() {
+        if (!settings.listeningAvailable) return 0;
+        long now = now();
+        int n = 0;
+        for (Map.Entry<String, Srs.CardState> e : progress.cards.entrySet()) {
+            if (isListenCard(e.getKey()) && e.getValue().isDue(now) && askable(e.getKey())) n++;
+        }
+        return n;
+    }
+
+    private void unlockListening(String itemId) {
+        progress.cards.computeIfAbsent(cardId(itemId, LISTEN), k -> Srs.newCard(now()));
+        changed();
+    }
+
+    /** Counts one hearing of an item (in the given voice, if known). */
+    public void recordHeard(String itemId, String voice) {
+        if (itemId == null || curriculum.item(itemId) == null) return;
+        progress.heard.merge(itemId, 1, Integer::sum);
+        if (voice != null) progress.heardVoices.computeIfAbsent(itemId, k -> new java.util.HashMap<>()).merge(voice, 1, Integer::sum);
+        changed();
+    }
+
+    void recordListening(String voice, boolean right) {
+        Progress.Tally t = progress.listenByVoice.computeIfAbsent(voice, k -> new Progress.Tally());
+        t.total++;
+        if (right) t.right++;
+    }
+
+    /**
+     * Chooses who reads an item aloud. The first few hearings use the primary voice ({@code voices.get(0)}), so
+     * a new word starts from one clear model; after that other voices take over some of the time, favouring the
+     * voices this item has been heard in least, then the voices the learner understands least. Listening checks
+     * always rotate, so recognition is tested across speakers rather than in one familiar voice.
+     */
+    public String pickVoice(String itemId, List<String> voices, boolean check) {
+        if (voices.isEmpty()) return null;
+        String primary = voices.get(0);
+        if (voices.size() == 1 || settings.voiceVariety <= 0) return primary;
+        if (!check && (heardCount(itemId) < settings.anchorExposures || rng.nextDouble() >= settings.voiceVariety)) {
+            return primary;
+        }
+        Map<String, Integer> byVoice = progress.heardVoices.getOrDefault(itemId, Map.of());
+        List<String> pool = new ArrayList<>(check ? voices : voices.subList(1, voices.size()));
+        Collections.shuffle(pool, rng);
+        pool.sort(Comparator.comparingInt((String v) -> byVoice.getOrDefault(v, 0))
+                .thenComparingDouble(v -> progress.listenByVoice.getOrDefault(v, new Progress.Tally()).accuracy()));
+        return pool.get(0);
+    }
+
+    /**
+     * The card for an occasional in-world listening check: a listening card that is due, or else a known word
+     * or phrase the learner has now heard several times (its listening card starts here). Null if there is none.
+     */
+    public String listeningCheck() {
+        if (!settings.listeningAvailable) return null;
+        long now = now();
+        String best = null;
+        long bestDue = Long.MAX_VALUE;
+        for (Map.Entry<String, Srs.CardState> e : progress.cards.entrySet()) {
+            Srs.CardState s = e.getValue();
+            if (isListenCard(e.getKey()) && s.isDue(now) && s.due < bestDue && askable(e.getKey())) {
+                best = e.getKey();
+                bestDue = s.due;
+            }
+        }
+        if (best != null) return best;
+        List<Item> ready = listenReady();
+        if (ready.isEmpty()) return null;
+        unlockListening(ready.get(0).id);
+        return cardId(ready.get(0).id, LISTEN);
+    }
+
+    /** A one-question session for an in-world listening check. */
+    public StudySession startListenCheck(String cardId) {
+        if (!settings.listeningAvailable || !isListenCard(cardId) || !progress.cards.containsKey(cardId)) return null;
+        StudySession s = new StudySession(this, StudySession.Mode.FIELD, List.of(new StudySession.Ask(cardId)), rng);
+        s.repeat = false;
+        return s;
+    }
+
+    /** Why listening practice can't start right now, or null if it can. */
+    public String listeningBlockReason() {
+        if (!settings.listeningAvailable) return "No Japanese voice found. Set one up in Voice & audio.";
+        if (listenDueCount() > 0) return null;
+        for (String id : progress.introduced) {
+            Item item = curriculum.item(id);
+            if (item != null && listenEligible(item)) return null;
+        }
+        return "Nothing to listen to yet. Words join listening practice once you know how to read them.";
+    }
+
+    /**
+     * Listening practice: due listening cards, plus a few known words and phrases tested by ear for the first
+     * time (most heard first). Nothing is shown in writing until it has been answered.
+     */
+    public StudySession startListening() {
+        if (listeningBlockReason() != null) return null;
+        long now = now();
+        List<Map.Entry<String, Srs.CardState>> due = new ArrayList<>();
+        for (Map.Entry<String, Srs.CardState> e : progress.cards.entrySet()) {
+            if (isListenCard(e.getKey()) && e.getValue().isDue(now) && askable(e.getKey())) due.add(e);
+        }
+        due.sort(Comparator.comparingLong(e -> e.getValue().due));
+        List<StudySession.Step> steps = new ArrayList<>();
+        for (int i = 0; i < due.size() && i < settings.maxReviewsPerSession; i++) steps.add(new StudySession.Ask(due.get(i).getKey()));
+        List<Item> fresh = new ArrayList<>();
+        for (String id : progress.introduced) {
+            Item item = curriculum.item(id);
+            if (item != null && listenEligible(item)) fresh.add(item);
+        }
+        fresh.sort(Comparator.comparingInt((Item i) -> -heardCount(i.id)));
+        for (int i = 0; i < fresh.size() && i < settings.maxNewListenPerSession; i++) {
+            unlockListening(fresh.get(i).id);
+            steps.add(new StudySession.Ask(cardId(fresh.get(i).id, LISTEN)));
+        }
+        Collections.shuffle(steps, rng);
+        return steps.isEmpty() ? null : new StudySession(this, StudySession.Mode.LISTENING, steps, rng);
+    }
+
     /** Adaptive placement test, or null if the course is already complete. Changes nothing until applied. */
     public PlacementTest startPlacement() {
         PlacementTest test = new PlacementTest(this, rng);
@@ -525,10 +708,129 @@ public final class LearningEngine {
         Item item = curriculum.item(itemOf(cardId));
         String dir = directionOf(cardId);
         if (item == null) return null;
+        if (LISTEN.equals(dir)) return listenQuestion(cardId, item);
         if (item instanceof KanaItem k) return kanaQuestion(cardId, k, dir);
         if (item instanceof VocabItem v) return vocabQuestion(cardId, v, dir);
         if (item instanceof GrammarPoint g) return grammarQuestion(cardId, g);
         return null;
+    }
+
+    /** Audio-only questions: the challenge is recognising spoken Japanese, so nothing Japanese is shown first. */
+    private Question listenQuestion(String cardId, Item item) {
+        Question q;
+        if (item instanceof VocabItem v) {
+            List<String> distractors = v.meanings.isEmpty() ? List.of() : soundAlikeMeanings(v);
+            if (distractors.size() >= 3 && rng.nextInt(10) < 7) {
+                q = new Question(cardId, v.id, Question.Type.CHOICE);
+                q.instruction = "Which word did you hear?";
+                q.subPrompt = "Listen, then pick what it means";
+                String right = v.meanings.get(0);
+                List<String> opts = new ArrayList<>(distractors.subList(0, 3));
+                opts.add(right);
+                Collections.shuffle(opts, rng);
+                q.options = opts;
+                q.accepted.add(right);
+                q.answer = right;
+            } else {
+                q = new Question(cardId, v.id, Question.Type.TYPE_JAPANESE);
+                q.instruction = "What was just said? Type what you heard (romaji is fine)";
+                q.accepted.add(v.kana);
+                q.accepted.addAll(v.accept);
+                q.answer = v.kana;
+            }
+            q.speak = v.kana;
+            q.reading = v.kana + "  (" + v.romaji() + ")" + (v.kanji != null && !v.kanji.isEmpty() ? "   " + v.kanji : "");
+            q.meaning = String.join(", ", v.meanings);
+            q.icon = v.icon;
+            q.detail = v.note;
+        } else if (item instanceof GrammarPoint g && !g.examples.isEmpty()) {
+            Curriculum.Example ex = g.examples.get(rng.nextInt(g.examples.size()));
+            q = new Question(cardId, g.id, Question.Type.CHOICE);
+            q.instruction = "What did this phrase mean?";
+            q.subPrompt = "Listen, then pick the meaning";
+            List<String> opts = new ArrayList<>(otherSentenceMeanings(g, ex.en));
+            opts.add(ex.en);
+            Collections.shuffle(opts, rng);
+            q.options = opts;
+            q.accepted.add(ex.en);
+            q.answer = ex.en;
+            q.speak = ex.jp;
+            q.reading = ex.jp;
+            q.detail = g.title + ": " + g.summary;
+        } else {
+            return null;
+        }
+        q.prompt = "♪";
+        q.listening = true;
+        q.speakInPrompt = true;
+        return q;
+    }
+
+    /**
+     * Meanings of three words that sound like this one (closest kana spelling), so the right answer can only
+     * be picked by actually telling the sounds apart. Words the learner knows are preferred.
+     */
+    private List<String> soundAlikeMeanings(VocabItem v) {
+        Set<String> own = new HashSet<>();
+        for (String m : v.meanings) own.add(m.toLowerCase(java.util.Locale.ROOT));
+        List<VocabItem> pool = new ArrayList<>();
+        for (VocabItem o : introducedVocab()) if (usableDistractor(v, o, own)) pool.add(o);
+        if (pool.size() < 3) {
+            for (Item i : curriculum.items().values()) {
+                if (i instanceof VocabItem o && !isIntroduced(o.id) && usableDistractor(v, o, own)) pool.add(o);
+            }
+        }
+        Collections.shuffle(pool, rng);
+        pool.sort(Comparator.comparingInt(o -> soundDistance(v.kana, o.kana)));
+        List<VocabItem> near = new ArrayList<>(pool.subList(0, Math.min(6, pool.size())));
+        Collections.shuffle(near, rng);
+        Set<String> out = new LinkedHashSet<>();
+        for (VocabItem o : near) {
+            if (out.size() < 3 && !own.contains(o.meanings.get(0).toLowerCase(java.util.Locale.ROOT))) out.add(o.meanings.get(0));
+        }
+        return new ArrayList<>(out);
+    }
+
+    private static boolean usableDistractor(VocabItem v, VocabItem o, Set<String> ownMeanings) {
+        // Homophones are left out: they can't be told apart by ear.
+        return !o.id.equals(v.id) && !o.kana.equals(v.kana) && !o.meanings.isEmpty()
+                && !ownMeanings.contains(o.meanings.get(0).toLowerCase(java.util.Locale.ROOT));
+    }
+
+    /** Edit distance between two kana spellings, plus a little for length, as a rough measure of sounding alike. */
+    static int soundDistance(String a, String b) {
+        int[] prev = new int[b.length() + 1];
+        int[] cur = new int[b.length() + 1];
+        for (int j = 0; j <= b.length(); j++) prev[j] = j;
+        for (int i = 1; i <= a.length(); i++) {
+            cur[0] = i;
+            for (int j = 1; j <= b.length(); j++) {
+                int sub = prev[j - 1] + (a.charAt(i - 1) == b.charAt(j - 1) ? 0 : 1);
+                cur[j] = Math.min(sub, Math.min(prev[j], cur[j - 1]) + 1);
+            }
+            int[] t = prev;
+            prev = cur;
+            cur = t;
+        }
+        return prev[b.length()] * 3 + Math.abs(a.length() - b.length());
+    }
+
+    /** English meanings of up to three example sentences from other grammar points (learned ones first). */
+    private List<String> otherSentenceMeanings(GrammarPoint g, String right) {
+        List<String> known = new ArrayList<>();
+        List<String> rest = new ArrayList<>();
+        for (Item i : curriculum.items().values()) {
+            if (!(i instanceof GrammarPoint o) || o.id.equals(g.id)) continue;
+            for (Curriculum.Example ex : o.examples) {
+                if (ex.en != null && !ex.en.isBlank() && !ex.en.equals(right)) (isIntroduced(o.id) ? known : rest).add(ex.en);
+            }
+        }
+        Collections.shuffle(known, rng);
+        Collections.shuffle(rest, rng);
+        Set<String> out = new LinkedHashSet<>();
+        for (String s : known) if (out.size() < 3) out.add(s);
+        for (String s : rest) if (out.size() < 3) out.add(s);
+        return new ArrayList<>(out);
     }
 
     private Question kanaQuestion(String cardId, KanaItem k, String dir) {

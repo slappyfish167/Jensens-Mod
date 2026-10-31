@@ -46,6 +46,10 @@ public final class Question {
     public boolean speakInPrompt;
     /** Whether the learner may answer by voice instead of typing. */
     public boolean allowVoice;
+    /** A listening question: the Japanese is only heard, never shown, until it is answered. */
+    public boolean listening;
+    /** Id of the voice that reads this question aloud (chosen by the client), or null. */
+    public String voice;
 
     public Question(String cardId, String itemId, Type type) {
         this.cardId = cardId;

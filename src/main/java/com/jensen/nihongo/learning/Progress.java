@@ -43,6 +43,23 @@ public final class Progress {
     public int spellsCast = 0;
     /** How many times each item has been spoken correctly. */
     public Map<String, Integer> spoken = new HashMap<>();
+    /** How many times each item has been heard aloud, in any voice. */
+    public Map<String, Integer> heard = new HashMap<>();
+    /** Item id to voice id to how many times the item was heard in that voice. */
+    public Map<String, Map<String, Integer>> heardVoices = new HashMap<>();
+    /** Listening results per voice, so voices that are harder to follow can be shown and practised more. */
+    public Map<String, Tally> listenByVoice = new HashMap<>();
+
+    /** Right answers out of all answers. */
+    public static final class Tally {
+        public int right;
+        public int total;
+
+        /** Smoothed accuracy, so a voice heard once doesn't count as 0% or 100%. */
+        public double accuracy() {
+            return (right + 1.0) / (total + 2.0);
+        }
+    }
 
     /** Resets the per-day counters when the date changes and maintains the study streak. */
     public void rollDay(LocalDate today) {
@@ -76,6 +93,9 @@ public final class Progress {
         if (cards == null) cards = new LinkedHashMap<>();
         if (introduced == null) introduced = new ArrayList<>();
         if (spoken == null) spoken = new HashMap<>();
+        if (heard == null) heard = new HashMap<>();
+        if (heardVoices == null) heardVoices = new HashMap<>();
+        if (listenByVoice == null) listenByVoice = new HashMap<>();
         if (dailyDate == null) dailyDate = "";
         if (lastStudyDate == null) lastStudyDate = "";
     }

@@ -36,7 +36,28 @@ and offline voice recognition, and it labels the Minecraft world in Japanese as 
   - **Speaking practice** mode.
   - **Kotodama (言霊) spells**: hold **V** in-world and say a word you've learned
     (ひかり → night vision, みず → water breathing, はやい → speed, つよい → strength, …).
-- **Listening**: words and sentences are read aloud by your OS's Japanese voice.
+- **Listening in many voices**: words and sentences are read aloud by several different speakers, so you
+  learn to recognise the word itself, not one voice:
+  - every Japanese voice on your system (e.g. Windows: Haruka, Ichiro, Sayaka, Ayumi; macOS: Kyoko, Otoya),
+  - styled versions of them: a slow, calm **narrator**, a higher-pitched **younger** voice and a fast **energetic** one,
+  - the speakers of **VOICEVOX** if it's running on your computer (free; natural adult, young and anime-style voices),
+  - and any custom TTS commands you add.
+
+  New words are read first by your **primary voice**; once you've heard a word a couple of times other voices take
+  turns, favouring the ones you've heard that word in least. Choose voices and the primary one in
+  **Voice & audio → Voices**, where you can also see how well you understand each voice.
+- **Listening comprehension, tracked separately from reading**: each word and grammar phrase gets its own
+  listening card with its own spaced-repetition schedule, so the mod knows when you can read a word but not yet
+  catch it by ear. Listening questions never show the Japanese first:
+  - *Which word did you hear?* (pick its meaning; the wrong options are words that **sound alike**),
+  - *What was just said?* (type what you heard),
+  - *What did this phrase mean?* (a grammar example sentence).
+
+  Replay as often as you like; the **Slower** button is there too (a right answer after it counts as "hard").
+  Practise from the hub (**Listening**), or let reviews mix listening cards in.
+- **Listening during play**: known words are sometimes said aloud as you mine, collect or look at the things they
+  name. Every few minutes, when you're not busy, a short **listening check** says a word or phrase you've heard
+  several times and asks what it was: press **K** to answer, or ignore it. Each check rotates speakers.
 - **Immersion**:
   - Look at a block or mob you've studied to see its Japanese name.
   - Item tooltips show the Japanese name too.
@@ -60,17 +81,21 @@ and offline voice recognition, and it labels the Minecraft world in Japanese as 
 | J | Open the study hub |
 | V (hold) | Speak a kotodama spell |
 | H | Show/hide the hint for the current quest |
-| K | Answer a field-study prompt (or ask about what you're looking at) |
+| K | Answer a field-study prompt or listening check (or ask about what you're looking at) |
 | Enter | Check answer / continue |
 | 1-4 | Pick a multiple-choice answer |
 
 ### Hearing Japanese (text-to-speech)
 
-The mod uses your operating system's speech voices:
+The mod uses your operating system's speech voices, and as many of them as it can find:
 
-- **Windows**: Settings → Time & language → Speech → *Add voices* → Japanese.
-- **macOS**: System Settings → Accessibility → Spoken Content → System voice → add *Kyoko*.
+- **Windows**: Settings → Time & language → Speech → *Add voices* → Japanese (adds a male and several female voices).
+- **macOS**: System Settings → Accessibility → Spoken Content → System voice → add *Kyoko* and *Otoya*.
 - **Linux**: install `espeak-ng` (or set a custom command in the config, e.g. one that runs a better TTS engine).
+- **More, and more natural, voices**: install and start [VOICEVOX](https://voicevox.hiroshiba.jp/) (free). The mod finds
+  its engine at `http://127.0.0.1:50021` and uses up to 8 of its speakers; they're credited as "VOICEVOX:name"
+  when they speak, as VOICEVOX asks. Then press **Find voices again** in Voice & audio → Voices.
+- **Anything else** (Piper, a cloud TTS script, ...): add `Name|command {text}` lines to `extraVoices` in the config.
 
 ### Voice recognition notes
 
@@ -85,7 +110,9 @@ The mod uses your operating system's speech voices:
 Mods → NihongoCraft → Config, or edit `config/nihongo-client.toml`:
 - daily new-item limit (on/off and how many), unlock threshold, look-at labels, tooltips, romaji, quests,
   field-study prompts and how often they appear
-- TTS on/off and a custom TTS command, voice recognition and spells
+- in-world listening checks and spoken words (on/off and how often)
+- TTS on/off, voice variety (one voice / sometimes / often), primary and switched-off voices, VOICEVOX,
+  extra voice commands, a custom TTS command, voice recognition and spells
 
 Per-world settings (`serverconfig/nihongo-server.toml`): spell cooldown, XP per correct answer, quest rewards.
 
@@ -124,7 +151,8 @@ src/main/java/com/jensen/nihongo/
     Kana, AnswerChecker, Srs, Curriculum, LearningEngine, StudySession, Quests, McIndex
   client/        screens, HUD, tooltips, quests, keybinds
     voice/       Vosk speech recognition + model download
-    tts/         OS text-to-speech
+    tts/         text-to-speech: voice catalog (OS voices, styles, VOICEVOX) and playback
+    Listening    voice rotation, in-world spoken words and listening checks
   network/       reward and spell packets
 src/main/resources/assets/nihongo/curriculum/   kana.json, vocab.json, grammar.json, lessons.json
 tools/           course generators and validator

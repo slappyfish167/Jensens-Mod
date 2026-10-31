@@ -87,7 +87,38 @@ nothing about memory; wrong kana are not, since they make a different word.
   where it is used, with the thing itself in front of you, is a strong retrieval cue
   (encoding specificity: Tulving & Thomson, 1973; Godden & Baddeley, 1975).
 
-## 9. Motivation
+## 9. Listening in many voices
+
+Understanding anime, games and conversation means recognising words spoken by people you've never heard
+before, quickly, with no text to lean on. Listening is therefore trained as its own skill:
+
+- **Listening is tracked separately from reading.** Each word and grammar phrase has a *listening card* with its
+  own schedule, apart from its reading and meaning cards. Learners often know far more words by sight than by ear
+  (Milton & Hopkins, 2006), so recognising the written form is not taken as proof of recognising the spoken one,
+  and failing by ear never resets what you can read. A word joins the listening track once you can read it.
+- **No text first.** Listening questions show nothing in Japanese until they are answered: you pick the meaning of
+  what you heard, type what was said, or pick the meaning of a sentence. The challenge is perceiving the sound,
+  not reading.
+- **Many speakers (high-variability training).** Japanese learners trained to hear English /r/ and /l/ with
+  several talkers learned to hear the difference in *new* voices; those trained with one talker did not
+  generalise (Logan, Lively & Pisoni, 1991; Lively, Logan & Pisoni, 1993), and the gains carried over to their own
+  pronunciation (Bradlow et al., 1997). Hearing new words from several talkers also improves vocabulary learning
+  itself (Barcroft & Sommers, 2005). So the mod reads words with every voice it can find: different speakers,
+  and styles that vary speed and pitch (narrator, younger, energetic).
+- **One clear voice first, then variety.** High variability can overwhelm some learners at the very start
+  (Perrachione et al., 2011), so a new word is first heard a couple of times in your primary voice; other voices
+  then take turns, favouring the voices that word has been heard in least. Listening checks always rotate and lean
+  towards the voices you understand least. The amount of variety is a setting.
+- **Sound-alike distractors.** In "which word did you hear?", the wrong options are words whose kana are closest to
+  the right one (e.g. はし vs はな), which trains fine discrimination, like the look-alike kana distractors.
+  Homophones are left out, since they can't be told apart by ear.
+- **Honest grading.** Replays are free (real listening allows asking again), but a right answer after the slowed
+  replay counts as "hard", so the schedule reflects listening at natural speed.
+- **Repeated exposure in context.** Known words are said aloud as you meet the things they name in the world, and
+  each hearing is counted. After several hearings a brief, skippable listening check asks about the word. This is
+  the testing effect (section 3) applied to listening, inside play rather than as a quiz.
+
+## 10. Motivation
 
 Streaks, XP rewards, quest emeralds and kotodama (spoken word) spells are designed to keep you
 playing. Sustained, regular study matters more than any single technique (Dörnyei, 2001).
@@ -95,7 +126,9 @@ playing. Sustained, regular study matters more than any single technique (Dörny
 ## References
 
 - Atkinson, R. C., & Raugh, M. R. (1975). An application of the mnemonic keyword method to the acquisition of a Russian vocabulary. *Journal of Experimental Psychology: Human Learning and Memory*, 1(2).
+- Barcroft, J., & Sommers, M. S. (2005). Effects of acoustic variability on second language vocabulary learning. *Studies in Second Language Acquisition*, 27(3).
 - Bjork, R. A. (1994). Memory and metamemory considerations in the training of human beings. In *Metacognition: Knowing about knowing*. MIT Press.
+- Bradlow, A. R., Pisoni, D. B., Akahane-Yamada, R., & Tohkura, Y. (1997). Training Japanese listeners to identify English /r/ and /l/: IV. Some effects of perceptual learning on speech production. *Journal of the Acoustical Society of America*, 101(4).
 - Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., & Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. *Psychological Bulletin*, 132(3).
 - Dörnyei, Z. (2001). *Motivational Strategies in the Language Classroom*. Cambridge University Press.
 - Ebbinghaus, H. (1885). *Über das Gedächtnis*.
@@ -105,9 +138,13 @@ playing. Sustained, regular study matters more than any single technique (Dörny
 - Karpicke, J. D., & Roediger, H. L. (2008). The critical importance of retrieval for learning. *Science*, 319(5865).
 - Kornell, N., & Bjork, R. A. (2008). Learning concepts and categories: Is spacing the "enemy of induction"? *Psychological Science*, 19(6).
 - Krashen, S. (1985). *The Input Hypothesis: Issues and Implications*. Longman.
+- Lively, S. E., Logan, J. S., & Pisoni, D. B. (1993). Training Japanese listeners to identify English /r/ and /l/. II: The role of phonetic environment and talker variability in learning new perceptual categories. *Journal of the Acoustical Society of America*, 94(3).
+- Logan, J. S., Lively, S. E., & Pisoni, D. B. (1991). Training Japanese listeners to identify English /r/ and /l/: A first report. *Journal of the Acoustical Society of America*, 89(2).
+- Milton, J., & Hopkins, N. (2006). Comparing phonological and orthographic vocabulary size: Do vocabulary tests underestimate the knowledge of some learners? *Canadian Modern Language Review*, 63(1).
 - Nation, I. S. P. (2001). *Learning Vocabulary in Another Language*. Cambridge University Press.
 - Nation, I. S. P. (2006). How large a vocabulary is needed for reading and listening? *Canadian Modern Language Review*, 63(1).
 - Paivio, A. (1986). *Mental Representations: A Dual Coding Approach*. Oxford University Press.
+- Perrachione, T. K., Lee, J., Ha, L. Y. Y., & Wong, P. C. M. (2011). Learner and stimulus variability in second language speech learning. *Journal of the Acoustical Society of America*, 130(1).
 - Quackenbush, H., & Ohso, M. (1990). *Hiragana in 48 Minutes*. Curriculum Development Centre.
 - Roediger, H. L., & Karpicke, J. D. (2006). Test-enhanced learning. *Psychological Science*, 17(3).
 - Rohrer, D., & Taylor, K. (2007). The shuffling of mathematics problems improves learning. *Instructional Science*, 35(6).

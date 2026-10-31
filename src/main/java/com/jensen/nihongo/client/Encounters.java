@@ -84,10 +84,8 @@ public final class Encounters {
     static void tick(Minecraft mc, int ticks) {
         if (mc.player == null) return;
         if (pending != null && System.currentTimeMillis() > pendingUntil) pending = null;
-        if (!enabled()) {
-            pending = null;
-            return;
-        }
+        // Things met are still tracked with prompts off, so known words can be said aloud (see Listening).
+        if (!enabled()) pending = null;
         if (mc.screen == null) trackLook(mc);
         if (ticks % 20 == 0) trackInventory(mc);
     }
@@ -142,12 +140,15 @@ public final class Encounters {
 
     /** Shows a prompt for this thing if there is something to study about it. Returns true if one was shown. */
     private static boolean offer(McIndex.Type type, String id, String icon, boolean force) {
+        List<Curriculum.VocabItem> words = Learner.index().lookup(type, id);
+        if (words.isEmpty()) return false;
+        if (!force && Listening.checkPending()) return false;
+        LearningEngine.Encounter e = Learner.engine().encounter(words);
+        // A known word that isn't up for review is just said aloud now and then (saying a due word would give the answer away).
+        if (!force && (e == null || e.kind() == LearningEngine.EncounterKind.DISCOVER)) Listening.ambient(words);
         if (!force && (!enabled() || pending != null)) return false;
         long now = System.currentTimeMillis();
         if (!force && now < nextAllowedAt) return false;
-        List<Curriculum.VocabItem> words = Learner.index().lookup(type, id);
-        if (words.isEmpty()) return false;
-        LearningEngine.Encounter e = Learner.engine().encounter(words);
         if (e == null) return false;
         Long last = recent.get(e.word().id);
         if (!force && last != null && now - last < SAME_WORD_MS) return false;
@@ -165,6 +166,7 @@ public final class Encounters {
     /** The field-study key: answers the current prompt, or asks about whatever you're looking at. */
     static void onKey(Minecraft mc) {
         if (mc.player == null || mc.screen != null) return;
+        if (Listening.onKey(mc)) return;
         if (pending == null) {
             Target t = target(mc);
             if (t == null || !offer(t.type, t.id, null, true)) {

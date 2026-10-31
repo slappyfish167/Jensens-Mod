@@ -60,13 +60,20 @@ public class HubScreen extends Screen {
 
         if (VoiceService.isReady()) {
             Button speak = addRenderableWidget(Button.builder(Component.literal("Speaking practice"), b -> startSpeaking())
-                    .bounds(cx - bw / 2, y + ROW * 2, bw, 20).build());
+                    .bounds(cx - bw / 2, y + ROW * 2, half, 20).build());
             speak.active = !engine.introducedVocab().isEmpty();
             speak.setTooltip(Tooltip.create(Component.literal("Say the words you know out loud. Production practice strengthens recall.")));
         } else {
-            addRenderableWidget(Button.builder(Component.literal("Set up voice recognition"), b -> minecraft.setScreen(new VoiceSetupScreen(this)))
-                    .bounds(cx - bw / 2, y + ROW * 2, bw, 20).build());
+            addRenderableWidget(Button.builder(Component.literal("Set up voice"), b -> minecraft.setScreen(new VoiceSetupScreen(this)))
+                    .bounds(cx - bw / 2, y + ROW * 2, half, 20).build());
         }
+        String listenReason = engine.listeningBlockReason();
+        int listenDue = engine.listenDueCount();
+        Button listen = addRenderableWidget(Button.builder(Component.literal(listenDue > 0 ? "Listening (" + listenDue + " due)" : "Listening"),
+                b -> startListening()).bounds(cx + 2, y + ROW * 2, half, 20).build());
+        listen.active = listenReason == null;
+        listen.setTooltip(Tooltip.create(Component.literal(listenReason != null ? listenReason
+                : "Hear words and phrases you know, in different voices, and say what they were. Nothing is shown in writing first.")));
 
         addRenderableWidget(Button.builder(Component.literal("Kana chart"), b -> minecraft.setScreen(new KanaChartScreen(this)))
                 .bounds(cx - bw / 2, y + ROW * 3, half, 20).build());
@@ -127,6 +134,11 @@ public class HubScreen extends Screen {
         if (s != null) minecraft.setScreen(new StudyScreen(this, s));
     }
 
+    private void startListening() {
+        StudySession s = engine.startListening();
+        if (s != null) minecraft.setScreen(new StudyScreen(this, s));
+    }
+
     private void startSpeaking() {
         StudySession s = engine.startSpeaking(10);
         if (s != null) minecraft.setScreen(new StudyScreen(this, s));
@@ -141,8 +153,8 @@ public class HubScreen extends Screen {
 
         LearningEngine.Counts c = engine.counts();
         var p = engine.progress();
-        String stats = String.format("Kana %d/%d   Words %d/%d   Grammar %d/%d   Kanji %d",
-                c.kanaLearned(), c.kanaTotal(), c.vocabLearned(), c.vocabTotal(), c.grammarLearned(), c.grammarTotal(), c.kanjiLearned());
+        String stats = String.format("Kana %d/%d   Words %d/%d   Grammar %d/%d   Kanji %d   Listening %d",
+                c.kanaLearned(), c.kanaTotal(), c.vocabLearned(), c.vocabTotal(), c.grammarLearned(), c.grammarTotal(), c.kanjiLearned(), c.listening());
         g.drawCenteredString(font, stats, cx, top - 46, Ui.WHITE);
         int streak = p.currentStreak(engine.today());
         String limit = engine.settings().dailyLimitEnabled ? " (limit " + engine.settings().dailyNewLimit + ")" : "";

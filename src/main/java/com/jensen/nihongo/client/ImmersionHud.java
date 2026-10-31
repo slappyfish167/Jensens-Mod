@@ -61,6 +61,7 @@ public final class ImmersionHud {
         }
 
         renderEncounter(g, font, w, h);
+        renderListeningCheck(g, font, w, h);
 
         if (VoiceService.isRecording()) {
             String text = "♪ きいて います... (listening)";
@@ -95,6 +96,23 @@ public final class ImmersionHud {
         g.drawString(font, title, tx, y + 4, review ? 0xFF8AE6FF : 0xFFFFD866, false);
         g.drawString(font, line, tx, y + 16, 0xFFFFFFFF, false);
         g.drawString(font, action, tx, y + 28, 0xFFAAAAAA, false);
+    }
+
+    /** A listening check: no word or picture is shown, since the point is to recognise what was heard. */
+    private static void renderListeningCheck(GuiGraphics g, Font font, int w, int h) {
+        if (!Listening.checkPending()) return;
+        String key = KeyBindings.FIELD_STUDY.getTranslatedKeyMessage().getString();
+        String title = "♪ きいて!  Listening check";
+        String line = "What did you just hear?";
+        String action = "Press [" + key + "] to answer (or ignore it)";
+        int boxW = Math.max(font.width(title), Math.max(font.width(line), font.width(action))) + 12;
+        int x = w - boxW - 6;
+        int y = h / 2 - 40;
+        g.fill(x, y, x + boxW, y + 40, 0xB0101020);
+        g.renderOutline(x, y, boxW, 40, 0xFFFFA8D8);
+        g.drawString(font, title, x + 6, y + 4, 0xFFFFA8D8, false);
+        g.drawString(font, line, x + 6, y + 16, 0xFFFFFFFF, false);
+        g.drawString(font, action, x + 6, y + 28, 0xFFAAAAAA, false);
     }
 
     private static ItemStack iconStack(String id) {

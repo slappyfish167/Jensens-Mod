@@ -1,6 +1,7 @@
 package com.jensen.nihongo.client.screen;
 
 import com.jensen.nihongo.client.tts.Tts;
+import com.jensen.nihongo.client.tts.VoiceCatalog;
 import com.jensen.nihongo.client.voice.VoiceService;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -44,6 +45,10 @@ public class VoiceSetupScreen extends Screen {
         Button tts = addRenderableWidget(Button.builder(Component.literal("Test speech: こんにちは"), b -> Tts.speak("こんにちは、 にほんご を べんきょう しましょう。"))
                 .bounds(cx - 120, y + 48, 240, 20).build());
         tts.active = Tts.enabled();
+
+        int voices = VoiceCatalog.active().size();
+        addRenderableWidget(Button.builder(Component.literal("Voices (" + voices + " on)..."), b -> minecraft.setScreen(new VoicesScreen(this)))
+                .bounds(cx - 120, y + 72, 240, 20).build());
 
         addRenderableWidget(Button.builder(Component.literal("Back"), b -> onClose()).bounds(cx - 50, height - 28, 100, 20).build());
     }
@@ -94,9 +99,9 @@ public class VoiceSetupScreen extends Screen {
             int bar = (int) (VoiceService.level() * 200);
             g.fill(cx - 100, y, cx - 100 + bar, y + 3, 0xFFFF80FF);
         }
-        int below = height / 2 + 82;
-        Ui.wrap(g, font, "Listening uses your system's speech voice. Windows: Settings > Time & language > Speech > add Japanese. "
-                + "macOS: the Kyoko voice. Linux: install espeak-ng.", cx, below, w, Ui.GRAY);
+        int below = height / 2 + 106;
+        Ui.wrap(g, font, "Listening uses your system's Japanese voices, in several styles. Windows: Settings > Time & language > Speech > "
+                + "add Japanese. macOS: Kyoko and Otoya. Linux: espeak-ng. For many natural voices, run VOICEVOX (free).", cx, below, w, Ui.GRAY);
         if (!Tts.lastError().isEmpty()) Ui.wrap(g, font, Tts.lastError(), cx, below + 32, w, Ui.RED);
     }
 

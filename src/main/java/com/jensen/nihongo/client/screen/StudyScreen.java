@@ -1,7 +1,9 @@
 package com.jensen.nihongo.client.screen;
 
 import com.jensen.nihongo.client.Learner;
+import com.jensen.nihongo.client.Listening;
 import com.jensen.nihongo.client.tts.Tts;
+import com.jensen.nihongo.client.tts.VoiceCatalog;
 import com.jensen.nihongo.client.voice.VoiceService;
 import com.jensen.nihongo.learning.AnswerChecker;
 import com.jensen.nihongo.learning.Curriculum;
@@ -36,12 +38,20 @@ public class StudyScreen extends Screen {
     private boolean rewarded;
     private int scroll;
     private boolean wasRecording;
+    /** The listening question whose audio has already been played automatically. */
+    private Question autoPlayed;
 
     public StudyScreen(Screen parent, StudySession session) {
+        this(parent, session, false);
+    }
+
+    /** @param alreadyHeard the first question's audio was just played (an in-world listening check) */
+    public StudyScreen(Screen parent, StudySession session, boolean alreadyHeard) {
         super(Component.literal("Study"));
         this.parent = parent;
         this.session = session;
         this.placement = session.mode() == StudySession.Mode.PLACEMENT;
+        if (alreadyHeard) autoPlayed = session.question();
     }
 
     /** Bottom row for buttons; placement tests reserve a line below it for "I don't know". */
@@ -72,7 +82,8 @@ public class StudyScreen extends Screen {
             if (teach.item() instanceof Curriculum.GrammarPoint gp && !gp.examples.isEmpty()) speak = gp.examples.get(0).jp;
             if (teach.kanjiOnly() && teach.item() instanceof Curriculum.VocabItem v) speak = v.kana;
             String toSpeak = speak;
-            Button listen = addRenderableWidget(Button.builder(Component.literal("Listen"), b -> Tts.speak(toSpeak))
+            String itemId = teach.item().id;
+            Button listen = addRenderableWidget(Button.builder(Component.literal("Listen"), b -> Listening.say(itemId, toSpeak))
                     .bounds(cx - 104, bottom, 100, 20).build());
             listen.active = Tts.enabled() && toSpeak != null;
             addRenderableWidget(Button.builder(Component.literal("Got it  →"), b -> next()).bounds(cx + 4, bottom, 100, 20).build());
@@ -82,6 +93,10 @@ public class StudyScreen extends Screen {
         Question q = question();
         if (q == null) return;
         int inputY = inputY();
+        if (q.listening && !session.isAnswered() && autoPlayed != q) {
+            autoPlayed = q;
+            playListening(q, false);
+        }
 
         if (placement && !session.isAnswered()) {
             addRenderableWidget(Button.builder(Component.literal("I don't know"), b -> {
@@ -104,7 +119,7 @@ public class StudyScreen extends Screen {
                     rebuildWidgets();
                 }).width(90).build());
             }
-            if (Tts.enabled() && q.speak != null) row.add(Button.builder(Component.literal("Listen"), b -> Tts.speak(q.speak)).width(70).build());
+            if (Tts.enabled() && q.speak != null) row.add(Button.builder(Component.literal("Listen"), b -> speakAnswer(q)).width(70).build());
             row.add(Button.builder(Component.literal("Continue (Enter)"), b -> next()).width(110).build());
             layoutRow(row, bottom);
             return;
@@ -120,7 +135,8 @@ public class StudyScreen extends Screen {
                 addRenderableWidget(input);
                 setInitialFocus(input);
                 List<Button> row = new ArrayList<>();
-                if (q.speakInPrompt && Tts.enabled()) row.add(Button.builder(Component.literal("Listen"), b -> Tts.speak(q.speak)).width(70).build());
+                if (q.listening) row.addAll(replayButtons(q));
+                else if (q.speakInPrompt && Tts.enabled()) row.add(Button.builder(Component.literal("Listen"), b -> Listening.say(q.itemId, q.speak)).width(70).build());
                 if (q.allowVoice && VoiceService.isReady()) row.add(micButton(q));
                 row.add(Button.builder(Component.literal("Check (Enter)"), b -> checkTyped()).width(100).build());
                 layoutRow(row, inputY + 40);
@@ -134,8 +150,10 @@ public class StudyScreen extends Screen {
                     addRenderableWidget(Button.builder(Component.literal((i + 1) + ".  " + q.options.get(i)), b -> choose(idx))
                             .bounds(x, y, bw, 20).build());
                 }
-                if (q.speak != null && Tts.enabled() && q.promptJapanese && q.subPrompt.isEmpty()) {
-                    addRenderableWidget(Button.builder(Component.literal("Listen"), b -> Tts.speak(q.prompt)).bounds(cx - 35, bottom, 70, 20).build());
+                if (q.listening) {
+                    layoutRow(replayButtons(q), bottom);
+                } else if (q.speak != null && Tts.enabled() && q.promptJapanese && q.subPrompt.isEmpty()) {
+                    addRenderableWidget(Button.builder(Component.literal("Listen"), b -> Listening.say(q.itemId, q.prompt)).bounds(cx - 35, bottom, 70, 20).build());
                 }
             }
             case ORDER -> {
@@ -178,6 +196,33 @@ public class StudyScreen extends Screen {
                 layoutRow(row, inputY + 10);
             }
         }
+    }
+
+    /** Replay at normal speed, or slowly (a right answer after a slow replay counts as "hard"). */
+    private List<Button> replayButtons(Question q) {
+        List<Button> row = new ArrayList<>();
+        row.add(Button.builder(Component.literal("♪ Replay"), b -> playListening(q, false)).width(70).build());
+        row.add(Button.builder(Component.literal("Slower"), b -> {
+            session.usedSlowReplay();
+            playListening(q, true);
+        }).width(60).build());
+        return row;
+    }
+
+    /** Plays a listening question in its voice (picking one the first time). */
+    private void playListening(Question q, boolean slow) {
+        if (q.speak == null) return;
+        if (q.voice == null) {
+            VoiceCatalog.Speaker s = Listening.voiceFor(q.itemId, true);
+            q.voice = s == null ? null : s.id();
+        }
+        Listening.say(q.itemId, q.speak, q.voice == null ? null : VoiceCatalog.byId(q.voice), slow);
+    }
+
+    /** After answering: the same voice again for listening questions, otherwise whichever voice is due. */
+    private void speakAnswer(Question q) {
+        if (q.listening) playListening(q, false);
+        else Listening.say(q.itemId, q.speak);
     }
 
     private Button micButton(Question q) {
@@ -232,7 +277,7 @@ public class StudyScreen extends Screen {
         Ui.sound(r.passed());
         Question q = question();
         // Hearing the word right after recalling it ties sound to meaning.
-        if (q != null && q.speak != null && q.type != Question.Type.CHOICE) Tts.speak(q.speak);
+        if (q != null && q.speak != null && (q.type != Question.Type.CHOICE || q.listening)) speakAnswer(q);
         rebuildWidgets();
     }
 
@@ -360,7 +405,8 @@ public class StudyScreen extends Screen {
             case REVIEW -> "Review";
             case SPEAKING -> "Speaking practice";
             case PLACEMENT -> "Placement test";
-            case FIELD -> "Field study";
+            case FIELD -> question() != null && question().listening ? "Listening check" : "Field study";
+            case LISTENING -> "Listening practice";
         };
         String left = placement ? "lesson " + session.placement().lessonNumber() + "/" + session.placement().lessonTotal()
                 : session.remaining() + " left";
@@ -513,7 +559,12 @@ public class StudyScreen extends Screen {
         fy = Ui.wrap(g, font, "Answer: " + q.answer, cx, fy, wrapW, Ui.WHITE);
         if (!q.reading.isEmpty()) fy = Ui.wrap(g, font, q.reading, cx, fy, wrapW, Ui.GOLD);
         if (!q.meaning.isEmpty() && !q.meaning.equals(q.answer)) fy = Ui.wrap(g, font, q.meaning, cx, fy, wrapW, Ui.WHITE);
-        Ui.wrap(g, font, q.detail, cx, fy + 2, wrapW, Ui.GRAY);
+        fy = Ui.wrap(g, font, q.detail, cx, fy + 2, wrapW, Ui.GRAY);
+        VoiceCatalog.Speaker voice = q.listening && q.voice != null ? VoiceCatalog.byId(q.voice) : null;
+        if (voice != null) {
+            String credit = voice.credit().isEmpty() ? "" : "   (" + voice.credit() + ")";
+            Ui.wrap(g, font, "Voice: " + voice.label() + credit, cx, fy + 2, wrapW, Ui.DIM);
+        }
     }
 
     private void renderSummary(GuiGraphics g, int cx) {
