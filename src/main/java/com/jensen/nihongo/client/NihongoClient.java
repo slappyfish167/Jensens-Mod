@@ -1,6 +1,7 @@
 package com.jensen.nihongo.client;
 
 import com.jensen.nihongo.NihongoMod;
+import com.jensen.nihongo.client.tts.VoiceCatalog;
 import com.jensen.nihongo.client.voice.VoiceService;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -50,5 +51,6 @@ public class NihongoClient {
 
     private static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(VoiceService::initFromDisk);
+        event.enqueueWork(VoiceCatalog::refresh);
     }
 }

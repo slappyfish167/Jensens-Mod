@@ -66,11 +66,13 @@ public final class Learner {
     /** Copies the client config into the engine (called whenever the engine is fetched). */
     private static void applySettings() {
         LearningEngine.Settings s = engine.settings();
+        s.listeningAvailable = Listening.available();
         try {
             s.dailyLimitEnabled = ClientConfig.DAILY_LIMIT_ENABLED.get();
             s.dailyNewLimit = ClientConfig.DAILY_NEW_LIMIT.get();
             s.maxReviewsPerSession = ClientConfig.MAX_REVIEWS.get();
             s.gate = ClientConfig.GATE_PERCENT.get() / 100.0;
+            s.voiceVariety = ClientConfig.VOICE_VARIETY.get().chance;
         } catch (IllegalStateException notLoadedYet) {
             // Config not loaded yet; keep defaults.
         }
@@ -102,6 +104,7 @@ public final class Learner {
         saveIfDirty();
         QuestTracker.reset();
         Encounters.reset();
+        Listening.reset();
     }
 
     public static void markDirty() {

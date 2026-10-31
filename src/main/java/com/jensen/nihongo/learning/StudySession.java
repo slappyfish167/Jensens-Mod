@@ -9,8 +9,8 @@ import java.util.Random;
  * cards that are still being learned come back a few questions later (expanding rehearsal).
  */
 public final class StudySession {
-    /** FIELD: a quick study break about something just met in the world. */
-    public enum Mode { LESSON, REVIEW, SPEAKING, PLACEMENT, FIELD }
+    /** FIELD: a quick study break about something just met in the world. LISTENING: audio-only questions. */
+    public enum Mode { LESSON, REVIEW, SPEAKING, PLACEMENT, FIELD, LISTENING }
 
     public sealed interface Step permits Teach, Ask {}
 
@@ -30,10 +30,13 @@ public final class StudySession {
     private AnswerChecker.Result result;
     private Srs.Grade pendingGrade;
     private boolean overridden;
+    private boolean slowReplay;
     private int answered;
     private int correct;
     private final List<String> missed = new ArrayList<>();
     private final java.util.Set<String> speakingRetries = new java.util.HashSet<>();
+    /** Whether cards still being learned come back later in the session (off for one-question checks). */
+    boolean repeat = true;
 
     StudySession(LearningEngine engine, Mode mode, List<Step> steps, Random rng) {
         this(engine, mode, steps, rng, null);
@@ -97,6 +100,7 @@ public final class StudySession {
         result = null;
         pendingGrade = null;
         overridden = false;
+        slowReplay = false;
         question = null;
         if (queue.isEmpty()) {
             current = null;
@@ -134,13 +138,18 @@ public final class StudySession {
         return record(r);
     }
 
+    /** The learner asked to hear a listening question slowly: a right answer then counts as "hard". */
+    public void usedSlowReplay() {
+        if (question != null && !isAnswered()) slowReplay = true;
+    }
+
     private AnswerChecker.Result record(AnswerChecker.Result r) {
         result = r;
         if (r.verdict() == AnswerChecker.Verdict.RETRY) return r;
         answered++;
         if (r.passed()) {
             correct++;
-            pendingGrade = Srs.Grade.GOOD;
+            pendingGrade = slowReplay ? Srs.Grade.HARD : Srs.Grade.GOOD;
         } else {
             pendingGrade = Srs.Grade.AGAIN;
             if (!missed.contains(question.itemId)) missed.add(question.itemId);
@@ -186,9 +195,12 @@ public final class StudySession {
             pop();
             return;
         }
+        if (current instanceof Ask && pendingGrade != null && question.listening && question.voice != null && mode != Mode.SPEAKING) {
+            engine.recordListening(question.voice, pendingGrade != Srs.Grade.AGAIN);
+        }
         if (current instanceof Ask a && pendingGrade != null && mode != Mode.SPEAKING) {
             boolean stillLearning = engine.applyGrade(a.cardId(), pendingGrade);
-            if (stillLearning) {
+            if (stillLearning && repeat) {
                 int base = pendingGrade == Srs.Grade.AGAIN ? 2 : 5;
                 int pos = Math.min(queue.size(), base + rng.nextInt(3));
                 queue.add(pos, new Ask(a.cardId()));

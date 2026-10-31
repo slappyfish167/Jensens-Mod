@@ -45,6 +45,7 @@ public final class ClientEvents {
         }
         if (mc.player != null && ticks % 20 == 0) QuestTracker.tick(mc);
         if (mc.player != null) Encounters.tick(mc, ticks);
+        if (mc.player != null && ticks % 20 == 10) Listening.tick(mc);
         if (ticks % 200 == 0) Learner.saveIfDirty();
     }
 
@@ -67,6 +68,7 @@ public final class ClientEvents {
         Learner.saveIfDirty();
         QuestTracker.reset();
         Encounters.reset();
+        Listening.reset();
     }
 
     // ------------------------------------------------------------------ spells
