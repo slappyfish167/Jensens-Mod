@@ -30,12 +30,14 @@ public class NihongoClient {
         NeoForge.EVENT_BUS.addListener(ClientEvents::onTooltip);
         NeoForge.EVENT_BUS.addListener(ClientEvents::onLoggingIn);
         NeoForge.EVENT_BUS.addListener(ClientEvents::onLoggingOut);
+        NeoForge.EVENT_BUS.addListener(Encounters::onAttack);
     }
 
     private static void onRegisterKeys(RegisterKeyMappingsEvent event) {
         event.register(KeyBindings.OPEN_HUB);
         event.register(KeyBindings.SPEAK);
         event.register(KeyBindings.QUEST_HINT);
+        event.register(KeyBindings.FIELD_STUDY);
     }
 
     private static void onRegisterLayers(RegisterGuiLayersEvent event) {

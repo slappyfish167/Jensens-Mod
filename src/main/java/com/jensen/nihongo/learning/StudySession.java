@@ -9,7 +9,8 @@ import java.util.Random;
  * cards that are still being learned come back a few questions later (expanding rehearsal).
  */
 public final class StudySession {
-    public enum Mode { LESSON, REVIEW, SPEAKING, PLACEMENT }
+    /** FIELD: a quick study break about something just met in the world. */
+    public enum Mode { LESSON, REVIEW, SPEAKING, PLACEMENT, FIELD }
 
     public sealed interface Step permits Teach, Ask {}
 

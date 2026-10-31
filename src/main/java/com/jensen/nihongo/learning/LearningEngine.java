@@ -28,6 +28,8 @@ import java.util.function.LongSupplier;
 public final class LearningEngine {
 
     public static final class Settings {
+        /** Whether {@link #dailyNewLimit} applies at all. Off by default: learners set their own pace. */
+        public boolean dailyLimitEnabled = false;
         /** New items per day. Small daily batches keep cognitive load and review piles manageable. */
         public int dailyNewLimit = 15;
         /** Fraction of the recent lessons' cards that must be past the learning steps to unlock more. */
@@ -155,8 +157,10 @@ public final class LearningEngine {
         return best;
     }
 
+    /** New items still allowed today; unlimited when the daily limit is turned off. */
     public int newRemainingToday() {
         progress.rollDay(today());
+        if (!settings.dailyLimitEnabled) return Integer.MAX_VALUE;
         return Math.max(0, settings.dailyNewLimit - progress.dailyNew);
     }
 
@@ -166,6 +170,52 @@ public final class LearningEngine {
             for (String id : l.items) {
                 if (!isIntroduced(id) && curriculum.item(id) != null) return l;
             }
+        }
+        return null;
+    }
+
+    /** True once every hiragana and katakana item has been introduced (the course teaches all kana before words). */
+    public boolean kanaStageDone() {
+        for (Item i : curriculum.items().values()) {
+            if (i.kind() == Kind.KANA && !isIntroduced(i.id) && inSomeLesson(i.id)) return false;
+        }
+        return true;
+    }
+
+    /** Kanji are the last stage: they open once every word lesson has been started. */
+    public boolean kanjiStageOpen() {
+        for (Lesson l : curriculum.lessons()) {
+            for (String id : l.items) {
+                if (curriculum.item(id) instanceof VocabItem && !isIntroduced(id)) return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean inSomeLesson(String itemId) {
+        for (Lesson l : curriculum.lessons()) if (l.items.contains(itemId)) return true;
+        return false;
+    }
+
+    /** Words whose kanji can be taught now: the spoken word has been remembered for a few days. */
+    public List<VocabItem> kanjiReady() {
+        List<VocabItem> out = new ArrayList<>();
+        if (!kanjiStageOpen()) return out;
+        for (VocabItem v : introducedVocab()) {
+            if (!v.hasKanjiCard() || progress.cards.containsKey(cardId(v.id, "kanji"))) continue;
+            Srs.CardState reading = progress.cards.get(cardId(v.id, "reading"));
+            if (reading != null && reading.inReview() && reading.interval >= settings.kanjiUnlockDays) out.add(v);
+        }
+        return out;
+    }
+
+    /** Why a kanji lesson can't start right now, or null if it can. */
+    public String kanjiBlockReason() {
+        if (!kanjiStageOpen()) return "Kanji come last: finish the hiragana, katakana and word lessons first.";
+        if (newRemainingToday() <= 0) return "Daily limit of new items reached.";
+        if (kanjiReady().isEmpty()) {
+            return String.format("No kanji ready yet. A word's kanji unlocks once you've remembered the word for %d days.",
+                    Math.round(settings.kanjiUnlockDays));
         }
         return null;
     }
@@ -200,7 +250,7 @@ public final class LearningEngine {
 
     /** Why a new lesson can't start right now, or null if it can. */
     public String lessonBlockReason() {
-        if (currentLesson() == null) return "You've finished every lesson - keep your reviews going!";
+        if (currentLesson() == null) return "You've finished every lesson! Now learn the kanji and keep your reviews going.";
         if (newRemainingToday() <= 0) return "Daily limit of new items reached. Reviews and rest help memories set.";
         if (gateProgress() < settings.gate) {
             return String.format("Master the last lesson first (%d%% of its cards past the learning stage, need %d%%).",
@@ -295,7 +345,11 @@ public final class LearningEngine {
     }
 
     void unlockKanji(String itemId) {
-        progress.cards.computeIfAbsent(cardId(itemId, "kanji"), k -> Srs.newCard(now()));
+        if (!progress.cards.containsKey(cardId(itemId, "kanji"))) {
+            progress.cards.put(cardId(itemId, "kanji"), Srs.newCard(now()));
+            progress.rollDay(today());
+            progress.dailyNew++;
+        }
         changed();
     }
 
@@ -361,20 +415,72 @@ public final class LearningEngine {
         }
         // Interleave item types and directions rather than reviewing in blocks.
         Collections.shuffle(steps, rng);
-
-        // Kanji are introduced only for words whose spoken form is already well known.
-        int kanji = 0;
-        for (VocabItem v : introducedVocab()) {
-            if (kanji >= settings.maxKanjiPerSession) break;
-            if (!v.hasKanjiCard() || progress.cards.containsKey(cardId(v.id, "kanji"))) continue;
-            Srs.CardState reading = progress.cards.get(cardId(v.id, "reading"));
-            if (reading != null && reading.inReview() && reading.interval >= settings.kanjiUnlockDays) {
-                steps.add(new StudySession.Teach(v, true));
-                steps.add(new StudySession.Ask(cardId(v.id, "kanji")));
-                kanji++;
-            }
-        }
         return steps.isEmpty() ? null : new StudySession(this, StudySession.Mode.REVIEW, steps, rng);
+    }
+
+    /** Teaches the kanji of words whose spoken form is already well known (the final stage of the course). */
+    public StudySession startKanjiLesson() {
+        if (kanjiBlockReason() != null) return null;
+        List<VocabItem> ready = kanjiReady();
+        int n = Math.min(Math.min(settings.maxKanjiPerSession, newRemainingToday()), ready.size());
+        List<StudySession.Step> steps = new ArrayList<>();
+        List<StudySession.Step> asks = new ArrayList<>();
+        for (VocabItem v : ready.subList(0, n)) {
+            steps.add(new StudySession.Teach(v, true));
+            asks.add(new StudySession.Ask(cardId(v.id, "kanji")));
+        }
+        Collections.shuffle(asks, rng);
+        steps.addAll(asks);
+        return steps.isEmpty() ? null : new StudySession(this, StudySession.Mode.LESSON, steps, rng);
+    }
+
+    // ---------------------------------------------------------------- in-world encounters
+
+    public enum EncounterKind { REVIEW, DISCOVER }
+
+    /** Something met in the world (mined, collected, attacked, looked at) that the learner can study on the spot. */
+    public record Encounter(EncounterKind kind, VocabItem word) {}
+
+    /**
+     * Picks what to study about a thing met in the world: a due review of its word first; otherwise, once the
+     * kana are done, a word not learned yet, taught right there instead of waiting for its lesson.
+     */
+    public Encounter encounter(List<VocabItem> words) {
+        long now = now();
+        for (VocabItem v : words) {
+            if (isIntroduced(v.id) && !dueCards(v, now).isEmpty()) return new Encounter(EncounterKind.REVIEW, v);
+        }
+        if (!kanaStageDone() || newRemainingToday() <= 0) return null;
+        for (VocabItem v : words) {
+            if (!isIntroduced(v.id) && inSomeLesson(v.id)) return new Encounter(EncounterKind.DISCOVER, v);
+        }
+        return null;
+    }
+
+    private List<String> dueCards(VocabItem v, long now) {
+        List<String> out = new ArrayList<>();
+        for (String dir : List.of("meaning", "reading", "kanji")) {
+            Srs.CardState s = progress.cards.get(cardId(v.id, dir));
+            if (s != null && s.isDue(now)) out.add(cardId(v.id, dir));
+        }
+        return out;
+    }
+
+    /** A short study session for an encounter, or null if it no longer applies. */
+    public StudySession startEncounter(Encounter e) {
+        List<StudySession.Step> steps = new ArrayList<>();
+        if (e.kind() == EncounterKind.REVIEW) {
+            for (String card : dueCards(e.word(), now())) steps.add(new StudySession.Ask(card));
+            Collections.shuffle(steps, rng);
+            return steps.isEmpty() ? null : new StudySession(this, StudySession.Mode.FIELD, steps, rng);
+        }
+        if (isIntroduced(e.word().id) || newRemainingToday() <= 0) return null;
+        steps.add(new StudySession.Teach(e.word(), false));
+        List<StudySession.Step> asks = new ArrayList<>();
+        for (String dir : e.word().directions()) asks.add(new StudySession.Ask(cardId(e.word().id, dir)));
+        Collections.shuffle(asks, rng);
+        steps.addAll(asks);
+        return new StudySession(this, StudySession.Mode.FIELD, steps, rng);
     }
 
     /** Adaptive placement test, or null if the course is already complete. Changes nothing until applied. */

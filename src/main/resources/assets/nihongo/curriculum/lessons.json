@@ -27,23 +27,6 @@
    ]
   },
   {
-   "id": "words_1",
-   "title": "First words",
-   "stage": "vocabulary",
-   "intro": "You can already read real words! Each one is linked to something in Minecraft.",
-   "items": [
-    "v_ki",
-    "v_ie",
-    "v_aka",
-    "v_ao",
-    "v_kao",
-    "v_koe",
-    "v_e",
-    "v_ika",
-    "v_ue"
-   ]
-  },
-  {
    "id": "hira_sa",
    "title": "Hiragana: さ row",
    "stage": "hiragana",
@@ -70,30 +53,6 @@
    ]
   },
   {
-   "id": "words_2",
-   "title": "Stone, dirt and iron",
-   "stage": "vocabulary",
-   "intro": "Words for the things you mine and craft first.",
-   "items": [
-    "v_ishi",
-    "v_tsuchi",
-    "v_take",
-    "v_tetsu",
-    "v_ushi",
-    "v_tate",
-    "v_ito",
-    "v_kutsu",
-    "v_asa",
-    "v_suika",
-    "v_satou",
-    "v_tokei",
-    "v_teki",
-    "v_te",
-    "v_shita",
-    "v_soto"
-   ]
-  },
-  {
    "id": "hira_na",
    "title": "Hiragana: な row",
    "stage": "hiragana",
@@ -117,6 +76,221 @@
     "h_fu",
     "h_he",
     "h_ho"
+   ]
+  },
+  {
+   "id": "hira_ma",
+   "title": "Hiragana: ま row",
+   "stage": "hiragana",
+   "intro": "",
+   "items": [
+    "h_ma",
+    "h_mi",
+    "h_mu",
+    "h_me",
+    "h_mo"
+   ]
+  },
+  {
+   "id": "hira_ya",
+   "title": "Hiragana: や row",
+   "stage": "hiragana",
+   "intro": "Only three: や ゆ よ.",
+   "items": [
+    "h_ya",
+    "h_yu",
+    "h_yo"
+   ]
+  },
+  {
+   "id": "hira_ra",
+   "title": "Hiragana: ら row",
+   "stage": "hiragana",
+   "intro": "The Japanese r is a light tap, halfway to an l or d.",
+   "items": [
+    "h_ra",
+    "h_ri",
+    "h_ru",
+    "h_re",
+    "h_ro"
+   ]
+  },
+  {
+   "id": "hira_wa",
+   "title": "Hiragana: わ を ん",
+   "stage": "hiragana",
+   "intro": "The last three basic hiragana.",
+   "items": [
+    "h_wa",
+    "h_wo",
+    "h_n"
+   ]
+  },
+  {
+   "id": "hira_dakuten",
+   "title": "Hiragana: ゛ and ゜",
+   "stage": "hiragana",
+   "intro": "Two marks turn the kana you know into 25 more sounds.",
+   "items": [
+    "h_ga",
+    "h_za",
+    "h_da",
+    "h_ba",
+    "h_pa"
+   ]
+  },
+  {
+   "id": "hira_combos",
+   "title": "Hiragana: combos, small っ, long vowels",
+   "stage": "hiragana",
+   "intro": "The last hiragana rules. After this you can read anything written in hiragana!",
+   "items": [
+    "h_yoon1",
+    "h_yoon2",
+    "h_yoon3",
+    "h_sokuon",
+    "h_long"
+   ]
+  },
+  {
+   "id": "kata_1",
+   "title": "Katakana: ア and カ rows, ー",
+   "stage": "katakana",
+   "intro": "Katakana writes foreign words - including most Minecraft mobs! Same sounds as hiragana, new shapes.",
+   "items": [
+    "k_a",
+    "k_i",
+    "k_u",
+    "k_e",
+    "k_o",
+    "k_ka",
+    "k_ki",
+    "k_ku",
+    "k_ke",
+    "k_ko",
+    "k_choon"
+   ]
+  },
+  {
+   "id": "kata_2",
+   "title": "Katakana: サ and タ rows",
+   "stage": "katakana",
+   "intro": "Careful with シ/ツ and ソ/ン: watch the stroke direction.",
+   "items": [
+    "k_sa",
+    "k_shi",
+    "k_su",
+    "k_se",
+    "k_so",
+    "k_ta",
+    "k_chi",
+    "k_tsu",
+    "k_te",
+    "k_to"
+   ]
+  },
+  {
+   "id": "kata_3",
+   "title": "Katakana: ナ and ハ rows",
+   "stage": "katakana",
+   "intro": "",
+   "items": [
+    "k_na",
+    "k_ni",
+    "k_nu",
+    "k_ne",
+    "k_no",
+    "k_ha",
+    "k_hi",
+    "k_fu",
+    "k_he",
+    "k_ho"
+   ]
+  },
+  {
+   "id": "kata_4",
+   "title": "Katakana: マ and ヤ rows",
+   "stage": "katakana",
+   "intro": "",
+   "items": [
+    "k_ma",
+    "k_mi",
+    "k_mu",
+    "k_me",
+    "k_mo",
+    "k_ya",
+    "k_yu",
+    "k_yo"
+   ]
+  },
+  {
+   "id": "kata_5",
+   "title": "Katakana: ラ row, ワ ヲ ン",
+   "stage": "katakana",
+   "intro": "",
+   "items": [
+    "k_ra",
+    "k_ri",
+    "k_ru",
+    "k_re",
+    "k_ro",
+    "k_wa",
+    "k_wo",
+    "k_n"
+   ]
+  },
+  {
+   "id": "kata_6",
+   "title": "Katakana: marks, combos and new sounds",
+   "stage": "katakana",
+   "intro": "",
+   "items": [
+    "k_dakuten",
+    "k_handakuten",
+    "k_yoon",
+    "k_sokuon",
+    "k_extended"
+   ]
+  },
+  {
+   "id": "words_1",
+   "title": "First words",
+   "stage": "vocabulary",
+   "intro": "You can read both scripts now - time for real words! Each one is linked to something in Minecraft.",
+   "items": [
+    "v_ki",
+    "v_ie",
+    "v_aka",
+    "v_ao",
+    "v_kao",
+    "v_koe",
+    "v_e",
+    "v_ika",
+    "v_ue"
+   ]
+  },
+  {
+   "id": "words_2",
+   "title": "Stone, dirt and iron",
+   "stage": "vocabulary",
+   "intro": "Words for the things you mine and craft first.",
+   "items": [
+    "v_ishi",
+    "v_tsuchi",
+    "v_take",
+    "v_tetsu",
+    "v_ushi",
+    "v_tate",
+    "v_ito",
+    "v_kutsu",
+    "v_asa",
+    "v_suika",
+    "v_satou",
+    "v_tokei",
+    "v_teki",
+    "v_te",
+    "v_shita",
+    "v_soto"
    ]
   },
   {
@@ -147,30 +321,6 @@
    ]
   },
   {
-   "id": "hira_ma",
-   "title": "Hiragana: ま row",
-   "stage": "hiragana",
-   "intro": "",
-   "items": [
-    "h_ma",
-    "h_mi",
-    "h_mu",
-    "h_me",
-    "h_mo"
-   ]
-  },
-  {
-   "id": "hira_ya",
-   "title": "Hiragana: や row",
-   "stage": "hiragana",
-   "intro": "Only three: や ゆ よ.",
-   "items": [
-    "h_ya",
-    "h_yu",
-    "h_yo"
-   ]
-  },
-  {
    "id": "words_4",
    "title": "Mountains, mobs and weapons",
    "stage": "vocabulary",
@@ -197,30 +347,6 @@
     "v_ima",
     "v_namae",
     "v_tsuki"
-   ]
-  },
-  {
-   "id": "hira_ra",
-   "title": "Hiragana: ら row",
-   "stage": "hiragana",
-   "intro": "The Japanese r is a light tap, halfway to an l or d.",
-   "items": [
-    "h_ra",
-    "h_ri",
-    "h_ru",
-    "h_re",
-    "h_ro"
-   ]
-  },
-  {
-   "id": "hira_wa",
-   "title": "Hiragana: わ を ん",
-   "stage": "hiragana",
-   "intro": "The last three basic hiragana.",
-   "items": [
-    "h_wa",
-    "h_wo",
-    "h_n"
    ]
   },
   {
@@ -267,19 +393,6 @@
    ]
   },
   {
-   "id": "hira_dakuten",
-   "title": "Hiragana: ゛ and ゜",
-   "stage": "hiragana",
-   "intro": "Two marks turn the kana you know into 25 more sounds.",
-   "items": [
-    "h_ga",
-    "h_za",
-    "h_da",
-    "h_ba",
-    "h_pa"
-   ]
-  },
-  {
    "id": "words_6",
    "title": "Farm and village",
    "stage": "vocabulary",
@@ -322,19 +435,6 @@
     "v_gomennasai",
     "v_douzo",
     "v_onegaishimasu"
-   ]
-  },
-  {
-   "id": "hira_combos",
-   "title": "Hiragana: combos, small っ, long vowels",
-   "stage": "hiragana",
-   "intro": "The last hiragana rules. After this you can read anything written in hiragana!",
-   "items": [
-    "h_yoon1",
-    "h_yoon2",
-    "h_yoon3",
-    "h_sokuon",
-    "h_long"
    ]
   },
   {
@@ -471,106 +571,6 @@
    "intro": "",
    "items": [
     "g_adj_i"
-   ]
-  },
-  {
-   "id": "kata_1",
-   "title": "Katakana: ア and カ rows, ー",
-   "stage": "katakana",
-   "intro": "Katakana writes foreign words - including most Minecraft mobs! Same sounds as hiragana, new shapes.",
-   "items": [
-    "k_a",
-    "k_i",
-    "k_u",
-    "k_e",
-    "k_o",
-    "k_ka",
-    "k_ki",
-    "k_ku",
-    "k_ke",
-    "k_ko",
-    "k_choon"
-   ]
-  },
-  {
-   "id": "kata_2",
-   "title": "Katakana: サ and タ rows",
-   "stage": "katakana",
-   "intro": "Careful with シ/ツ and ソ/ン: watch the stroke direction.",
-   "items": [
-    "k_sa",
-    "k_shi",
-    "k_su",
-    "k_se",
-    "k_so",
-    "k_ta",
-    "k_chi",
-    "k_tsu",
-    "k_te",
-    "k_to"
-   ]
-  },
-  {
-   "id": "kata_3",
-   "title": "Katakana: ナ and ハ rows",
-   "stage": "katakana",
-   "intro": "",
-   "items": [
-    "k_na",
-    "k_ni",
-    "k_nu",
-    "k_ne",
-    "k_no",
-    "k_ha",
-    "k_hi",
-    "k_fu",
-    "k_he",
-    "k_ho"
-   ]
-  },
-  {
-   "id": "kata_4",
-   "title": "Katakana: マ and ヤ rows",
-   "stage": "katakana",
-   "intro": "",
-   "items": [
-    "k_ma",
-    "k_mi",
-    "k_mu",
-    "k_me",
-    "k_mo",
-    "k_ya",
-    "k_yu",
-    "k_yo"
-   ]
-  },
-  {
-   "id": "kata_5",
-   "title": "Katakana: ラ row, ワ ヲ ン",
-   "stage": "katakana",
-   "intro": "",
-   "items": [
-    "k_ra",
-    "k_ri",
-    "k_ru",
-    "k_re",
-    "k_ro",
-    "k_wa",
-    "k_wo",
-    "k_n"
-   ]
-  },
-  {
-   "id": "kata_6",
-   "title": "Katakana: marks, combos and new sounds",
-   "stage": "katakana",
-   "intro": "",
-   "items": [
-    "k_dakuten",
-    "k_handakuten",
-    "k_yoon",
-    "k_sokuon",
-    "k_extended"
    ]
   },
   {

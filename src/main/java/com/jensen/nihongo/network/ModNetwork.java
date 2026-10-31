@@ -42,10 +42,11 @@ public final class ModNetwork {
         }
     }
 
-    /** kind 0: study session finished with {@code amount} correct answers; kind 1: quest completed. */
+    /** kind 0: study session finished with {@code amount} correct answers; kind 1: quest completed; kind 2: in-world prompt answered. */
     public record Reward(int kind, int amount) implements CustomPacketPayload {
         public static final int STUDY = 0;
         public static final int QUEST = 1;
+        public static final int FIELD = 2;
         public static final Type<Reward> TYPE = new Type<>(NihongoMod.id("reward"));
         public static final StreamCodec<ByteBuf, Reward> CODEC =
                 StreamCodec.composite(ByteBufCodecs.VAR_INT, Reward::kind, ByteBufCodecs.VAR_INT, Reward::amount, Reward::new);
@@ -65,6 +66,7 @@ public final class ModNetwork {
     private static final Map<UUID, Map<String, Long>> SPELL_COOLDOWNS = new HashMap<>();
     private static final Map<UUID, Long> LAST_STUDY_REWARD = new HashMap<>();
     private static final Map<UUID, Long> LAST_QUEST_REWARD = new HashMap<>();
+    private static final Map<UUID, Long> LAST_FIELD_REWARD = new HashMap<>();
 
     private static void handleSpell(CastSpell payload, IPayloadContext context) {
         context.enqueueWork(() -> {
@@ -100,6 +102,12 @@ public final class ModNetwork {
                 if (now - LAST_STUDY_REWARD.getOrDefault(uuid, 0L) < 20_000L) return;
                 LAST_STUDY_REWARD.put(uuid, now);
                 int xp = Math.min(ServerConfig.MAX_XP_PER_SESSION.get(), Math.max(0, payload.amount()) * ServerConfig.XP_PER_CORRECT.get());
+                if (xp > 0) player.giveExperiencePoints(xp);
+            } else if (payload.kind() == Reward.FIELD) {
+                // In-world prompts are a question or two and at least a few seconds apart.
+                if (now - LAST_FIELD_REWARD.getOrDefault(uuid, 0L) < 4_000L) return;
+                LAST_FIELD_REWARD.put(uuid, now);
+                int xp = Math.min(3, Math.max(0, payload.amount())) * ServerConfig.XP_PER_CORRECT.get();
                 if (xp > 0) player.giveExperiencePoints(xp);
             } else if (payload.kind() == Reward.QUEST) {
                 if (now - LAST_QUEST_REWARD.getOrDefault(uuid, 0L) < 60_000L) return;

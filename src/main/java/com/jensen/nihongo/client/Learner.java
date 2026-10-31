@@ -11,7 +11,10 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.neoforge.network.PacketDistributor;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.time.ZoneId;
 import java.util.Random;
 import java.util.UUID;
@@ -64,12 +67,41 @@ public final class Learner {
     private static void applySettings() {
         LearningEngine.Settings s = engine.settings();
         try {
+            s.dailyLimitEnabled = ClientConfig.DAILY_LIMIT_ENABLED.get();
             s.dailyNewLimit = ClientConfig.DAILY_NEW_LIMIT.get();
             s.maxReviewsPerSession = ClientConfig.MAX_REVIEWS.get();
             s.gate = ClientConfig.GATE_PERCENT.get() / 100.0;
         } catch (IllegalStateException notLoadedYet) {
             // Config not loaded yet; keep defaults.
         }
+    }
+
+    /** Turns the daily new-item limit on or off and saves the choice to the client config. */
+    public static void setDailyLimitEnabled(boolean enabled) {
+        ClientConfig.DAILY_LIMIT_ENABLED.set(enabled);
+        ClientConfig.DAILY_LIMIT_ENABLED.save();
+        engine();
+    }
+
+    /**
+     * Starts the course over. The old progress file is kept as a ".bak" next to the new one, so an
+     * accidental reset can be undone by hand.
+     */
+    public static void resetProgress() {
+        engine();
+        try {
+            if (Files.exists(progressFile)) {
+                Files.copy(progressFile, progressFile.resolveSibling(progressFile.getFileName() + ".bak"), StandardCopyOption.REPLACE_EXISTING);
+            }
+        } catch (IOException e) {
+            NihongoMod.LOGGER.warn("Could not back up Japanese progress before resetting it", e);
+        }
+        progress = new Progress();
+        engine = null;
+        dirty = true;
+        saveIfDirty();
+        QuestTracker.reset();
+        Encounters.reset();
     }
 
     public static void markDirty() {
@@ -101,5 +133,10 @@ public final class Learner {
 
     public static void rewardStudy(int correct) {
         if (correct > 0) sendToServer(new ModNetwork.Reward(ModNetwork.Reward.STUDY, correct));
+    }
+
+    /** Small, quick reward for answering an in-world prompt. */
+    public static void rewardField(int correct) {
+        if (correct > 0) sendToServer(new ModNetwork.Reward(ModNetwork.Reward.FIELD, correct));
     }
 }

@@ -34,6 +34,9 @@ public final class ClientEvents {
         while (KeyBindings.QUEST_HINT.consumeClick()) {
             QuestTracker.toggleHint();
         }
+        while (KeyBindings.FIELD_STUDY.consumeClick()) {
+            Encounters.onKey(mc);
+        }
         if (mc.player != null && mc.screen == null) {
             handlePushToTalk(mc);
         } else if (speakWasDown) {
@@ -41,6 +44,7 @@ public final class ClientEvents {
             VoiceService.stopRecording();
         }
         if (mc.player != null && ticks % 20 == 0) QuestTracker.tick(mc);
+        if (mc.player != null) Encounters.tick(mc, ticks);
         if (ticks % 200 == 0) Learner.saveIfDirty();
     }
 
@@ -49,7 +53,8 @@ public final class ClientEvents {
         int due = engine.dueCount();
         Component msg;
         if (engine.progress().introduced.isEmpty()) {
-            msg = Component.literal("ようこそ! Press J (or craft a Japanese Textbook: book + red dye) to start learning Japanese.");
+            msg = Component.literal("ようこそ! Press J (or craft a Japanese Textbook: book + red dye) to start learning Japanese. "
+                    + "Once you know your kana, things you mine, collect or fight will offer quick questions: press K to answer.");
         } else if (due > 0) {
             msg = Component.literal("おかえり! You have " + due + " Japanese reviews waiting - press J.");
         } else {
@@ -61,6 +66,7 @@ public final class ClientEvents {
     static void onLoggingOut(ClientPlayerNetworkEvent.LoggingOut event) {
         Learner.saveIfDirty();
         QuestTracker.reset();
+        Encounters.reset();
     }
 
     // ------------------------------------------------------------------ spells

@@ -7,12 +7,10 @@ second-language acquisition research. This page maps the features to the researc
 
 | Stage | What | Why this order |
 |---|---|---|
-| 1 | **Hiragana**, one row at a time, with words after every two rows | Every Japanese sound can be written in hiragana, and textbooks (Genki, Minna no Nihongo) teach it first. Reading real words immediately makes the kana meaningful instead of abstract symbols. |
-| 2 | **Dakuten, combinations, small っ, long vowels** | These are *rules* applied to kana you already know, so they are taught as rule groups (one card per group) rather than 60 more symbols. |
-| 3 | **High-frequency vocabulary** tied to Minecraft | Learning the most frequent words first gives the most comprehension per word learned (Nation, 2001/2006). Words are also chosen because you can *see* them in the game. |
-| 4 | **Grammar** in the standard beginner order: は/です → か → これ/の → も/じゃない → adjectives → あります/います → ます verbs → を/に/で → past → が/すき → ましょう → たい → て-form → ている → から | This is the sequence used by Genki I and the JLPT N5 syllabus: each point builds on the ones before it. |
-| 5 | **Katakana** after the first grammar, then loanwords | Katakana is the same sound system with new shapes, so it is quick to learn once hiragana is solid. It unlocks Minecraft's loanword names (ゾンビ, クリーパー, ダイヤモンド). |
-| 6 | **Kanji through words you already know** | A word's kanji only appears once you've remembered the spoken word for 3+ days. Meaning and sound are already in memory, so the kanji is one new link instead of three. |
+| 1 | **Hiragana**, one row at a time, then dakuten, combinations, small っ and long vowels | Every Japanese sound can be written in hiragana, and textbooks (Genki, Minna no Nihongo) teach it first. The extra marks are *rules* applied to kana you already know, so they are taught as rule groups (one card per group) rather than 60 more symbols. |
+| 2 | **Katakana** | The same sound system with new shapes, so it is quick to learn while hiragana is fresh. With both scripts done, every word in the course (including Minecraft's loanwords: ゾンビ, クリーパー, ダイヤモンド) can be read. |
+| 3 | **High-frequency words and grammar** tied to Minecraft | Learning the most frequent words first gives the most comprehension per word learned (Nation, 2001/2006). Words are also chosen because you can *see* them in the game. Grammar follows the standard beginner order (は/です → か → これ/の → も/じゃない → adjectives → あります/います → ます verbs → を/に/で → past → が/すき → ましょう → たい → て-form → ている → から), as in Genki I and the JLPT N5 syllabus. |
+| 4 | **Kanji through words you already know** | Kanji are the last stage: they open once every word lesson has been started, and a word's kanji is only taught after you've remembered the spoken word for 3+ days. Meaning and sound are already in memory, so the kanji is one new link instead of three. |
 
 **i+1 rule, enforced automatically.** `tools/validate_curriculum.py` checks that every word and
 every example sentence only uses kana taught in earlier lessons. Learners are never asked to read
@@ -29,8 +27,8 @@ behind SuperMemo and Anki):
   back rarely and hard ones come back often.
 - Distributed practice beats cramming for long-term retention, a result replicated across
   hundreds of studies (Ebbinghaus, 1885; Cepeda et al., 2006 meta-analysis).
-- **Daily new-item limit** (15 by default) keeps tomorrow's review load manageable and limits
-  cognitive load (Sweller, 1988).
+- **Optional daily new-item limit** (off by default; 15 a day when turned on) keeps tomorrow's
+  review load manageable and limits cognitive load (Sweller, 1988). Toggle it from the hub.
 - **Mastery gating**: a new lesson unlocks only when 80% of the previous lesson's cards are past
   the learning stage, so material is never built on a shaky foundation.
 
@@ -83,6 +81,11 @@ nothing about memory; wrong kana are not, since they make a different word.
 - Romaji under labels fades away once you know a word well, so it doesn't become a crutch.
 - **Japanese quests** ("りんご を さんこ あつめて ください") give a reason to understand a sentence and
   act on it. This is task-based language teaching (Ellis, 2003): language used to get something done.
+- **Field study**: when you mine, collect, attack or keep looking at something whose word is due
+  for review, a prompt offers the question right there (press **K**). Once the kana are done, things
+  whose word you haven't learned yet offer to teach it on the spot. Recalling a word in the context
+  where it is used, with the thing itself in front of you, is a strong retrieval cue
+  (encoding specificity: Tulving & Thomson, 1973; Godden & Baddeley, 1975).
 
 ## 9. Motivation
 
@@ -97,6 +100,7 @@ playing. Sustained, regular study matters more than any single technique (Dörny
 - Dörnyei, Z. (2001). *Motivational Strategies in the Language Classroom*. Cambridge University Press.
 - Ebbinghaus, H. (1885). *Über das Gedächtnis*.
 - Ellis, R. (2003). *Task-based Language Learning and Teaching*. Oxford University Press.
+- Godden, D. R., & Baddeley, A. D. (1975). Context-dependent memory in two natural environments: On land and underwater. *British Journal of Psychology*, 66(3).
 - Hattie, J., & Timperley, H. (2007). The power of feedback. *Review of Educational Research*, 77(1).
 - Karpicke, J. D., & Roediger, H. L. (2008). The critical importance of retrieval for learning. *Science*, 319(5865).
 - Kornell, N., & Bjork, R. A. (2008). Learning concepts and categories: Is spacing the "enemy of induction"? *Psychological Science*, 19(6).
@@ -109,4 +113,5 @@ playing. Sustained, regular study matters more than any single technique (Dörny
 - Rohrer, D., & Taylor, K. (2007). The shuffling of mathematics problems improves learning. *Instructional Science*, 35(6).
 - Swain, M. (1985). Communicative competence: Some roles of comprehensible input and comprehensible output in its development. In *Input in Second Language Acquisition*. Newbury House.
 - Sweller, J. (1988). Cognitive load during problem solving. *Cognitive Science*, 12(2).
+- Tulving, E., & Thomson, D. M. (1973). Encoding specificity and retrieval processes in episodic memory. *Psychological Review*, 80(5).
 - Wozniak, P. A. (1990). *Optimization of learning* (SuperMemo SM-2 algorithm).
